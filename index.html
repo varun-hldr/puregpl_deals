@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PureGPL Clone - Premium Themes & Plugins</title>
+    <title>PureGPL - Download 20,000+ Premium WordPress Themes & Plugins | Save 98%</title>
+    <meta name="description" content="Access 20,000+ premium WordPress themes and plugins under GPL license. Save thousands with unlimited downloads. Trusted by 45,000+ agencies and freelancers." />
     <style>
       :root {
         --primary: #10b981; /* Emerald Green */
@@ -254,6 +255,24 @@
         padding: 20px;
       }
 
+      .product-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .product-btn:hover {
+        background: var(--primary-dark);
+      }
+
       .category {
         font-size: 0.8rem;
         color: var(--gray);
@@ -413,6 +432,288 @@
         color: var(--gray);
       }
 
+      /* Trust Badges */
+      .trust-badges {
+        background: var(--white);
+        padding: 30px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .badges-grid {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .trust-icon {
+        font-size: 1.5rem;
+      }
+
+      /* Comparison Table */
+      .comparison {
+        padding: 80px 0;
+        background: var(--white);
+      }
+
+      .comparison h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+      }
+
+      .comparison-table {
+        max-width: 900px;
+        margin: 0 auto;
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .comparison-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .comparison-table th {
+        background: var(--dark);
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      .comparison-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .comparison-table .highlight {
+        background: #f0fdf4;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .comparison-table .strike {
+        color: var(--red);
+        text-decoration: line-through;
+      }
+
+      /* Testimonials */
+      .testimonials {
+        padding: 80px 0;
+        background: #f9fafb;
+      }
+
+      .testimonials h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .stars {
+        color: #fbbf24;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+      }
+
+      .testimonial-text {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .author-info h5 {
+        margin-bottom: 3px;
+        color: var(--dark);
+      }
+
+      .author-info p {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      /* FAQ */
+      .faq {
+        padding: 80px 0;
+        background: var(--white);
+      }
+
+      .faq h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: #f9fafb;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+      }
+
+      .faq-question:hover {
+        background: #f3f4f6;
+      }
+
+      .faq-answer {
+        padding: 0 25px 20px;
+        color: var(--gray);
+        line-height: 1.8;
+      }
+
+      /* Guarantee Section */
+      .guarantee {
+        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+        padding: 60px 0;
+        color: var(--white);
+        text-align: center;
+      }
+
+      .guarantee-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .guarantee h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .guarantee-badge {
+        display: inline-block;
+        background: var(--white);
+        color: var(--primary);
+        padding: 40px;
+        border-radius: 50%;
+        font-size: 3rem;
+        margin: 30px 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .guarantee p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.95;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--dark);
+        color: var(--white);
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        color: #d1d5db;
+        margin-bottom: 30px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* Pulse Animation */
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .nav-links ul,
@@ -422,7 +723,8 @@
         .grid,
         .feature-grid,
         .pricing-grid,
-        .footer-grid {
+        .footer-grid,
+        .testimonial-grid {
           grid-template-columns: 1fr;
         }
         .hero h1 {
@@ -431,13 +733,29 @@
         .plan-card.popular {
           transform: scale(1);
         }
+        .comparison-table {
+          overflow-x: auto;
+        }
+        .badges-grid {
+          flex-direction: column;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .guarantee h2,
+        .faq h2,
+        .testimonials h2,
+        .comparison h2 {
+          font-size: 1.8rem;
+        }
       }
     </style>
   </head>
   <body>
     <div class="top-bar">
-      LIMITED TIME: Save 30% on all Membership Plans with code
-      <strong>SAVE30</strong>
+      🔥 LIMITED TIME: Save 30% on all Membership Plans with code
+      <strong>SAVE30</strong> - Expires in 24 Hours!
     </div>
 
     <header>
@@ -474,17 +792,17 @@
     <section class="hero">
       <div class="container">
         <h1>
-          Access 20,000+ Premium <br />
-          <span style="color: var(--primary)">WordPress Tools</span>
+          Save 98% on Premium <br />
+          <span style="color: var(--primary)">WordPress Themes & Plugins</span>
         </h1>
         <p>
-          The ultimate marketplace for agencies and freelancers. Save thousands
-          with instant access to top-rated themes, plugins, and templates under
-          GPL license.
+          Stop overpaying for individual products! Get unlimited access to 20,000+ premium WordPress themes, plugins, and tools for one low price. Trusted by 45,000+ agencies, freelancers, and developers worldwide.
         </p>
         <div style="display: flex; gap: 15px; justify-content: center">
-          <a href="#" class="btn btn-primary">View Pricing Plans</a>
-          <a href="#" class="btn btn-outline">Browse Products</a>
+          <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 35px;">
+            🚀 Start Saving Today - Only $99/Year
+          </a>
+          <a href="#" class="btn btn-outline">Browse 20,000+ Products</a>
         </div>
 
         <div class="hero-stats">
@@ -499,6 +817,48 @@
           <div class="stat-item">
             <h3>100%</h3>
             <span>Legal (GPL)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-badges">
+      <div class="container">
+        <div class="badges-grid">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <div>
+              <strong>256-bit SSL Secure</strong><br />
+              <small>100% Safe Payments</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⭐</span>
+            <div>
+              <strong>4.9/5 Rating</strong><br />
+              <small>12,450+ Reviews</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">✅</span>
+            <div>
+              <strong>McAfee Secured</strong><br />
+              <small>Virus-Free Files</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">💰</span>
+            <div>
+              <strong>30-Day Guarantee</strong><br />
+              <small>100% Money Back</small>
+            </div>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⚡</span>
+            <div>
+              <strong>Instant Access</strong><br />
+              <small>Download Immediately</small>
+            </div>
           </div>
         </div>
       </div>
@@ -560,8 +920,9 @@
             <div class="product-title">Elementor Pro Plugin</div>
             <div class="price-row">
               <span class="old-price">$59.00</span>
-              <span class="new-price">$3.99</span>
+              <span class="new-price">FREE</span>
             </div>
+            <button class="product-btn">Get Instant Access →</button>
           </div>
         </div>
 
@@ -575,8 +936,9 @@
             <div class="product-title">Divi Theme & Builder</div>
             <div class="price-row">
               <span class="old-price">$89.00</span>
-              <span class="new-price">$3.99</span>
+              <span class="new-price">FREE</span>
             </div>
+            <button class="product-btn">Get Instant Access →</button>
           </div>
         </div>
 
@@ -590,8 +952,9 @@
             <div class="product-title">WP Rocket Cache</div>
             <div class="price-row">
               <span class="old-price">$49.00</span>
-              <span class="new-price">$3.99</span>
+              <span class="new-price">FREE</span>
             </div>
+            <button class="product-btn">Get Instant Access →</button>
           </div>
         </div>
 
@@ -605,18 +968,161 @@
             <div class="product-title">Yoast SEO Premium</div>
             <div class="price-row">
               <span class="old-price">$99.00</span>
-              <span class="new-price">$3.99</span>
+              <span class="new-price">FREE</span>
             </div>
+            <button class="product-btn">Get Instant Access →</button>
           </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">94% OFF</span>
+            ACF PRO
+          </div>
+          <div class="product-info">
+            <div class="category">Custom Fields</div>
+            <div class="product-title">Advanced Custom Fields Pro</div>
+            <div class="price-row">
+              <span class="old-price">$49.00</span>
+              <span class="new-price">FREE</span>
+            </div>
+            <button class="product-btn">Get Instant Access →</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">88% OFF</span>
+            ASTRA PRO
+          </div>
+          <div class="product-info">
+            <div class="category">WordPress Theme</div>
+            <div class="product-title">Astra Pro Theme</div>
+            <div class="price-row">
+              <span class="old-price">$59.00</span>
+              <span class="new-price">FREE</span>
+            </div>
+            <button class="product-btn">Get Instant Access →</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">97% OFF</span>
+            WPML
+          </div>
+          <div class="product-info">
+            <div class="category">Translation</div>
+            <div class="product-title">WPML Multilingual CMS</div>
+            <div class="price-row">
+              <span class="old-price">$99.00</span>
+              <span class="new-price">FREE</span>
+            </div>
+            <button class="product-btn">Get Instant Access →</button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">93% OFF</span>
+            SLIDER REVOLUTION
+          </div>
+          <div class="product-info">
+            <div class="category">Slider Plugin</div>
+            <div class="product-title">Slider Revolution</div>
+            <div class="price-row">
+              <span class="old-price">$29.00</span>
+              <span class="new-price">FREE</span>
+            </div>
+            <button class="product-btn">Get Instant Access →</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
+          View All 20,000+ Products →
+        </a>
+      </div>
+    </section>
+
+    <section class="comparison">
+      <div class="container">
+        <h2>See How Much You'll Save</h2>
+        <p style="text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;">
+          Stop paying full price for every theme and plugin. Get unlimited access instead.
+        </p>
+
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Original Price</th>
+                <th>PureGPL Price</th>
+                <th>You Save</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Elementor Pro</strong></td>
+                <td class="strike">$59/year</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$59</td>
+              </tr>
+              <tr>
+                <td><strong>Divi Theme</strong></td>
+                <td class="strike">$89/year</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$89</td>
+              </tr>
+              <tr>
+                <td><strong>WP Rocket</strong></td>
+                <td class="strike">$59/year</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$59</td>
+              </tr>
+              <tr>
+                <td><strong>Yoast SEO Premium</strong></td>
+                <td class="strike">$99/year</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$99</td>
+              </tr>
+              <tr>
+                <td><strong>WooCommerce Themes</strong></td>
+                <td class="strike">$79/each</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$79+</td>
+              </tr>
+              <tr>
+                <td><strong>ACF Pro</strong></td>
+                <td class="strike">$49/year</td>
+                <td class="highlight">$0 (Included)</td>
+                <td class="highlight">$49</td>
+              </tr>
+              <tr style="background: #f0fdf4;">
+                <td><strong>TOTAL VALUE</strong></td>
+                <td><strong>$434+</strong></td>
+                <td><strong>Just $99/year</strong></td>
+                <td style="color: var(--primary); font-size: 1.3rem;"><strong>Save $335+</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
+            Start Saving Today →
+          </a>
         </div>
       </div>
     </section>
 
     <section class="pricing" style="background-color: #f3f4f6">
       <div class="container">
-        <h2>Simple, Affordable Pricing</h2>
-        <p style="color: var(--gray); margin-top: 10px">
-          Stop paying per product. Get access to everything.
+        <h2>Choose Your Plan & Start Saving</h2>
+        <p style="color: var(--gray); margin-top: 10px; font-size: 1.1rem;">
+          Stop paying $49-$299 per product. Get unlimited access to everything for one low price.
         </p>
 
         <div class="pricing-grid">
@@ -694,6 +1200,222 @@
       </div>
     </section>
 
+    <section class="testimonials">
+      <div class="container">
+        <h2>Trusted by 45,000+ Happy Customers</h2>
+        <p style="text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;">
+          See what our members are saying about PureGPL
+        </p>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I've saved over $3,000 in my first year alone. As a freelance developer, PureGPL has been a game-changer for my business. The instant downloads and regular updates are fantastic!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MJ</div>
+              <div class="author-info">
+                <h5>Michael Johnson</h5>
+                <p>Freelance Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Best investment for my agency. We build 20+ client sites per month and PureGPL gives us access to every premium theme and plugin we need. Incredible value!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SR</div>
+              <div class="author-info">
+                <h5>Sarah Rodriguez</h5>
+                <p>Agency Owner</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Clean files, regular updates, and excellent support. I was skeptical at first, but PureGPL has exceeded all my expectations. The lifetime plan is worth every penny."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">DK</div>
+              <div class="author-info">
+                <h5>David Kim</h5>
+                <p>WordPress Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Finally, a GPL site that actually works! Downloads are instant, files are clean, and everything is updated regularly. The money-back guarantee gave me confidence to try it."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">EP</div>
+              <div class="author-info">
+                <h5>Emily Parker</h5>
+                <p>Web Designer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The variety of themes and plugins is incredible. I can find everything I need in one place. No more searching multiple sites or paying ridiculous prices. Highly recommend!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RC</div>
+              <div class="author-info">
+                <h5>Robert Chen</h5>
+                <p>Digital Marketer</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "PureGPL has become essential for my workflow. The support team is responsive, files are always clean, and the savings are unbelievable. Best decision I've made for my business!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LM</div>
+              <div class="author-info">
+                <h5>Lisa Martinez</h5>
+                <p>E-commerce Consultant</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="guarantee">
+      <div class="container">
+        <div class="guarantee-content">
+          <h2>30-Day Money-Back Guarantee</h2>
+          <div class="guarantee-badge float">🛡️</div>
+          <p>
+            Try PureGPL completely risk-free. If you're not 100% satisfied with your membership within the first 30 days, we'll refund every penny. No questions asked. You have nothing to lose and everything to gain!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              Is this legal? How can you offer premium products so cheap?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, 100% legal! All WordPress themes and plugins are released under the GPL (General Public License), which allows redistribution. We purchase original licenses and share them with our members, passing the savings to you. This is completely within GPL rights and WordPress foundation guidelines.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Will I receive updates for the themes and plugins?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Absolutely! Our team monitors and updates all products regularly. You'll always have access to the latest versions. Premium members get priority access to updates, often within 24-48 hours of official release.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Are the files safe and malware-free?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Safety is our top priority. Every file is scanned with McAfee and other security tools before upload. We never modify original files - you get clean, authentic versions straight from developers. We also offer a malware-free guarantee.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I use these on client websites?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes! Under GPL license, you can use all products on unlimited personal and client websites. Perfect for agencies, freelancers, and developers managing multiple projects. No restrictions on commercial use.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Do I get premium support from original developers?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              While you won't get direct support from original developers (that requires individual licenses), our team provides installation help and troubleshooting. Plus, you save so much that you can afford premium support for specific products if needed.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What if I'm not satisfied?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              We offer a 30-day money-back guarantee, no questions asked. If PureGPL doesn't meet your expectations, simply contact us within 30 days for a full refund. Your satisfaction is guaranteed!
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How quickly can I download after joining?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Immediately! Once your payment is confirmed, you'll get instant access to your member dashboard. Start downloading any of our 20,000+ products right away. No waiting, no approval process.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I cancel my subscription anytime?
+              <span style="color: var(--primary);">+</span>
+            </div>
+            <div class="faq-answer">
+              Yes, you can cancel anytime from your account dashboard. No contracts, no commitments. If you cancel, you'll retain access until the end of your current billing period. (Lifetime members have permanent access with no recurring fees!)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Save Thousands on WordPress Products?</h2>
+        <p>
+          Join 45,000+ smart developers and agencies who trust PureGPL.<br />
+          Get instant access to 20,000+ premium themes and plugins today!
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary pulse" style="font-size: 1.2rem; padding: 18px 50px;">
+            Start Your Membership Now
+          </a>
+          <a href="#" class="btn btn-outline" style="background: transparent; border: 2px solid white; color: white; font-size: 1.2rem; padding: 18px 50px;">
+            View All Pricing Plans
+          </a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
+          ✓ 30-Day Money-Back Guarantee &nbsp; | &nbsp; ✓ Instant Access &nbsp; | &nbsp; ✓ Cancel Anytime
+        </p>
+      </div>
+    </section>
+
     <footer>
       <div class="container">
         <div class="footer-grid">
@@ -740,8 +1462,12 @@
         </div>
         <div class="disclaimer">
           <p>
-            &copy; 2024 PureGPL Clone. All rights reserved. WordPress is a
+            &copy; 2026 PureGPL. All rights reserved. WordPress is a
             trademark of the WordPress Foundation.
+          </p>
+          <p style="margin-top: 10px; font-size: 0.75rem;">
+            All products are distributed under GPL license. We are not affiliated with or endorsed by the original developers.
+            Original developer support is not included. PureGPL provides installation assistance only.
           </p>
         </div>
       </div>
