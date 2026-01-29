@@ -1,157 +1,750 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PureGPL Deals - Premium GPL Themes & Plugins</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 40px 20px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    header {
-      text-align: center;
-      color: white;
-      margin-bottom: 50px;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    .deals-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-    .deal-card {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-    .deal-card:hover {
-      transform: translateY(-5px);
-    }
-    .deal-badge {
-      display: inline-block;
-      background: #ff6b6b;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .deal-card h2 {
-      font-size: 1.4rem;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .deal-card p {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .deal-price {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .deal-price .original {
-      text-decoration: line-through;
-      color: #999;
-      font-size: 1.1rem;
-    }
-    .deal-price .current {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #667eea;
-    }
-    .deal-btn {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: opacity 0.3s ease;
-    }
-    .deal-btn:hover {
-      opacity: 0.9;
-    }
-    footer {
-      text-align: center;
-      color: white;
-      margin-top: 50px;
-      opacity: 0.8;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>PureGPL Deals</h1>
-      <p>Premium WordPress Themes & Plugins at Unbeatable Prices</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PureGPL Clone - Premium Themes & Plugins</title>
+    <style>
+      :root {
+        --primary: #10b981; /* Emerald Green */
+        --primary-dark: #059669;
+        --dark: #1f2937;
+        --light: #f3f4f6;
+        --white: #ffffff;
+        --gray: #6b7280;
+        --red: #ef4444;
+        --border: #e5e7eb;
+      }
 
-    <div class="deals-grid">
-      <div class="deal-card">
-        <span class="deal-badge">50% OFF</span>
-        <h2>Starter Bundle</h2>
-        <p>Get access to 100+ premium themes and plugins. Perfect for beginners and small websites.</p>
-        <div class="deal-price">
-          <span class="original">$99</span>
-          <span class="current">$49</span>
-        </div>
-        <a href="#" class="deal-btn">Get This Deal</a>
-      </div>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+      }
 
-      <div class="deal-card">
-        <span class="deal-badge">BEST VALUE</span>
-        <h2>Pro Bundle</h2>
-        <p>Unlimited access to 500+ themes and plugins with priority support and weekly updates.</p>
-        <div class="deal-price">
-          <span class="original">$199</span>
-          <span class="current">$79</span>
-        </div>
-        <a href="#" class="deal-btn">Get This Deal</a>
-      </div>
+      body {
+        background-color: #f9fafb;
+        color: var(--dark);
+        line-height: 1.6;
+      }
 
-      <div class="deal-card">
-        <span class="deal-badge">LIFETIME</span>
-        <h2>Agency Bundle</h2>
-        <p>Complete collection with lifetime access. Use on unlimited websites with commercial license.</p>
-        <div class="deal-price">
-          <span class="original">$499</span>
-          <span class="current">$149</span>
-        </div>
-        <a href="#" class="deal-btn">Get This Deal</a>
-      </div>
+      /* Utilities */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .badge {
+        background-color: var(--red);
+        color: white;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+
+      /* Top Bar */
+      .top-bar {
+        background-color: var(--dark);
+        color: var(--white);
+        text-align: center;
+        padding: 8px 0;
+        font-size: 0.9rem;
+      }
+
+      /* Header */
+      header {
+        background: var(--white);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--dark);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .logo span {
+        color: var(--primary);
+      }
+
+      .search-bar {
+        flex: 1;
+        max-width: 500px;
+        margin: 0 20px;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--light);
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .nav-links {
+        border-top: 1px solid var(--border);
+        padding: 10px 0;
+      }
+
+      .nav-links ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(to right, #ffffff, #e6fffa);
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: var(--gray);
+        max-width: 700px;
+        margin: 0 auto 40px;
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .stat-item h3 {
+        font-size: 2rem;
+        color: var(--primary);
+      }
+      .stat-item span {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      /* Product Grid */
+      .products-section {
+        padding: 60px 0;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .product-img {
+        height: 180px;
+        background-color: #e5e7eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray);
+        font-weight: bold;
+        position: relative;
+      }
+
+      .discount-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--red);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .category {
+        font-size: 0.8rem;
+        color: var(--gray);
+        margin-bottom: 5px;
+      }
+
+      .product-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .new-price {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+
+      /* Features */
+      .features {
+        background: var(--white);
+        padding: 60px 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        text-align: center;
+      }
+
+      .feature-item i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      /* Pricing */
+      .pricing {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .plan-card {
+        background: var(--white);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        position: relative;
+      }
+
+      .plan-card.popular {
+        border: 2px solid var(--primary);
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+      }
+
+      .plan-tag {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .plan-price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin: 20px 0;
+        color: var(--dark);
+      }
+
+      .plan-features {
+        list-style: none;
+        margin: 30px 0;
+        text-align: left;
+      }
+
+      .plan-features li {
+        margin-bottom: 12px;
+        color: var(--gray);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .plan-features li::before {
+        content: "✓";
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: #d1d5db;
+        padding: 60px 0 20px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer h4 {
+        color: var(--white);
+        margin-bottom: 20px;
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer a {
+        color: #d1d5db;
+        text-decoration: none;
+      }
+
+      .disclaimer {
+        border-top: 1px solid #374151;
+        padding-top: 20px;
+        font-size: 0.8rem;
+        text-align: center;
+        color: var(--gray);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links ul,
+        .hero-stats {
+          display: none;
+        }
+        .grid,
+        .feature-grid,
+        .pricing-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .plan-card.popular {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      LIMITED TIME: Save 30% on all Membership Plans with code
+      <strong>SAVE30</strong>
     </div>
 
+    <header>
+      <div class="container">
+        <div class="header-main">
+          <a href="#" class="logo">Pure<span>GPL</span></a>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              placeholder="Search 20,000+ themes & plugins..."
+            />
+          </div>
+
+          <div class="nav-actions">
+            <a href="#" class="btn btn-outline" style="border: none">Login</a>
+            <a href="#" class="btn btn-primary">Join Club</a>
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">WordPress Themes</a></li>
+            <li><a href="#">WordPress Plugins</a></li>
+            <li><a href="#">WooCommerce</a></li>
+            <li><a href="#">Membership Plans</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>
+          Access 20,000+ Premium <br />
+          <span style="color: var(--primary)">WordPress Tools</span>
+        </h1>
+        <p>
+          The ultimate marketplace for agencies and freelancers. Save thousands
+          with instant access to top-rated themes, plugins, and templates under
+          GPL license.
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center">
+          <a href="#" class="btn btn-primary">View Pricing Plans</a>
+          <a href="#" class="btn btn-outline">Browse Products</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>20,704</h3>
+            <span>Premium Products</span>
+          </div>
+          <div class="stat-item">
+            <h3>45,000+</h3>
+            <span>Active Members</span>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <span>Legal (GPL)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature-grid">
+          <div class="feature-item">
+            <i>⚡</i>
+            <h4>Instant Delivery</h4>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Download immediately after purchase.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i>🔄</i>
+            <h4>Daily Updates</h4>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Get the latest versions automatically.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i>🛡️</i>
+            <h4>100% Secure</h4>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              McAfee Scanned & Virus Free files.
+            </p>
+          </div>
+          <div class="feature-item">
+            <i>💬</i>
+            <h4>Premium Support</h4>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Dedicated team to help you install.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section container">
+      <div class="section-header">
+        <h2>Trending WordPress Products</h2>
+        <a
+          href="#"
+          style="color: var(--primary); text-decoration: none; font-weight: 600"
+          >View All Products →</a
+        >
+      </div>
+
+      <div class="grid">
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">96% OFF</span>
+            ELEMENTOR PRO
+          </div>
+          <div class="product-info">
+            <div class="category">Page Builder</div>
+            <div class="product-title">Elementor Pro Plugin</div>
+            <div class="price-row">
+              <span class="old-price">$59.00</span>
+              <span class="new-price">$3.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">92% OFF</span>
+            DIVI THEME
+          </div>
+          <div class="product-info">
+            <div class="category">WordPress Theme</div>
+            <div class="product-title">Divi Theme & Builder</div>
+            <div class="price-row">
+              <span class="old-price">$89.00</span>
+              <span class="new-price">$3.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">90% OFF</span>
+            WP ROCKET
+          </div>
+          <div class="product-info">
+            <div class="category">Performance</div>
+            <div class="product-title">WP Rocket Cache</div>
+            <div class="price-row">
+              <span class="old-price">$49.00</span>
+              <span class="new-price">$3.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img">
+            <span class="discount-tag">95% OFF</span>
+            YOAST SEO
+          </div>
+          <div class="product-info">
+            <div class="category">SEO Plugin</div>
+            <div class="product-title">Yoast SEO Premium</div>
+            <div class="price-row">
+              <span class="old-price">$99.00</span>
+              <span class="new-price">$3.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" style="background-color: #f3f4f6">
+      <div class="container">
+        <h2>Simple, Affordable Pricing</h2>
+        <p style="color: var(--gray); margin-top: 10px">
+          Stop paying per product. Get access to everything.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="plan-card">
+            <h3>Monthly</h3>
+            <div class="plan-price">
+              $16
+              <span
+                style="font-size: 1rem; color: var(--gray); font-weight: normal"
+                >/mo</span
+              >
+            </div>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Perfect for testing waters.
+            </p>
+            <ul class="plan-features">
+              <li>30 Downloads / Day</li>
+              <li>Access All 20,000+ Items</li>
+              <li>Regular Updates</li>
+              <li>Basic Support</li>
+            </ul>
+            <a href="#" class="btn btn-outline" style="width: 100%"
+              >Get Started</a
+            >
+          </div>
+
+          <div class="plan-card popular">
+            <span class="plan-tag">MOST POPULAR</span>
+            <h3>Yearly</h3>
+            <div class="plan-price">
+              $99
+              <span
+                style="font-size: 1rem; color: var(--gray); font-weight: normal"
+                >/yr</span
+              >
+            </div>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Best value for freelancers.
+            </p>
+            <ul class="plan-features">
+              <li>Unlimited Downloads</li>
+              <li>Priority Support</li>
+              <li>Early Access to New Items</li>
+              <li>API Access</li>
+              <li>Cancel Anytime</li>
+            </ul>
+            <a href="#" class="btn btn-primary" style="width: 100%"
+              >Choose Yearly</a
+            >
+          </div>
+
+          <div class="plan-card">
+            <h3>Lifetime</h3>
+            <div class="plan-price">
+              $199
+              <span
+                style="font-size: 1rem; color: var(--gray); font-weight: normal"
+                >/once</span
+              >
+            </div>
+            <p style="font-size: 0.9rem; color: var(--gray)">
+              Pay once, use forever.
+            </p>
+            <ul class="plan-features">
+              <li>Lifetime Access</li>
+              <li>Lifetime Updates</li>
+              <li>VIP Support</li>
+              <li>No Recurring Fees</li>
+            </ul>
+            <a href="#" class="btn btn-outline" style="width: 100%"
+              >Get Lifetime</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
-      <p>&copy; 2026 PureGPL. All rights reserved.</p>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="col">
+            <a
+              href="#"
+              class="logo"
+              style="color: white; margin-bottom: 20px; display: inline-block"
+              >Pure<span style="color: var(--primary)">GPL</span></a
+            >
+            <p style="font-size: 0.9rem; line-height: 1.6">
+              PureGPL provides premium WordPress themes and plugins under the
+              General Public License (GPL). We are not affiliated with any
+              third-party developers.
+            </p>
+          </div>
+          <div class="col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">DMCA</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="disclaimer">
+          <p>
+            &copy; 2024 PureGPL Clone. All rights reserved. WordPress is a
+            trademark of the WordPress Foundation.
+          </p>
+        </div>
+      </div>
     </footer>
-  </div>
-</body>
+  </body>
 </html>
