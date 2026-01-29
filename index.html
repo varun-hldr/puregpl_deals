@@ -1,8 +1,157 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Hello World :-)</title>  
-</head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureGPL Deals - Premium GPL Themes & Plugins</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .deal-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .deal-card:hover {
+      transform: translateY(-5px);
+    }
+    .deal-badge {
+      display: inline-block;
+      background: #ff6b6b;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .deal-card h2 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .deal-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .deal-price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .deal-price .original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 1.1rem;
+    }
+    .deal-price .current {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #667eea;
+    }
+    .deal-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: opacity 0.3s ease;
+    }
+    .deal-btn:hover {
+      opacity: 0.9;
+    }
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
 <body>
-  Hello World :-)
-</body>  
+  <div class="container">
+    <header>
+      <h1>PureGPL Deals</h1>
+      <p>Premium WordPress Themes & Plugins at Unbeatable Prices</p>
+    </header>
+
+    <div class="deals-grid">
+      <div class="deal-card">
+        <span class="deal-badge">50% OFF</span>
+        <h2>Starter Bundle</h2>
+        <p>Get access to 100+ premium themes and plugins. Perfect for beginners and small websites.</p>
+        <div class="deal-price">
+          <span class="original">$99</span>
+          <span class="current">$49</span>
+        </div>
+        <a href="#" class="deal-btn">Get This Deal</a>
+      </div>
+
+      <div class="deal-card">
+        <span class="deal-badge">BEST VALUE</span>
+        <h2>Pro Bundle</h2>
+        <p>Unlimited access to 500+ themes and plugins with priority support and weekly updates.</p>
+        <div class="deal-price">
+          <span class="original">$199</span>
+          <span class="current">$79</span>
+        </div>
+        <a href="#" class="deal-btn">Get This Deal</a>
+      </div>
+
+      <div class="deal-card">
+        <span class="deal-badge">LIFETIME</span>
+        <h2>Agency Bundle</h2>
+        <p>Complete collection with lifetime access. Use on unlimited websites with commercial license.</p>
+        <div class="deal-price">
+          <span class="original">$499</span>
+          <span class="current">$149</span>
+        </div>
+        <a href="#" class="deal-btn">Get This Deal</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 PureGPL. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
 </html>
