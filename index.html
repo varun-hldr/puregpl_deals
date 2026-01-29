@@ -736,6 +736,12 @@
         .comparison-table {
           overflow-x: auto;
         }
+        .comparison .container > div[style*="grid-template-columns"] {
+          grid-template-columns: 1fr !important;
+        }
+        .comparison .container > div[style*="display: grid"] > div {
+          margin-bottom: 20px;
+        }
         .badges-grid {
           flex-direction: column;
         }
@@ -1048,72 +1054,130 @@
 
     <section class="comparison">
       <div class="container">
-        <h2>See How Much You'll Save</h2>
-        <p style="text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;">
-          Stop paying full price for every theme and plugin. Get unlimited access instead.
+        <h2>One Project or Entire Agency — The Math is Simple</h2>
+        <p style="text-align: center; color: var(--gray); margin-bottom: 50px; font-size: 1.1rem;">
+          See what agencies and freelancers spend buying tools individually vs. PureGPL
         </p>
 
-        <div class="comparison-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Original Price</th>
-                <th>PureGPL Price</th>
-                <th>You Save</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Elementor Pro</strong></td>
-                <td class="strike">$59/year</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$59</td>
-              </tr>
-              <tr>
-                <td><strong>Divi Theme</strong></td>
-                <td class="strike">$89/year</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$89</td>
-              </tr>
-              <tr>
-                <td><strong>WP Rocket</strong></td>
-                <td class="strike">$59/year</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$59</td>
-              </tr>
-              <tr>
-                <td><strong>Yoast SEO Premium</strong></td>
-                <td class="strike">$99/year</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$99</td>
-              </tr>
-              <tr>
-                <td><strong>WooCommerce Themes</strong></td>
-                <td class="strike">$79/each</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$79+</td>
-              </tr>
-              <tr>
-                <td><strong>ACF Pro</strong></td>
-                <td class="strike">$49/year</td>
-                <td class="highlight">$0 (Included)</td>
-                <td class="highlight">$49</td>
-              </tr>
-              <tr style="background: #f0fdf4;">
-                <td><strong>TOTAL VALUE</strong></td>
-                <td><strong>$434+</strong></td>
-                <td><strong>Just $99/year</strong></td>
-                <td style="color: var(--primary); font-size: 1.3rem;"><strong>Save $335+</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto;">
+          <!-- Traditional Way -->
+          <div style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 2px solid #fee2e2;">
+            <div style="text-align: center; margin-bottom: 30px;">
+              <div style="font-size: 3rem; margin-bottom: 10px;">😰</div>
+              <h3 style="color: var(--dark); margin-bottom: 10px;">Traditional Way</h3>
+              <p style="color: var(--gray); font-size: 0.9rem;">Buying plugins individually</p>
+            </div>
+
+            <div style="space-y: 15px;">
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">Elementor Pro</span>
+                <span style="font-weight: 600; color: var(--dark);">$59/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">WP Rocket</span>
+                <span style="font-weight: 600; color: var(--dark);">$59/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">Yoast SEO Premium</span>
+                <span style="font-weight: 600; color: var(--dark);">$99/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">ACF Pro</span>
+                <span style="font-weight: 600; color: var(--dark);">$49/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">Premium Theme</span>
+                <span style="font-weight: 600; color: var(--dark);">$89/year</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--gray);">5-10 more plugins...</span>
+                <span style="font-weight: 600; color: var(--dark);">$200+/year</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid var(--border); text-align: center;">
+              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 5px;">Your Annual Cost:</div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--red);">$555+</div>
+              <div style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">For just ONE website!</div>
+            </div>
+          </div>
+
+          <!-- PureGPL Way -->
+          <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15); border: 2px solid var(--primary); position: relative;">
+            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;">RECOMMENDED</div>
+
+            <div style="text-align: center; margin-bottom: 30px;">
+              <div style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
+              <h3 style="color: var(--dark); margin-bottom: 10px;">The PureGPL Way</h3>
+              <p style="color: var(--gray); font-size: 0.9rem;">Unlimited everything, one price</p>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 25px;">
+              <div style="text-align: center; margin-bottom: 20px;">
+                <div style="font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 10px;">✓ Everything Included:</div>
+              </div>
+              <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
+                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                  <span>20,000+ Premium Themes & Plugins</span>
+                </li>
+                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
+                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                  <span>Unlimited Downloads</span>
+                </li>
+                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
+                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                  <span>Regular Updates</span>
+                </li>
+                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
+                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                  <span>Use on Unlimited Websites</span>
+                </li>
+                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
+                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                  <span>Premium Support</span>
+                </li>
+              </ul>
+            </div>
+
+            <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid rgba(16, 185, 129, 0.3); text-align: center;">
+              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 5px;">Your Annual Cost:</div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">$99</div>
+              <div style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">For UNLIMITED websites!</div>
+            </div>
+          </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
-            Start Saving Today →
+        <!-- Savings Highlight -->
+        <div style="max-width: 700px; margin: 50px auto 0; text-align: center; background: linear-gradient(135deg, var(--primary) 0%, #059669 100%); padding: 40px; border-radius: 12px; color: white;">
+          <div style="font-size: 1.2rem; margin-bottom: 15px; opacity: 0.95;">You Save</div>
+          <div style="font-size: 4rem; font-weight: 800; line-height: 1; margin-bottom: 15px;">$456+</div>
+          <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px;">every single year (and that's being conservative!)</div>
+          <a href="#" class="btn btn-primary" style="background: white; color: var(--primary); font-size: 1.1rem; padding: 15px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            Start Saving Now →
           </a>
+        </div>
+
+        <!-- Real scenario -->
+        <div style="max-width: 900px; margin: 50px auto 0; background: #f9fafb; padding: 40px; border-radius: 12px; border-left: 4px solid var(--primary);">
+          <h4 style="color: var(--dark); margin-bottom: 20px; font-size: 1.3rem;">💡 Real Agency Scenario</h4>
+          <p style="color: var(--gray); line-height: 1.8; margin-bottom: 20px;">
+            <strong style="color: var(--dark);">Sarah runs a WordPress agency</strong> building 10 client websites per year.
+            Each site needs: Elementor Pro ($59), WP Rocket ($59), Yoast SEO ($99), ACF Pro ($49), security plugin ($79), backup plugin ($49), and a premium theme ($89).
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">Traditional Cost (10 sites):</div>
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--red);">$4,830/year</div>
+            </div>
+            <div>
+              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">With PureGPL:</div>
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$99/year</div>
+            </div>
+          </div>
+          <div style="margin-top: 20px; padding: 20px; background: white; border-radius: 8px; text-align: center;">
+            <strong style="color: var(--primary); font-size: 1.4rem;">Sarah saves $4,731 every year 🎯</strong>
+          </div>
         </div>
       </div>
     </section>
