@@ -21,6 +21,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SERVER_PORT || 22 }}
           script: |
+            git config --global --add safe.directory /home/puregpl-deals/htdocs/deals.puregpl.com
             cd /home/puregpl-deals/htdocs/deals.puregpl.com
             git fetch origin master
             git reset --hard origin/master
