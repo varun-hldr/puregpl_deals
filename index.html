@@ -3,24 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PureGPL - Download 20,000+ Premium WordPress Themes & Plugins | Save 98%</title>
-    <meta name="description" content="Access 20,000+ premium WordPress themes and plugins under GPL license. Save thousands with unlimited downloads. Trusted by 45,000+ agencies and freelancers." />
+    <title>
+      PureGPL - Download 20,000+ Premium WordPress Themes & Plugins | Save 98%
+    </title>
+    <meta
+      name="description"
+      content="Access 20,000+ premium WordPress themes and plugins under GPL license. Save thousands with unlimited downloads. Trusted by 45,000+ agencies and freelancers."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       :root {
+        /* Base Colors */
         --primary: #10b981; /* Emerald Green */
         --primary-dark: #059669;
+        --primary-light: #34d399;
         --dark: #1f2937;
         --light: #f3f4f6;
         --white: #ffffff;
         --gray: #6b7280;
+        --gray-light: #9ca3af;
+        --gray-dark: #374151;
         --red: #ef4444;
+        --orange: #f97316;
+        --yellow: #fbbf24;
         --border: #e5e7eb;
+        --bg-gray: #f9fafb;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        --gradient-hero: linear-gradient(
+          -45deg,
+          #10b981,
+          #059669,
+          #047857,
+          #065f46
+        );
+        --gradient-warm: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --shadow-green: 0 10px 30px rgba(16, 185, 129, 0.2);
+
+        /* Spacing Scale */
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+
+        /* Typography Scale */
+        --text-xs: 0.75rem;
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.875rem;
+        --text-4xl: 2.25rem;
+        --text-5xl: 3rem;
+
+        /* Animation Timings */
+        --transition-fast: 150ms;
+        --transition-base: 300ms;
+        --transition-slow: 500ms;
+        --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+
+      body {
         font-family:
           "Inter",
           -apple-system,
@@ -28,19 +98,26 @@
           "Segoe UI",
           Roboto,
           sans-serif;
-      }
-
-      body {
-        background-color: #f9fafb;
+        background-color: var(--bg-gray);
         color: var(--dark);
         line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
       }
 
       /* Utilities */
       .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 10px;
       }
 
       .btn {
@@ -78,85 +155,276 @@
         font-weight: bold;
       }
 
-      /* Top Bar */
+      /* Infinite Scrolling Top Bar */
       .top-bar {
-        background-color: var(--dark);
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         color: var(--white);
-        text-align: center;
-        padding: 8px 0;
-        font-size: 0.9rem;
-      }
-
-      /* Header */
-      header {
-        background: var(--white);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .header-main {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 0;
-      }
-
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--dark);
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .logo span {
-        color: var(--primary);
-      }
-
-      .search-bar {
-        flex: 1;
-        max-width: 500px;
-        margin: 0 20px;
+        padding: 10px 0;
+        overflow: hidden;
         position: relative;
       }
 
-      .search-bar input {
-        width: 100%;
-        padding: 10px 15px;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        background: var(--light);
-      }
-
-      .nav-actions {
+      .top-bar-wrapper {
         display: flex;
-        gap: 15px;
-        align-items: center;
+        gap: 0;
       }
 
+      .top-bar-track {
+        display: flex;
+        min-width: 100%;
+        flex-shrink: 0;
+        white-space: nowrap;
+        animation: infiniteScroll 20s linear infinite;
+        will-change: transform;
+      }
+
+      .top-bar-wrapper:hover .top-bar-track {
+        animation-play-state: paused;
+      }
+
+      .top-bar-item {
+        display: inline-flex;
+        align-items: center;
+        padding: 0 40px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .top-bar-item strong {
+        color: #fbbf24;
+        font-weight: 700;
+        margin: 0 5px;
+      }
+
+      .top-bar-separator {
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0 -25px;
+      }
+
+      /* Professional Header (Dark Theme) */
+      header {
+        background: #2c3e50;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition:
+          transform 0.3s var(--ease-smooth),
+          box-shadow 0.3s var(--ease-smooth);
+      }
+
+      header.scrolled {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      header.hidden {
+        transform: translateY(-100%);
+      }
+
+      .header-main {
+        display: grid;
+        grid-template-columns: 180px 1fr 140px;
+        align-items: center;
+        gap: 40px;
+        padding: 14px 0;
+      }
+
+      /* Logo Section */
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: opacity 0.3s var(--ease-smooth);
+        justify-self: start;
+      }
+
+      .logo:hover {
+        opacity: 0.85;
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+
+      /* Search Bar (Center) */
+      .search-container {
+        max-width: 700px;
+        width: 100%;
+        position: relative;
+        justify-self: center;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 14px 60px 14px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        transition: all 0.3s var(--ease-smooth);
+        background: #f5f5f5;
+        color: #333;
+      }
+
+      .search-input::placeholder {
+        color: #999;
+      }
+
+      .search-input:focus {
+        outline: none;
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s var(--ease-smooth);
+        font-size: 1.1rem;
+      }
+
+      .search-btn:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Right Actions - Login Button */
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-self: end;
+      }
+
+      .user-icon-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.3s var(--ease-smooth);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .user-icon-btn img {
+        width: 18px;
+        height: 18px;
+        display: block;
+        filter: brightness(0) invert(1);
+      }
+
+      .user-icon-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Hamburger Menu (Mobile Only) */
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1001;
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: var(--white);
+        border-radius: 3px;
+        transition: all 0.3s var(--ease-smooth);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+
+      /* Navigation Menu (Mobile Slide-in) */
       .nav-links {
-        border-top: 1px solid var(--border);
-        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: var(--shadow-xl);
+        padding: 80px 30px 30px;
+        transition: left 0.3s var(--ease-smooth);
+        z-index: 999;
+        overflow-y: auto;
+      }
+
+      .nav-links.active {
+        left: 0;
       }
 
       .nav-links ul {
         list-style: none;
         display: flex;
-        gap: 30px;
-        font-weight: 500;
-        font-size: 0.95rem;
+        flex-direction: column;
+        gap: 0;
       }
 
       .nav-links a {
         text-decoration: none;
         color: var(--dark);
+        font-weight: 500;
+        font-size: 1.05rem;
+        display: block;
+        padding: 16px 0;
+        transition:
+          color 0.2s var(--ease-smooth),
+          padding-left 0.3s var(--ease-smooth);
+        border-bottom: 1px solid var(--border);
       }
 
       .nav-links a:hover {
         color: var(--primary);
+        padding-left: 10px;
+      }
+
+      /* Overlay when menu is open */
+      .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s var(--ease-smooth),
+          visibility 0.3s var(--ease-smooth);
+        z-index: 998;
+      }
+
+      .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
       }
 
       /* Hero Section */
@@ -688,7 +956,8 @@
 
       /* Pulse Animation */
       @keyframes pulse {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
         }
         50% {
@@ -702,7 +971,8 @@
 
       /* Floating Animation */
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0px);
         }
         50% {
@@ -714,9 +984,171 @@
         animation: float 3s ease-in-out infinite;
       }
 
+      /* Advanced Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      @keyframes infiniteScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(180deg);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+        }
+        50% {
+          box-shadow:
+            0 0 20px rgba(16, 185, 129, 0.8),
+            0 0 30px rgba(16, 185, 129, 0.6);
+        }
+      }
+
+      /* Utility Animation Classes */
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
-        .nav-links ul,
+        .top-bar {
+          font-size: 0.8rem;
+          padding: 5px 15px;
+        }
+
+        /* Mobile Header Layout: Hamburger | Logo | Login Button */
+        .header-main {
+          grid-template-columns: auto 1fr auto;
+          gap: 15px;
+          padding: 12px 0;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .mobile-menu-toggle span {
+          background: var(--white);
+        }
+
+        .logo {
+          font-size: 1.5rem;
+          justify-self: center;
+        }
+
+        /* Hide search on mobile */
+        .search-container {
+          display: none;
+        }
+
+        .user-icon-btn {
+          padding: 8px 12px;
+          font-size: 0.85rem;
+        }
+
+        .user-icon-btn img {
+          width: 16px;
+          height: 16px;
+        }
+
+        .user-icon-btn span {
+          display: inline;
+        }
+
+        .logo img,
+        .logo svg {
+          height: 32px;
+        }
+
         .hero-stats {
           display: none;
         }
@@ -760,39 +1192,95 @@
   </head>
   <body>
     <div class="top-bar">
-      🔥 LIMITED TIME: Save 30% on all Membership Plans with code
-      <strong>SAVE30</strong> - Expires in 24 Hours!
-    </div>
-
-    <header>
-      <div class="container">
-        <div class="header-main">
-          <a href="#" class="logo">Pure<span>GPL</span></a>
-
-          <div class="search-bar">
-            <input
-              type="text"
-              placeholder="Search 20,000+ themes & plugins..."
-            />
-          </div>
-
-          <div class="nav-actions">
-            <a href="#" class="btn btn-outline" style="border: none">Login</a>
-            <a href="#" class="btn btn-primary">Join Club</a>
-          </div>
+      <div class="top-bar-wrapper">
+        <!-- Track 1 -->
+        <div class="top-bar-track">
+          <span class="top-bar-item">🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss Out!</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed Products</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">💎 <strong>20,704 PREMIUM PRODUCTS</strong> - All Access</span>
+          <span class="top-bar-separator">|</span>
         </div>
 
-        <nav class="nav-links">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">WordPress Themes</a></li>
-            <li><a href="#">WordPress Plugins</a></li>
-            <li><a href="#">WooCommerce</a></li>
-            <li><a href="#">Membership Plans</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
-        </nav>
+        <!-- Track 2 (Duplicate for seamless loop) -->
+        <div class="top-bar-track" aria-hidden="true">
+          <span class="top-bar-item">🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss Out!</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed Products</span>
+          <span class="top-bar-separator">|</span>
+          <span class="top-bar-item">💎 <strong>20,704 PREMIUM PRODUCTS</strong> - All Access</span>
+          <span class="top-bar-separator">|</span>
+        </div>
       </div>
+    </div>
+
+    <header id="main-header">
+      <div class="container">
+        <div class="header-main">
+          <!-- Mobile Hamburger Menu (Hidden on Desktop) -->
+          <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- PureGPL Logo -->
+          <a href="#" class="logo">
+            <img
+              src="https://i.ibb.co/m5tH94PK/puregpl-logo.png"
+              alt="PureGPL Logo"
+            />
+          </a>
+
+          <!-- Search Bar (Desktop Only) -->
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for themes, plugins, and more..."
+              id="header-search"
+            />
+            <button class="search-btn" aria-label="Search">🔍</button>
+          </div>
+
+          <!-- Header Actions (Login Button) -->
+          <div class="header-actions">
+            <a
+              href="https://puregpl.com/login/"
+              class="user-icon-btn"
+              target="_blank"
+              aria-label="Login / Join"
+            >
+              <img src="https://i.ibb.co/kstd71wm/user.png" alt="User" />
+              <span>Login</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide-in Navigation Menu (Mobile) -->
+      <nav class="nav-links" id="nav-menu">
+        <ul>
+          <li><a href="#">🏠 Home</a></li>
+          <li><a href="#">🎨 WordPress Themes</a></li>
+          <li><a href="#">🔌 WordPress Plugins</a></li>
+          <li><a href="#">🛒 WooCommerce</a></li>
+          <li><a href="#">💎 Membership Plans</a></li>
+          <li><a href="#">💬 Support</a></li>
+        </ul>
+      </nav>
+
+      <!-- Overlay (when menu is open) -->
+      <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
     <section class="hero">
@@ -802,10 +1290,17 @@
           <span style="color: var(--primary)">WordPress Themes & Plugins</span>
         </h1>
         <p>
-          Stop overpaying for individual products! Get unlimited access to 20,000+ premium WordPress themes, plugins, and tools for one low price. Trusted by 45,000+ agencies, freelancers, and developers worldwide.
+          Stop overpaying for individual products! Get unlimited access to
+          20,000+ premium WordPress themes, plugins, and tools for one low
+          price. Trusted by 45,000+ agencies, freelancers, and developers
+          worldwide.
         </p>
         <div style="display: flex; gap: 15px; justify-content: center">
-          <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 35px;">
+          <a
+            href="#"
+            class="btn btn-primary"
+            style="font-size: 1.1rem; padding: 15px 35px"
+          >
             🚀 Start Saving Today - Only $99/Year
           </a>
           <a href="#" class="btn btn-outline">Browse 20,000+ Products</a>
@@ -1045,8 +1540,12 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">
+      <div style="text-align: center; margin-top: 50px">
+        <a
+          href="#"
+          class="btn btn-primary"
+          style="font-size: 1.1rem; padding: 15px 40px"
+        >
           View All 20,000+ Products →
         </a>
       </div>
@@ -1055,128 +1554,446 @@
     <section class="comparison">
       <div class="container">
         <h2>One Project or Entire Agency — The Math is Simple</h2>
-        <p style="text-align: center; color: var(--gray); margin-bottom: 50px; font-size: 1.1rem;">
-          See what agencies and freelancers spend buying tools individually vs. PureGPL
+        <p
+          style="
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+          "
+        >
+          See what agencies and freelancers spend buying tools individually vs.
+          PureGPL
         </p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto;">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+          "
+        >
           <!-- Traditional Way -->
-          <div style="background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 2px solid #fee2e2;">
-            <div style="text-align: center; margin-bottom: 30px;">
-              <div style="font-size: 3rem; margin-bottom: 10px;">😰</div>
-              <h3 style="color: var(--dark); margin-bottom: 10px;">Traditional Way</h3>
-              <p style="color: var(--gray); font-size: 0.9rem;">Buying plugins individually</p>
+          <div
+            style="
+              background: #fff;
+              padding: 40px;
+              border-radius: 12px;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+              border: 2px solid #fee2e2;
+            "
+          >
+            <div style="text-align: center; margin-bottom: 30px">
+              <div style="font-size: 3rem; margin-bottom: 10px">😰</div>
+              <h3 style="color: var(--dark); margin-bottom: 10px">
+                Traditional Way
+              </h3>
+              <p style="color: var(--gray); font-size: 0.9rem">
+                Buying plugins individually
+              </p>
             </div>
 
-            <div style="space-y: 15px;">
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">Elementor Pro</span>
-                <span style="font-weight: 600; color: var(--dark);">$59/year</span>
+            <div style="space-y: 15px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">Elementor Pro</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$59/year</span
+                >
               </div>
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">WP Rocket</span>
-                <span style="font-weight: 600; color: var(--dark);">$59/year</span>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">WP Rocket</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$59/year</span
+                >
               </div>
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">Yoast SEO Premium</span>
-                <span style="font-weight: 600; color: var(--dark);">$99/year</span>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">Yoast SEO Premium</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$99/year</span
+                >
               </div>
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">ACF Pro</span>
-                <span style="font-weight: 600; color: var(--dark);">$49/year</span>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">ACF Pro</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$49/year</span
+                >
               </div>
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">Premium Theme</span>
-                <span style="font-weight: 600; color: var(--dark);">$89/year</span>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">Premium Theme</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$89/year</span
+                >
               </div>
-              <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border);">
-                <span style="color: var(--gray);">5-10 more plugins...</span>
-                <span style="font-weight: 600; color: var(--dark);">$200+/year</span>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 12px 0;
+                  border-bottom: 1px solid var(--border);
+                "
+              >
+                <span style="color: var(--gray)">5-10 more plugins...</span>
+                <span style="font-weight: 600; color: var(--dark)"
+                  >$200+/year</span
+                >
               </div>
             </div>
 
-            <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid var(--border); text-align: center;">
-              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 5px;">Your Annual Cost:</div>
-              <div style="font-size: 2.5rem; font-weight: 800; color: var(--red);">$555+</div>
-              <div style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">For just ONE website!</div>
+            <div
+              style="
+                margin-top: 25px;
+                padding-top: 25px;
+                border-top: 2px solid var(--border);
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  font-size: 0.9rem;
+                  color: var(--gray);
+                  margin-bottom: 5px;
+                "
+              >
+                Your Annual Cost:
+              </div>
+              <div
+                style="font-size: 2.5rem; font-weight: 800; color: var(--red)"
+              >
+                $555+
+              </div>
+              <div
+                style="font-size: 0.85rem; color: var(--gray); margin-top: 10px"
+              >
+                For just ONE website!
+              </div>
             </div>
           </div>
 
           <!-- PureGPL Way -->
-          <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15); border: 2px solid var(--primary); position: relative;">
-            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.85rem;">RECOMMENDED</div>
-
-            <div style="text-align: center; margin-bottom: 30px;">
-              <div style="font-size: 3rem; margin-bottom: 10px;">🎉</div>
-              <h3 style="color: var(--dark); margin-bottom: 10px;">The PureGPL Way</h3>
-              <p style="color: var(--gray); font-size: 0.9rem;">Unlimited everything, one price</p>
+          <div
+            style="
+              background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+              padding: 40px;
+              border-radius: 12px;
+              box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+              border: 2px solid var(--primary);
+              position: relative;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primary);
+                color: white;
+                padding: 8px 20px;
+                border-radius: 20px;
+                font-weight: 700;
+                font-size: 0.85rem;
+              "
+            >
+              RECOMMENDED
             </div>
 
-            <div style="background: white; padding: 30px; border-radius: 10px; margin-bottom: 25px;">
-              <div style="text-align: center; margin-bottom: 20px;">
-                <div style="font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 10px;">✓ Everything Included:</div>
+            <div style="text-align: center; margin-bottom: 30px">
+              <div style="font-size: 3rem; margin-bottom: 10px">🎉</div>
+              <h3 style="color: var(--dark); margin-bottom: 10px">
+                The PureGPL Way
+              </h3>
+              <p style="color: var(--gray); font-size: 0.9rem">
+                Unlimited everything, one price
+              </p>
+            </div>
+
+            <div
+              style="
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                margin-bottom: 25px;
+              "
+            >
+              <div style="text-align: center; margin-bottom: 20px">
+                <div
+                  style="
+                    font-size: 1rem;
+                    color: var(--primary);
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                  "
+                >
+                  ✓ Everything Included:
+                </div>
               </div>
-              <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+              <ul style="list-style: none; padding: 0; margin: 0">
+                <li
+                  style="
+                    padding: 10px 0;
+                    color: var(--gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <span style="color: var(--primary); font-size: 1.2rem"
+                    >✓</span
+                  >
                   <span>20,000+ Premium Themes & Plugins</span>
                 </li>
-                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                <li
+                  style="
+                    padding: 10px 0;
+                    color: var(--gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <span style="color: var(--primary); font-size: 1.2rem"
+                    >✓</span
+                  >
                   <span>Unlimited Downloads</span>
                 </li>
-                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                <li
+                  style="
+                    padding: 10px 0;
+                    color: var(--gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <span style="color: var(--primary); font-size: 1.2rem"
+                    >✓</span
+                  >
                   <span>Regular Updates</span>
                 </li>
-                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                <li
+                  style="
+                    padding: 10px 0;
+                    color: var(--gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <span style="color: var(--primary); font-size: 1.2rem"
+                    >✓</span
+                  >
                   <span>Use on Unlimited Websites</span>
                 </li>
-                <li style="padding: 10px 0; color: var(--gray); display: flex; align-items: center; gap: 10px;">
-                  <span style="color: var(--primary); font-size: 1.2rem;">✓</span>
+                <li
+                  style="
+                    padding: 10px 0;
+                    color: var(--gray);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                  "
+                >
+                  <span style="color: var(--primary); font-size: 1.2rem"
+                    >✓</span
+                  >
                   <span>Premium Support</span>
                 </li>
               </ul>
             </div>
 
-            <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid rgba(16, 185, 129, 0.3); text-align: center;">
-              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 5px;">Your Annual Cost:</div>
-              <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">$99</div>
-              <div style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">For UNLIMITED websites!</div>
+            <div
+              style="
+                margin-top: 25px;
+                padding-top: 25px;
+                border-top: 2px solid rgba(16, 185, 129, 0.3);
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  font-size: 0.9rem;
+                  color: var(--gray);
+                  margin-bottom: 5px;
+                "
+              >
+                Your Annual Cost:
+              </div>
+              <div
+                style="
+                  font-size: 2.5rem;
+                  font-weight: 800;
+                  color: var(--primary);
+                "
+              >
+                $99
+              </div>
+              <div
+                style="font-size: 0.85rem; color: var(--gray); margin-top: 10px"
+              >
+                For UNLIMITED websites!
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Savings Highlight -->
-        <div style="max-width: 700px; margin: 50px auto 0; text-align: center; background: linear-gradient(135deg, var(--primary) 0%, #059669 100%); padding: 40px; border-radius: 12px; color: white;">
-          <div style="font-size: 1.2rem; margin-bottom: 15px; opacity: 0.95;">You Save</div>
-          <div style="font-size: 4rem; font-weight: 800; line-height: 1; margin-bottom: 15px;">$456+</div>
-          <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px;">every single year (and that's being conservative!)</div>
-          <a href="#" class="btn btn-primary" style="background: white; color: var(--primary); font-size: 1.1rem; padding: 15px 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <div
+          style="
+            max-width: 700px;
+            margin: 50px auto 0;
+            text-align: center;
+            background: linear-gradient(
+              135deg,
+              var(--primary) 0%,
+              #059669 100%
+            );
+            padding: 40px;
+            border-radius: 12px;
+            color: white;
+          "
+        >
+          <div style="font-size: 1.2rem; margin-bottom: 15px; opacity: 0.95">
+            You Save
+          </div>
+          <div
+            style="
+              font-size: 4rem;
+              font-weight: 800;
+              line-height: 1;
+              margin-bottom: 15px;
+            "
+          >
+            $456+
+          </div>
+          <div style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px">
+            every single year (and that's being conservative!)
+          </div>
+          <a
+            href="#"
+            class="btn btn-primary"
+            style="
+              background: white;
+              color: var(--primary);
+              font-size: 1.1rem;
+              padding: 15px 40px;
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            "
+          >
             Start Saving Now →
           </a>
         </div>
 
         <!-- Real scenario -->
-        <div style="max-width: 900px; margin: 50px auto 0; background: #f9fafb; padding: 40px; border-radius: 12px; border-left: 4px solid var(--primary);">
-          <h4 style="color: var(--dark); margin-bottom: 20px; font-size: 1.3rem;">💡 Real Agency Scenario</h4>
-          <p style="color: var(--gray); line-height: 1.8; margin-bottom: 20px;">
-            <strong style="color: var(--dark);">Sarah runs a WordPress agency</strong> building 10 client websites per year.
-            Each site needs: Elementor Pro ($59), WP Rocket ($59), Yoast SEO ($99), ACF Pro ($49), security plugin ($79), backup plugin ($49), and a premium theme ($89).
+        <div
+          style="
+            max-width: 900px;
+            margin: 50px auto 0;
+            background: #f9fafb;
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+          "
+        >
+          <h4
+            style="color: var(--dark); margin-bottom: 20px; font-size: 1.3rem"
+          >
+            💡 Real Agency Scenario
+          </h4>
+          <p style="color: var(--gray); line-height: 1.8; margin-bottom: 20px">
+            <strong style="color: var(--dark)"
+              >Sarah runs a WordPress agency</strong
+            >
+            building 10 client websites per year. Each site needs: Elementor Pro
+            ($59), WP Rocket ($59), Yoast SEO ($99), ACF Pro ($49), security
+            plugin ($79), backup plugin ($49), and a premium theme ($89).
           </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
             <div>
-              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">Traditional Cost (10 sites):</div>
-              <div style="font-size: 1.8rem; font-weight: 700; color: var(--red);">$4,830/year</div>
+              <div
+                style="
+                  font-size: 0.9rem;
+                  color: var(--gray);
+                  margin-bottom: 10px;
+                "
+              >
+                Traditional Cost (10 sites):
+              </div>
+              <div
+                style="font-size: 1.8rem; font-weight: 700; color: var(--red)"
+              >
+                $4,830/year
+              </div>
             </div>
             <div>
-              <div style="font-size: 0.9rem; color: var(--gray); margin-bottom: 10px;">With PureGPL:</div>
-              <div style="font-size: 1.8rem; font-weight: 700; color: var(--primary);">$99/year</div>
+              <div
+                style="
+                  font-size: 0.9rem;
+                  color: var(--gray);
+                  margin-bottom: 10px;
+                "
+              >
+                With PureGPL:
+              </div>
+              <div
+                style="
+                  font-size: 1.8rem;
+                  font-weight: 700;
+                  color: var(--primary);
+                "
+              >
+                $99/year
+              </div>
             </div>
           </div>
-          <div style="margin-top: 20px; padding: 20px; background: white; border-radius: 8px; text-align: center;">
-            <strong style="color: var(--primary); font-size: 1.4rem;">Sarah saves $4,731 every year 🎯</strong>
+          <div
+            style="
+              margin-top: 20px;
+              padding: 20px;
+              background: white;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            <strong style="color: var(--primary); font-size: 1.4rem"
+              >Sarah saves $4,731 every year 🎯</strong
+            >
           </div>
         </div>
       </div>
@@ -1185,8 +2002,9 @@
     <section class="pricing" style="background-color: #f3f4f6">
       <div class="container">
         <h2>Choose Your Plan & Start Saving</h2>
-        <p style="color: var(--gray); margin-top: 10px; font-size: 1.1rem;">
-          Stop paying $49-$299 per product. Get unlimited access to everything for one low price.
+        <p style="color: var(--gray); margin-top: 10px; font-size: 1.1rem">
+          Stop paying $49-$299 per product. Get unlimited access to everything
+          for one low price.
         </p>
 
         <div class="pricing-grid">
@@ -1267,7 +2085,14 @@
     <section class="testimonials">
       <div class="container">
         <h2>Trusted by 45,000+ Happy Customers</h2>
-        <p style="text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;">
+        <p
+          style="
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+          "
+        >
           See what our members are saying about PureGPL
         </p>
 
@@ -1275,7 +2100,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "I've saved over $3,000 in my first year alone. As a freelance developer, PureGPL has been a game-changer for my business. The instant downloads and regular updates are fantastic!"
+              "I've saved over $3,000 in my first year alone. As a freelance
+              developer, PureGPL has been a game-changer for my business. The
+              instant downloads and regular updates are fantastic!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">MJ</div>
@@ -1289,7 +2116,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "Best investment for my agency. We build 20+ client sites per month and PureGPL gives us access to every premium theme and plugin we need. Incredible value!"
+              "Best investment for my agency. We build 20+ client sites per
+              month and PureGPL gives us access to every premium theme and
+              plugin we need. Incredible value!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">SR</div>
@@ -1303,7 +2132,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "Clean files, regular updates, and excellent support. I was skeptical at first, but PureGPL has exceeded all my expectations. The lifetime plan is worth every penny."
+              "Clean files, regular updates, and excellent support. I was
+              skeptical at first, but PureGPL has exceeded all my expectations.
+              The lifetime plan is worth every penny."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">DK</div>
@@ -1317,7 +2148,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "Finally, a GPL site that actually works! Downloads are instant, files are clean, and everything is updated regularly. The money-back guarantee gave me confidence to try it."
+              "Finally, a GPL site that actually works! Downloads are instant,
+              files are clean, and everything is updated regularly. The
+              money-back guarantee gave me confidence to try it."
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">EP</div>
@@ -1331,7 +2164,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "The variety of themes and plugins is incredible. I can find everything I need in one place. No more searching multiple sites or paying ridiculous prices. Highly recommend!"
+              "The variety of themes and plugins is incredible. I can find
+              everything I need in one place. No more searching multiple sites
+              or paying ridiculous prices. Highly recommend!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">RC</div>
@@ -1345,7 +2180,9 @@
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text">
-              "PureGPL has become essential for my workflow. The support team is responsive, files are always clean, and the savings are unbelievable. Best decision I've made for my business!"
+              "PureGPL has become essential for my workflow. The support team is
+              responsive, files are always clean, and the savings are
+              unbelievable. Best decision I've made for my business!"
             </p>
             <div class="testimonial-author">
               <div class="author-avatar">LM</div>
@@ -1365,7 +2202,9 @@
           <h2>30-Day Money-Back Guarantee</h2>
           <div class="guarantee-badge float">🛡️</div>
           <p>
-            Try PureGPL completely risk-free. If you're not 100% satisfied with your membership within the first 30 days, we'll refund every penny. No questions asked. You have nothing to lose and everything to gain!
+            Try PureGPL completely risk-free. If you're not 100% satisfied with
+            your membership within the first 30 days, we'll refund every penny.
+            No questions asked. You have nothing to lose and everything to gain!
           </p>
         </div>
       </div>
@@ -1379,80 +2218,103 @@
           <div class="faq-item">
             <div class="faq-question">
               Is this legal? How can you offer premium products so cheap?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Yes, 100% legal! All WordPress themes and plugins are released under the GPL (General Public License), which allows redistribution. We purchase original licenses and share them with our members, passing the savings to you. This is completely within GPL rights and WordPress foundation guidelines.
+              Yes, 100% legal! All WordPress themes and plugins are released
+              under the GPL (General Public License), which allows
+              redistribution. We purchase original licenses and share them with
+              our members, passing the savings to you. This is completely within
+              GPL rights and WordPress foundation guidelines.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               Will I receive updates for the themes and plugins?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Absolutely! Our team monitors and updates all products regularly. You'll always have access to the latest versions. Premium members get priority access to updates, often within 24-48 hours of official release.
+              Absolutely! Our team monitors and updates all products regularly.
+              You'll always have access to the latest versions. Premium members
+              get priority access to updates, often within 24-48 hours of
+              official release.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               Are the files safe and malware-free?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Safety is our top priority. Every file is scanned with McAfee and other security tools before upload. We never modify original files - you get clean, authentic versions straight from developers. We also offer a malware-free guarantee.
+              Safety is our top priority. Every file is scanned with McAfee and
+              other security tools before upload. We never modify original files
+              - you get clean, authentic versions straight from developers. We
+              also offer a malware-free guarantee.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               Can I use these on client websites?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Yes! Under GPL license, you can use all products on unlimited personal and client websites. Perfect for agencies, freelancers, and developers managing multiple projects. No restrictions on commercial use.
+              Yes! Under GPL license, you can use all products on unlimited
+              personal and client websites. Perfect for agencies, freelancers,
+              and developers managing multiple projects. No restrictions on
+              commercial use.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               Do I get premium support from original developers?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              While you won't get direct support from original developers (that requires individual licenses), our team provides installation help and troubleshooting. Plus, you save so much that you can afford premium support for specific products if needed.
+              While you won't get direct support from original developers (that
+              requires individual licenses), our team provides installation help
+              and troubleshooting. Plus, you save so much that you can afford
+              premium support for specific products if needed.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               What if I'm not satisfied?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              We offer a 30-day money-back guarantee, no questions asked. If PureGPL doesn't meet your expectations, simply contact us within 30 days for a full refund. Your satisfaction is guaranteed!
+              We offer a 30-day money-back guarantee, no questions asked. If
+              PureGPL doesn't meet your expectations, simply contact us within
+              30 days for a full refund. Your satisfaction is guaranteed!
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               How quickly can I download after joining?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Immediately! Once your payment is confirmed, you'll get instant access to your member dashboard. Start downloading any of our 20,000+ products right away. No waiting, no approval process.
+              Immediately! Once your payment is confirmed, you'll get instant
+              access to your member dashboard. Start downloading any of our
+              20,000+ products right away. No waiting, no approval process.
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
               Can I cancel my subscription anytime?
-              <span style="color: var(--primary);">+</span>
+              <span style="color: var(--primary)">+</span>
             </div>
             <div class="faq-answer">
-              Yes, you can cancel anytime from your account dashboard. No contracts, no commitments. If you cancel, you'll retain access until the end of your current billing period. (Lifetime members have permanent access with no recurring fees!)
+              Yes, you can cancel anytime from your account dashboard. No
+              contracts, no commitments. If you cancel, you'll retain access
+              until the end of your current billing period. (Lifetime members
+              have permanent access with no recurring fees!)
             </div>
           </div>
         </div>
@@ -1467,15 +2329,30 @@
           Get instant access to 20,000+ premium themes and plugins today!
         </p>
         <div class="cta-buttons">
-          <a href="#" class="btn btn-primary pulse" style="font-size: 1.2rem; padding: 18px 50px;">
+          <a
+            href="#"
+            class="btn btn-primary pulse"
+            style="font-size: 1.2rem; padding: 18px 50px"
+          >
             Start Your Membership Now
           </a>
-          <a href="#" class="btn btn-outline" style="background: transparent; border: 2px solid white; color: white; font-size: 1.2rem; padding: 18px 50px;">
+          <a
+            href="#"
+            class="btn btn-outline"
+            style="
+              background: transparent;
+              border: 2px solid white;
+              color: white;
+              font-size: 1.2rem;
+              padding: 18px 50px;
+            "
+          >
             View All Pricing Plans
           </a>
         </div>
-        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-          ✓ 30-Day Money-Back Guarantee &nbsp; | &nbsp; ✓ Instant Access &nbsp; | &nbsp; ✓ Cancel Anytime
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8">
+          ✓ 30-Day Money-Back Guarantee &nbsp; | &nbsp; ✓ Instant Access &nbsp;
+          | &nbsp; ✓ Cancel Anytime
         </p>
       </div>
     </section>
@@ -1526,15 +2403,105 @@
         </div>
         <div class="disclaimer">
           <p>
-            &copy; 2026 PureGPL. All rights reserved. WordPress is a
-            trademark of the WordPress Foundation.
+            &copy; 2026 PureGPL. All rights reserved. WordPress is a trademark
+            of the WordPress Foundation.
           </p>
-          <p style="margin-top: 10px; font-size: 0.75rem;">
-            All products are distributed under GPL license. We are not affiliated with or endorsed by the original developers.
-            Original developer support is not included. PureGPL provides installation assistance only.
+          <p style="margin-top: 10px; font-size: 0.75rem">
+            All products are distributed under GPL license. We are not
+            affiliated with or endorsed by the original developers. Original
+            developer support is not included. PureGPL provides installation
+            assistance only.
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // ============================================
+      // 1. STICKY HEADER SCROLL BEHAVIOR
+      // ============================================
+      const header = document.getElementById("main-header");
+      let lastScroll = 0;
+      let scrollThreshold = 80;
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        // Add 'scrolled' class for backdrop blur effect
+        if (currentScroll > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        // Hide header on scroll down, show on scroll up
+        if (currentScroll > scrollThreshold) {
+          if (
+            currentScroll > lastScroll &&
+            !header.classList.contains("hidden")
+          ) {
+            header.classList.add("hidden");
+          } else if (
+            currentScroll < lastScroll &&
+            header.classList.contains("hidden")
+          ) {
+            header.classList.remove("hidden");
+          }
+        }
+
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+      });
+
+      // ============================================
+      // 2. MOBILE MENU TOGGLE
+      // ============================================
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const navOverlay = document.getElementById("nav-overlay");
+      const navLinks = navMenu.querySelectorAll("a");
+
+      // Toggle menu on hamburger click
+      mobileMenuToggle.addEventListener("click", () => {
+        const isActive = mobileMenuToggle.classList.contains("active");
+
+        if (isActive) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      // Close menu on overlay click
+      navOverlay.addEventListener("click", closeMenu);
+
+      // Close menu when clicking on navigation links
+      navLinks.forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Open menu function
+      function openMenu() {
+        mobileMenuToggle.classList.add("active");
+        navMenu.classList.add("active");
+        navOverlay.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+      }
+
+      // Close menu function
+      function closeMenu() {
+        mobileMenuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+        navOverlay.classList.remove("active");
+        document.body.style.overflow = ""; // Restore background scroll
+      }
+
+      // Close menu on escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navMenu.classList.contains("active")) {
+          closeMenu();
+        }
+      });
+    </script>
   </body>
 </html>
