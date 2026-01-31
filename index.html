@@ -369,8 +369,8 @@
         left: -100%;
         width: 280px;
         height: 100vh;
-        background: var(--white);
-        box-shadow: var(--shadow-xl);
+        background: #2c3e50;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
         padding: 80px 30px 30px;
         transition: left 0.3s var(--ease-smooth);
         z-index: 999;
@@ -390,20 +390,22 @@
 
       .nav-links a {
         text-decoration: none;
-        color: var(--dark);
+        color: #e2e8f0;
         font-weight: 500;
         font-size: 1.05rem;
         display: block;
         padding: 16px 0;
         transition:
           color 0.2s var(--ease-smooth),
-          padding-left 0.3s var(--ease-smooth);
-        border-bottom: 1px solid var(--border);
+          padding-left 0.3s var(--ease-smooth),
+          background 0.2s var(--ease-smooth);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .nav-links a:hover {
-        color: var(--primary);
+        color: #10b981;
         padding-left: 10px;
+        background: rgba(16, 185, 129, 0.1);
       }
 
       /* Overlay when menu is open */
@@ -413,7 +415,8 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(4px);
         opacity: 0;
         visibility: hidden;
         transition:
@@ -561,36 +564,20 @@
       .hero-cta .btn-primary {
         background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: var(--white);
-        padding: 18px 40px;
-        font-size: 1.1rem;
+        padding: 20px 60px;
+        font-size: 1.2rem;
         font-weight: 700;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
         transition: all 0.3s var(--ease-smooth);
         border: none;
+        text-decoration: none;
+        display: inline-block;
       }
 
       .hero-cta .btn-primary:hover {
         transform: translateY(-3px);
         box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
-      }
-
-      .hero-cta .btn-secondary {
-        background: transparent;
-        color: var(--white);
-        padding: 18px 40px;
-        font-size: 1.05rem;
-        font-weight: 600;
-        border-radius: 10px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.3s var(--ease-smooth);
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .hero-cta .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.5);
       }
 
       /* Urgency Strip */
@@ -606,7 +593,22 @@
         font-size: 0.95rem;
         font-weight: 600;
         margin-bottom: 60px;
-        animation: fadeIn 0.8s ease-out 0.8s both;
+        animation:
+          fadeIn 0.8s ease-out 0.8s both,
+          urgencyPulse 2s ease-in-out infinite;
+        animation-delay: 0.8s, 1.5s;
+      }
+
+      @keyframes urgencyPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+          transform: scale(1.02);
+        }
       }
 
       .hero-urgency .icon {
@@ -694,6 +696,93 @@
       .floating-badge .content span {
         color: var(--gray);
         font-size: 0.85rem;
+      }
+
+      /* ========== AS SEEN ON SECTION ========== */
+      .as-seen-on {
+        background: var(--white);
+        padding: 30px 0;
+        overflow: hidden;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logos-track-wrapper {
+        display: flex;
+        gap: 0;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .logos-track-wrapper::before,
+      .logos-track-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .logos-track-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, var(--white), transparent);
+      }
+
+      .logos-track-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, var(--white), transparent);
+      }
+
+      .logos-track {
+        display: flex;
+        min-width: 100%;
+        flex-shrink: 0;
+        align-items: center;
+        animation: logoScroll 25s linear infinite;
+        gap: 80px;
+        padding-right: 80px;
+        will-change: transform;
+      }
+
+      .logos-track-wrapper:hover .logos-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes logoScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .logo-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        flex-shrink: 0;
+      }
+
+      .logo-item img {
+        height: 40px;
+        width: auto;
+        max-width: 180px;
+        object-fit: contain;
+        filter: grayscale(100%) opacity(0.6);
+        transition: all 0.3s var(--ease-smooth);
+      }
+
+      .logo-item:hover img {
+        filter: grayscale(0%) opacity(1);
+        transform: scale(1.1);
+      }
+
+      .logo-item img[alt="SlideServe"] {
+        border-radius: 8px;
       }
 
       /* Product Grid */
@@ -1402,6 +1491,10 @@
           margin-bottom: 16px;
         }
 
+        .hero h1 .highlight::after {
+          display: none;
+        }
+
         .hero-subtitle {
           font-size: 1.05rem;
           margin-bottom: 30px;
@@ -1413,11 +1506,10 @@
           margin-bottom: 30px;
         }
 
-        .hero-cta .btn-primary,
-        .hero-cta .btn-secondary {
+        .hero-cta .btn-primary {
           width: 100%;
-          padding: 16px 24px;
-          font-size: 1rem;
+          padding: 18px 24px;
+          font-size: 1.05rem;
         }
 
         .hero-urgency {
@@ -1436,6 +1528,25 @@
 
         .stat-item span {
           font-size: 0.85rem;
+        }
+
+        /* As Seen On Mobile */
+        .as-seen-on {
+          padding: 20px 0;
+        }
+
+        .logos-track {
+          gap: 50px;
+        }
+
+        .logo-item img {
+          height: 32px;
+          max-width: 140px;
+        }
+
+        .logos-track-wrapper::before,
+        .logos-track-wrapper::after {
+          width: 50px;
         }
 
         .grid,
@@ -1632,16 +1743,20 @@
 
         <!-- Subtitle -->
         <p class="hero-subtitle">
-          Stop overpaying for individual products! Get <strong>unlimited access to 20,704+ premium</strong> WordPress themes, plugins, and tools for one low price. Join <strong>45,000+ agencies and freelancers</strong> who are already saving thousands.
+          Get <strong>unlimited access to 20,000+ premium</strong> WordPress
+          themes, plugins, and tools for one low price. Join
+          <strong>45,000+ agencies and freelancers</strong> who are already
+          saving thousands.
         </p>
 
-        <!-- CTA Buttons -->
+        <!-- CTA Button -->
         <div class="hero-cta">
-          <a href="https://puregpl.com/login/" class="btn-primary" target="_blank">
-            🚀 Start Saving Today - Only ₹8,249/Year
-          </a>
-          <a href="#products" class="btn-secondary">
-            Browse 20,704+ Products →
+          <a
+            href="https://puregpl.com/login/"
+            class="btn-primary"
+            target="_blank"
+          >
+            ⭐ Claim Lifetime Access - Only $199
           </a>
         </div>
 
@@ -1654,7 +1769,7 @@
         <!-- Stats Counter -->
         <div class="hero-stats">
           <div class="stat-item">
-            <h3 class="counter" data-target="20704">0</h3>
+            <h3 class="counter" data-target="20000">0</h3>
             <span>Premium Products</span>
           </div>
           <div class="stat-item">
@@ -1664,6 +1779,89 @@
           <div class="stat-item">
             <h3 class="counter" data-target="100">0</h3>
             <span>% Legal (GPL)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== AS SEEN ON SECTION ========== -->
+    <section class="as-seen-on">
+      <div class="logos-track-wrapper">
+        <!-- Track 1 -->
+        <div class="logos-track">
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/QvynGWHz/Trustpilot.webp"
+              alt="Trustpilot"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/1fjRKchW/Webjingha.webp"
+              alt="Webjinnee"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/Pzbp29Gs/Screenshot-from-2026-01-31-18-26-22.png"
+              alt="Medium"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/8gynMFkz/Slide-Serve.jpg"
+              alt="SlideServe"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/HDbJRxZC/Techcrunch.webp"
+              alt="Techcrunch"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Track 2 (Duplicate for seamless loop) -->
+        <div class="logos-track" aria-hidden="true">
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/QvynGWHz/Trustpilot.webp"
+              alt="Trustpilot"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/1fjRKchW/Webjingha.webp"
+              alt="Webjinnee"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/Pzbp29Gs/Screenshot-from-2026-01-31-18-26-22.png"
+              alt="Medium"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/8gynMFkz/Slide-Serve.jpg"
+              alt="SlideServe"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/HDbJRxZC/Techcrunch.webp"
+              alt="Techcrunch"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -2853,7 +3051,7 @@
       // 3. HERO STATS COUNTER ANIMATION
       // ============================================
       function animateCounter(element) {
-        const target = parseInt(element.getAttribute('data-target'));
+        const target = parseInt(element.getAttribute("data-target"));
         const duration = 2000; // 2 seconds
         const increment = target / (duration / 16); // 60fps
         let current = 0;
@@ -2866,9 +3064,9 @@
           } else {
             // Format final number
             if (target === 100) {
-              element.textContent = '100%';
+              element.textContent = "100%";
             } else if (target >= 1000) {
-              element.textContent = target.toLocaleString() + '+';
+              element.textContent = target.toLocaleString() + "+";
             } else {
               element.textContent = target.toLocaleString();
             }
@@ -2879,23 +3077,26 @@
       }
 
       // Intersection Observer for counter animation on scroll
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.counter');
-            counters.forEach(counter => {
-              if (counter.getAttribute('data-animated') !== 'true') {
-                counter.setAttribute('data-animated', 'true');
-                animateCounter(counter);
-              }
-            });
-            counterObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counters = entry.target.querySelectorAll(".counter");
+              counters.forEach((counter) => {
+                if (counter.getAttribute("data-animated") !== "true") {
+                  counter.setAttribute("data-animated", "true");
+                  animateCounter(counter);
+                }
+              });
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
 
       // Observe hero stats section
-      const heroStatsSection = document.querySelector('.hero-stats');
+      const heroStatsSection = document.querySelector(".hero-stats");
       if (heroStatsSection) {
         counterObserver.observe(heroStatsSection);
       }
