@@ -784,6 +784,248 @@
         border-radius: 8px;
       }
 
+      /* ========== BEST SELLERS SECTION ========== */
+      .best-sellers {
+        background: #f8f9fa;
+        padding: 80px 0;
+      }
+
+      .best-sellers-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .best-sellers-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 12px;
+      }
+
+      .best-sellers-header p {
+        font-size: 1.1rem;
+        color: var(--gray);
+      }
+
+      .filter-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .filter-tab {
+        padding: 12px 28px;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gray-dark);
+        cursor: pointer;
+        transition: all 0.3s var(--ease-smooth);
+      }
+
+      .filter-tab:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      .filter-tab.active {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--white);
+      }
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .product-card {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s var(--ease-smooth);
+        position: relative;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .product-card.hidden {
+        display: none;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-image {
+        position: relative;
+        height: 220px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .best-seller-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #ef4444;
+        color: var(--white);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        animation: badgePulse 2s ease-in-out infinite;
+        z-index: 2;
+      }
+
+      @keyframes badgePulse {
+        0%, 100% {
+          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+        }
+      }
+
+      .discount-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #10b981;
+        color: var(--white);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        z-index: 2;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .product-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .product-rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .stars {
+        display: flex;
+        gap: 2px;
+      }
+
+      .star {
+        color: #fbbf24;
+        font-size: 0.9rem;
+      }
+
+      .star.empty {
+        color: #d1d5db;
+      }
+
+      .rating-count {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      .product-pricing {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .original-price {
+        font-size: 0.95rem;
+        color: var(--gray);
+        text-decoration: line-through;
+      }
+
+      .puregpl-price {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .add-to-cart-btn {
+        width: 100%;
+        padding: 12px 20px;
+        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s var(--ease-smooth);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .add-to-cart-btn:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+
+      .add-to-cart-btn.loading {
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      .btn-spinner {
+        display: none;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top-color: var(--white);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      .add-to-cart-btn.loading .btn-spinner {
+        display: block;
+      }
+
+      .add-to-cart-btn.loading .btn-text {
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       /* Product Grid */
       .products-section {
         padding: 60px 0;
@@ -1549,6 +1791,80 @@
           width: 50px;
         }
 
+        /* Best Sellers Mobile */
+        .best-sellers {
+          padding: 60px 0;
+        }
+
+        .best-sellers-header h2 {
+          font-size: 2rem;
+        }
+
+        .best-sellers-header p {
+          font-size: 1rem;
+        }
+
+        .filter-tabs {
+          gap: 10px;
+        }
+
+        .filter-tab {
+          padding: 10px 20px;
+          font-size: 0.85rem;
+        }
+
+        .products-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+
+        .product-image {
+          height: 160px;
+        }
+
+        .product-info {
+          padding: 14px;
+        }
+
+        .product-name {
+          font-size: 0.95rem;
+          margin-bottom: 10px;
+        }
+
+        .product-rating {
+          margin-bottom: 10px;
+        }
+
+        .stars {
+          gap: 1px;
+        }
+
+        .star {
+          font-size: 0.8rem;
+        }
+
+        .rating-count {
+          font-size: 0.75rem;
+        }
+
+        .product-pricing {
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+
+        .original-price {
+          font-size: 0.85rem;
+        }
+
+        .puregpl-price {
+          font-size: 1.2rem;
+        }
+
+        .add-to-cart-btn {
+          padding: 10px 16px;
+          font-size: 0.85rem;
+        }
+
         .grid,
         .feature-grid,
         .pricing-grid,
@@ -1862,6 +2178,267 @@
               alt="Techcrunch"
               loading="lazy"
             />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== BEST SELLERS SECTION ========== -->
+    <section class="best-sellers">
+      <div class="container">
+        <div class="best-sellers-header">
+          <h2>🏆 Best Selling Products</h2>
+          <p>Premium WordPress themes & plugins at unbeatable prices</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Products</button>
+          <button class="filter-tab" data-filter="themes">Themes</button>
+          <button class="filter-tab" data-filter="plugins">Plugins</button>
+          <button class="filter-tab" data-filter="woocommerce">WooCommerce</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+          <!-- Product 1: Elementor Pro -->
+          <div class="product-card" data-category="plugins">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">95% OFF</div>
+              <img src="https://via.placeholder.com/300x220/667eea/ffffff?text=Elementor+Pro" alt="Elementor Pro" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Elementor Pro</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(2,840)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$59</span>
+                <span class="puregpl-price">₹299</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 2: Astra Pro Theme -->
+          <div class="product-card" data-category="themes">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">95% OFF</div>
+              <img src="https://via.placeholder.com/300x220/764ba2/ffffff?text=Astra+Pro" alt="Astra Pro" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Astra Pro Theme</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(1,920)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$59</span>
+                <span class="puregpl-price">₹299</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3: WP Rocket -->
+          <div class="product-card" data-category="plugins">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">94% OFF</div>
+              <img src="https://via.placeholder.com/300x220/f093fb/ffffff?text=WP+Rocket" alt="WP Rocket" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">WP Rocket</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(3,150)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$49</span>
+                <span class="puregpl-price">₹249</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 4: Yoast SEO Premium -->
+          <div class="product-card" data-category="plugins">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">96% OFF</div>
+              <img src="https://via.placeholder.com/300x220/4facfe/ffffff?text=Yoast+SEO" alt="Yoast SEO Premium" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Yoast SEO Premium</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(2,460)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$99</span>
+                <span class="puregpl-price">₹299</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 5: WooCommerce Subscriptions -->
+          <div class="product-card" data-category="woocommerce">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">97% OFF</div>
+              <img src="https://via.placeholder.com/300x220/00f2fe/ffffff?text=WooCommerce" alt="WooCommerce Subscriptions" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">WooCommerce Subscriptions</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(1,780)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$199</span>
+                <span class="puregpl-price">₹499</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 6: Slider Revolution -->
+          <div class="product-card" data-category="plugins">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">93% OFF</div>
+              <img src="https://via.placeholder.com/300x220/43e97b/ffffff?text=Slider+Revolution" alt="Slider Revolution" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Slider Revolution</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(2,290)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$29</span>
+                <span class="puregpl-price">₹199</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 7: Divi Builder Pro -->
+          <div class="product-card" data-category="themes">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">96% OFF</div>
+              <img src="https://via.placeholder.com/300x220/fa709a/ffffff?text=Divi+Builder" alt="Divi Builder Pro" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Divi Builder Pro</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(3,680)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$89</span>
+                <span class="puregpl-price">₹299</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 8: WPBakery Page Builder -->
+          <div class="product-card" data-category="plugins">
+            <div class="product-image">
+              <div class="best-seller-badge">Best Seller</div>
+              <div class="discount-badge">95% OFF</div>
+              <img src="https://via.placeholder.com/300x220/fee140/ffffff?text=WPBakery" alt="WPBakery Page Builder" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">WPBakery Page Builder</h3>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                </div>
+                <span class="rating-count">(2,920)</span>
+              </div>
+              <div class="product-pricing">
+                <span class="original-price">$64</span>
+                <span class="puregpl-price">₹299</span>
+              </div>
+              <button class="add-to-cart-btn">
+                <span class="btn-spinner"></span>
+                <span class="btn-text">Add to Cart</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -3100,6 +3677,65 @@
       if (heroStatsSection) {
         counterObserver.observe(heroStatsSection);
       }
+
+      // ============================================
+      // 4. BEST SELLERS FILTER FUNCTIONALITY
+      // ============================================
+      const filterTabs = document.querySelectorAll(".filter-tab");
+      const productCards = document.querySelectorAll(".product-card");
+
+      filterTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const filter = tab.getAttribute("data-filter");
+
+          // Update active tab
+          filterTabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Filter products with fade animation
+          productCards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+
+            if (filter === "all" || category === filter) {
+              card.classList.remove("hidden");
+              card.style.animation = "fadeInUp 0.5s ease-out";
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // ============================================
+      // 5. ADD TO CART BUTTON ANIMATION
+      // ============================================
+      const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
+
+      addToCartBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          // Add loading state
+          this.classList.add("loading");
+
+          // Simulate API call (2 seconds)
+          setTimeout(() => {
+            this.classList.remove("loading");
+
+            // Change button text temporarily
+            const btnText = this.querySelector(".btn-text");
+            const originalText = btnText.textContent;
+            btnText.textContent = "✓ Added!";
+            this.style.background =
+              "linear-gradient(135deg, #10b981 0%, #059669 100%)";
+
+            // Reset after 2 seconds
+            setTimeout(() => {
+              btnText.textContent = originalText;
+              this.style.background =
+                "linear-gradient(135deg, var(--primary) 0%, #059669 100%)";
+            }, 2000);
+          }, 2000);
+        });
+      });
     </script>
   </body>
 </html>
