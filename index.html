@@ -428,39 +428,272 @@
       }
 
       /* Hero Section */
+      /* ========== Hero Section (Advanced with Animations) ========== */
       .hero {
-        background: linear-gradient(to right, #ffffff, #e6fffa);
-        padding: 80px 0;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e293b 50%,
+          #334155 100%
+        );
+        padding: 100px 0 80px;
         text-align: center;
+        overflow: hidden;
       }
 
+      /* Animated Background Gradient */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(-45deg, #10b981, #059669, #047857, #065f46);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        opacity: 0.1;
+        z-index: 0;
+      }
+
+      /* Floating Shapes */
+      .hero::after {
+        content: "";
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(16, 185, 129, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        top: -150px;
+        right: -150px;
+        animation: float 20s ease-in-out infinite;
+        z-index: 0;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Hero Badge */
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #10b981;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .hero-badge .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: #10b981;
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      /* Hero Headline */
       .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
+        font-size: 3.5rem;
+        margin-bottom: 24px;
         line-height: 1.2;
+        color: var(--white);
+        font-weight: 800;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
       }
 
-      .hero p {
-        font-size: 1.2rem;
-        color: var(--gray);
-        max-width: 700px;
+      .hero h1 .highlight {
+        color: #10b981;
+        position: relative;
+        display: inline-block;
+      }
+
+      .hero h1 .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: rgba(16, 185, 129, 0.2);
+        z-index: -1;
+        animation: slideInRight 0.8s ease-out 0.6s both;
+      }
+
+      /* Hero Subheadline */
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: #cbd5e1;
+        max-width: 750px;
         margin: 0 auto 40px;
+        line-height: 1.7;
+        font-weight: 400;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
       }
 
+      .hero-subtitle strong {
+        color: var(--white);
+        font-weight: 700;
+      }
+
+      /* CTA Buttons */
+      .hero-cta {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      .hero-cta .btn-primary {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: var(--white);
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+        transition: all 0.3s var(--ease-smooth);
+        border: none;
+      }
+
+      .hero-cta .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5);
+      }
+
+      .hero-cta .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        padding: 18px 40px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s var(--ease-smooth);
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .hero-cta .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Urgency Strip */
+      .hero-urgency {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(239, 68, 68, 0.15);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #fca5a5;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 60px;
+        animation: fadeIn 0.8s ease-out 0.8s both;
+      }
+
+      .hero-urgency .icon {
+        font-size: 1.3rem;
+        animation: bounce 2s ease-in-out infinite;
+      }
+
+      /* Hero Stats */
       .hero-stats {
         display: flex;
         justify-content: center;
-        gap: 50px;
-        margin-top: 50px;
+        gap: 60px;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.8s ease-out 1s both;
+      }
+
+      .stat-item {
+        text-align: center;
       }
 
       .stat-item h3 {
-        font-size: 2rem;
-        color: var(--primary);
+        font-size: 3rem;
+        color: #10b981;
+        font-weight: 800;
+        margin-bottom: 8px;
+        line-height: 1;
       }
+
       .stat-item span {
+        color: #94a3b8;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Floating Badges */
+      .floating-badge {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: float 6s ease-in-out infinite;
+        z-index: 2;
+      }
+
+      .floating-badge.badge-1 {
+        top: 120px;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .floating-badge.badge-2 {
+        top: 200px;
+        right: 5%;
+        animation-delay: 1s;
+      }
+
+      .floating-badge.badge-3 {
+        bottom: 100px;
+        left: 8%;
+        animation-delay: 2s;
+      }
+
+      .floating-badge .icon {
+        font-size: 2rem;
+      }
+
+      .floating-badge .content {
+        text-align: left;
+      }
+
+      .floating-badge .content strong {
+        display: block;
+        color: var(--dark);
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+      }
+
+      .floating-badge .content span {
         color: var(--gray);
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
       /* Product Grid */
@@ -1149,18 +1382,68 @@
           height: 32px;
         }
 
-        .hero-stats {
-          display: none;
+        /* Hero Mobile Styles */
+        .hero {
+          padding: 60px 0 50px;
         }
+
+        .floating-badge {
+          display: none !important;
+        }
+
+        .hero-badge {
+          font-size: 0.8rem;
+          padding: 6px 16px;
+          margin-bottom: 20px;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+          margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+          font-size: 1.05rem;
+          margin-bottom: 30px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          gap: 12px;
+          margin-bottom: 30px;
+        }
+
+        .hero-cta .btn-primary,
+        .hero-cta .btn-secondary {
+          width: 100%;
+          padding: 16px 24px;
+          font-size: 1rem;
+        }
+
+        .hero-urgency {
+          font-size: 0.85rem;
+          padding: 10px 16px;
+          margin-bottom: 40px;
+        }
+
+        .hero-stats {
+          gap: 40px;
+        }
+
+        .stat-item h3 {
+          font-size: 2.2rem;
+        }
+
+        .stat-item span {
+          font-size: 0.85rem;
+        }
+
         .grid,
         .feature-grid,
         .pricing-grid,
         .footer-grid,
         .testimonial-grid {
           grid-template-columns: 1fr;
-        }
-        .hero h1 {
-          font-size: 2rem;
         }
         .plan-card.popular {
           transform: scale(1);
@@ -1195,29 +1478,53 @@
       <div class="top-bar-wrapper">
         <!-- Track 1 -->
         <div class="top-bar-track">
-          <span class="top-bar-item">🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span>
+          <span class="top-bar-item"
+            >🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss Out!</span>
+          <span class="top-bar-item"
+            >⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss
+            Out!</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span>
+          <span class="top-bar-item"
+            >⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed Products</span>
+          <span class="top-bar-item"
+            >✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed
+            Products</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">💎 <strong>20,704 PREMIUM PRODUCTS</strong> - All Access</span>
+          <span class="top-bar-item"
+            >💎 <strong>20,000+ PREMIUM PRODUCTS</strong> - All Access</span
+          >
           <span class="top-bar-separator">|</span>
         </div>
 
         <!-- Track 2 (Duplicate for seamless loop) -->
         <div class="top-bar-track" aria-hidden="true">
-          <span class="top-bar-item">🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span>
+          <span class="top-bar-item"
+            >🔥 <strong>LIMITED TIME DEAL</strong> - Save 30% on All Plans</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss Out!</span>
+          <span class="top-bar-item"
+            >⏰ <strong>ONLY FOR THE NEXT 100 CUSTOMERS</strong> - Don't Miss
+            Out!</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span>
+          <span class="top-bar-item"
+            >⭐ <strong>TRUSTED BY 5000+ CUSTOMERS</strong> - Join Today</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed Products</span>
+          <span class="top-bar-item"
+            >✅ <strong>100% SECURE & LEGAL</strong> - GPL Licensed
+            Products</span
+          >
           <span class="top-bar-separator">|</span>
-          <span class="top-bar-item">💎 <strong>20,704 PREMIUM PRODUCTS</strong> - All Access</span>
+          <span class="top-bar-item"
+            >💎 <strong>20,000+ PREMIUM PRODUCTS</strong> - All Access</span
+          >
           <span class="top-bar-separator">|</span>
         </div>
       </div>
@@ -1283,41 +1590,80 @@
       <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
+    <!-- ========== HERO SECTION ========== -->
     <section class="hero">
+      <!-- Floating Social Proof Badges -->
+      <div class="floating-badge badge-1">
+        <span class="icon">⭐</span>
+        <div class="content">
+          <strong>4.9/5 Rating</strong>
+          <span>12,450+ Reviews</span>
+        </div>
+      </div>
+
+      <div class="floating-badge badge-2">
+        <span class="icon">✅</span>
+        <div class="content">
+          <strong>100% Legal</strong>
+          <span>GPL Licensed</span>
+        </div>
+      </div>
+
+      <div class="floating-badge badge-3">
+        <span class="icon">⚡</span>
+        <div class="content">
+          <strong>Instant Access</strong>
+          <span>Download Now</span>
+        </div>
+      </div>
+
       <div class="container">
-        <h1>
-          Save 98% on Premium <br />
-          <span style="color: var(--primary)">WordPress Themes & Plugins</span>
-        </h1>
-        <p>
-          Stop overpaying for individual products! Get unlimited access to
-          20,000+ premium WordPress themes, plugins, and tools for one low
-          price. Trusted by 45,000+ agencies, freelancers, and developers
-          worldwide.
-        </p>
-        <div style="display: flex; gap: 15px; justify-content: center">
-          <a
-            href="#"
-            class="btn btn-primary"
-            style="font-size: 1.1rem; padding: 15px 35px"
-          >
-            🚀 Start Saving Today - Only $99/Year
-          </a>
-          <a href="#" class="btn btn-outline">Browse 20,000+ Products</a>
+        <!-- Limited Time Badge -->
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>🔥 LIMITED TIME OFFER - 100 Spots Left</span>
         </div>
 
+        <!-- Main Headline -->
+        <h1>
+          Save 98% on Premium<br />
+          <span class="highlight">WordPress Themes & Plugins</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          Stop overpaying for individual products! Get <strong>unlimited access to 20,704+ premium</strong> WordPress themes, plugins, and tools for one low price. Join <strong>45,000+ agencies and freelancers</strong> who are already saving thousands.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+          <a href="https://puregpl.com/login/" class="btn-primary" target="_blank">
+            🚀 Start Saving Today - Only ₹8,249/Year
+          </a>
+          <a href="#products" class="btn-secondary">
+            Browse 20,704+ Products →
+          </a>
+        </div>
+
+        <!-- Urgency Strip -->
+        <div class="hero-urgency">
+          <span class="icon">⏰</span>
+          <span>Only <strong>100 spots</strong> remaining at this price!</span>
+        </div>
+
+        <!-- Stats Counter -->
         <div class="hero-stats">
           <div class="stat-item">
-            <h3>20,704</h3>
+            <h3 class="counter" data-target="20704">0</h3>
             <span>Premium Products</span>
           </div>
           <div class="stat-item">
-            <h3>45,000+</h3>
+            <h3 class="counter" data-target="45000">0</h3>
             <span>Active Members</span>
           </div>
           <div class="stat-item">
-            <h3>100%</h3>
-            <span>Legal (GPL)</span>
+            <h3 class="counter" data-target="100">0</h3>
+            <span>% Legal (GPL)</span>
           </div>
         </div>
       </div>
@@ -2502,6 +2848,57 @@
           closeMenu();
         }
       });
+
+      // ============================================
+      // 3. HERO STATS COUNTER ANIMATION
+      // ============================================
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            element.textContent = Math.floor(current).toLocaleString();
+            requestAnimationFrame(updateCounter);
+          } else {
+            // Format final number
+            if (target === 100) {
+              element.textContent = '100%';
+            } else if (target >= 1000) {
+              element.textContent = target.toLocaleString() + '+';
+            } else {
+              element.textContent = target.toLocaleString();
+            }
+          }
+        };
+
+        updateCounter();
+      }
+
+      // Intersection Observer for counter animation on scroll
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(counter => {
+              if (counter.getAttribute('data-animated') !== 'true') {
+                counter.setAttribute('data-animated', 'true');
+                animateCounter(counter);
+              }
+            });
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      // Observe hero stats section
+      const heroStatsSection = document.querySelector('.hero-stats');
+      if (heroStatsSection) {
+        counterObserver.observe(heroStatsSection);
+      }
     </script>
   </body>
 </html>
