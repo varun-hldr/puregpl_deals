@@ -2423,7 +2423,7 @@
         <!-- Limited Time Badge -->
         <div class="hero-badge">
           <span class="pulse-dot"></span>
-          <span>🔥 LIMITED TIME OFFER - 100 Spots Left</span>
+          <span>🔥 LIMITED TIME OFFER - <span id="spots-badge">100</span> Spots Left</span>
         </div>
 
         <!-- Main Headline -->
@@ -2454,7 +2454,7 @@
         <!-- Urgency Strip -->
         <div class="hero-urgency">
           <span class="icon">⏰</span>
-          <span>Only <strong>100 spots</strong> remaining at this price!</span>
+          <span>Only <strong><span id="spots-urgency">100</span> spots</strong> remaining at this price!</span>
         </div>
 
         <!-- Stats Counter -->
@@ -3524,6 +3524,101 @@
 
     <!-- JavaScript -->
     <script>
+      // ============================================
+      // 0. DYNAMIC SPOTS COUNTER (FOMO) - ROBUST VERSION
+      // ============================================
+      (function initSpotsCounter() {
+        const INITIAL_SPOTS = 100;
+        const MIN_SPOTS = 7;
+        const storageKey = 'puregpl_spots_data_v2';
+
+        // Get stored data or initialize
+        let spotsData = JSON.parse(localStorage.getItem(storageKey));
+
+        if (!spotsData) {
+          spotsData = {
+            firstVisit: Date.now(),
+            lastVisit: Date.now(),
+            currentSpots: INITIAL_SPOTS
+          };
+          localStorage.setItem(storageKey, JSON.stringify(spotsData));
+        }
+
+        // Realistic sales curve calculation
+        function calculateSpots(firstVisitTime) {
+          const hoursElapsed = (Date.now() - firstVisitTime) / (1000 * 60 * 60);
+
+          // Phase 1: First 6 hours - LAUNCH RUSH (fast sales)
+          // ~3 spots per hour = 18 spots gone
+          const phase1Hours = Math.min(hoursElapsed, 6);
+          const phase1Loss = phase1Hours * 3;
+
+          // Phase 2: Hours 6-24 - HIGH DEMAND (medium-fast)
+          // ~2 spots per hour = 36 spots gone
+          const phase2Hours = Math.min(Math.max(hoursElapsed - 6, 0), 18);
+          const phase2Loss = phase2Hours * 2;
+
+          // Phase 3: Days 2-3 - STEADY SALES (medium)
+          // ~1 spot per hour = 48 spots gone
+          const phase3Hours = Math.min(Math.max(hoursElapsed - 24, 0), 48);
+          const phase3Loss = phase3Hours * 1;
+
+          // Phase 4: Days 4-7 - SLOWING DOWN (slow)
+          // ~0.5 spots per hour = 48 spots gone
+          const phase4Hours = Math.min(Math.max(hoursElapsed - 72, 0), 96);
+          const phase4Loss = phase4Hours * 0.5;
+
+          // Phase 5: After 1 week - FINAL STRETCH (very slow)
+          // ~0.2 spots per hour
+          const phase5Hours = Math.max(hoursElapsed - 168, 0);
+          const phase5Loss = phase5Hours * 0.2;
+
+          // Total spots remaining
+          const totalLoss = phase1Loss + phase2Loss + phase3Loss + phase4Loss + phase5Loss;
+
+          // Add slight randomness based on time (deterministic per timestamp)
+          const seed = Math.floor(hoursElapsed);
+          const pseudoRandom = ((seed * 9301 + 49297) % 233280) / 233280; // 0-1
+          const randomVariation = (pseudoRandom - 0.5) * 4; // -2 to +2
+
+          const finalSpots = Math.round(INITIAL_SPOTS - totalLoss + randomVariation);
+          return Math.max(MIN_SPOTS, Math.min(INITIAL_SPOTS, finalSpots));
+        }
+
+        // Calculate current spots
+        spotsData.currentSpots = calculateSpots(spotsData.firstVisit);
+        spotsData.lastVisit = Date.now();
+        localStorage.setItem(storageKey, JSON.stringify(spotsData));
+
+        // Update display elements
+        function updateSpotsDisplay(spots) {
+          const spotsBadge = document.getElementById('spots-badge');
+          const spotsUrgency = document.getElementById('spots-urgency');
+          if (spotsBadge) spotsBadge.textContent = spots;
+          if (spotsUrgency) spotsUrgency.textContent = spots;
+        }
+
+        // Initial display
+        updateSpotsDisplay(spotsData.currentSpots);
+
+        // Real-time decrease while browsing (for engagement)
+        // Decrease 1 spot every 3-6 minutes while on page
+        function scheduleRealtimeDecrease() {
+          const delay = (3 + Math.random() * 3) * 60 * 1000; // 3-6 minutes
+          setTimeout(() => {
+            if (spotsData.currentSpots > MIN_SPOTS) {
+              spotsData.currentSpots -= 1;
+              localStorage.setItem(storageKey, JSON.stringify(spotsData));
+              updateSpotsDisplay(spotsData.currentSpots);
+            }
+            scheduleRealtimeDecrease();
+          }, delay);
+        }
+
+        // Start real-time decrease after 2 minutes on page
+        setTimeout(scheduleRealtimeDecrease, 2 * 60 * 1000);
+      })();
+
       // ============================================
       // 1. STICKY HEADER SCROLL BEHAVIOR
       // ============================================
