@@ -1086,7 +1086,7 @@
       }
 
       .view-all-btn::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: -100%;
@@ -1421,7 +1421,9 @@
         border-radius: 16px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         position: relative;
-        transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+        transition:
+          transform 0.3s var(--ease-smooth),
+          box-shadow 0.3s var(--ease-smooth);
         opacity: 0;
         transform: translateY(30px);
       }
@@ -1429,7 +1431,9 @@
       .comparison-card.animate-in {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
 
       .comparison-card:hover {
@@ -1448,7 +1452,7 @@
       }
 
       .comparison-card.puregpl::before {
-        content: 'RECOMMENDED';
+        content: "RECOMMENDED";
         position: absolute;
         top: -14px;
         left: 50%;
@@ -1601,23 +1605,33 @@
       .savings-banner.animate-in {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
       }
 
       .savings-banner::before {
-        content: '';
+        content: "";
         position: absolute;
         top: -50%;
         left: -50%;
         width: 200%;
         height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 60%
+        );
         animation: rotateBg 20s linear infinite;
       }
 
       @keyframes rotateBg {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
       .savings-banner-content {
@@ -1681,7 +1695,9 @@
       .agency-scenario.animate-in {
         opacity: 1;
         transform: translateY(0);
-        transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+        transition:
+          opacity 0.6s ease 0.2s,
+          transform 0.6s ease 0.2s;
       }
 
       .agency-scenario-header {
@@ -2622,6 +2638,45 @@
             />
           </div>
         </div>
+
+        <!-- Track 3 (Duplicate for seamless loop) -->
+        <div class="logos-track" aria-hidden="true">
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/QvynGWHz/Trustpilot.webp"
+              alt="Trustpilot"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/1fjRKchW/Webjingha.webp"
+              alt="Webjinnee"
+              loading="lazy"
+            />
+          </div>
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/Pzbp29Gs/Screenshot-from-2026-01-31-18-26-22.png"
+              alt="Medium"
+              loading="lazy"
+            />
+          </div>
+          <!-- <div class="logo-item">
+            <img
+              src="https://i.ibb.co/8gynMFkz/Slide-Serve.jpg"
+              alt="SlideServe"
+              loading="lazy"
+            />
+          </div> -->
+          <div class="logo-item">
+            <img
+              src="https://i.ibb.co/HDbJRxZC/Techcrunch.webp"
+              alt="Techcrunch"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2639,7 +2694,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/cSp82wH7/Elementor.webp" alt="Elementor Pro" loading="lazy" />
+              <img
+                src="https://i.ibb.co/cSp82wH7/Elementor.webp"
+                alt="Elementor Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Page Builder</span>
@@ -2659,7 +2718,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/C5Yj8W2K/Astra.webp" alt="Astra Pro" loading="lazy" />
+              <img
+                src="https://i.ibb.co/C5Yj8W2K/Astra.webp"
+                alt="Astra Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">WordPress Theme</span>
@@ -2679,7 +2742,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/dJH6RHyF/Wp-Rocket.webp" alt="WP Rocket" loading="lazy" />
+              <img
+                src="https://i.ibb.co/dJH6RHyF/Wp-Rocket.webp"
+                alt="WP Rocket"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Performance Plugin</span>
@@ -2699,7 +2766,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/BWWdqp2/Yoast.webp" alt="Yoast SEO Premium" loading="lazy" />
+              <img
+                src="https://i.ibb.co/BWWdqp2/Yoast.webp"
+                alt="Yoast SEO Premium"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">SEO Plugin</span>
@@ -2719,7 +2790,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/5gkxMrcb/Rankmath.webp" alt="Rank Math Pro" loading="lazy" />
+              <img
+                src="https://i.ibb.co/5gkxMrcb/Rankmath.webp"
+                alt="Rank Math Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">SEO Plugin</span>
@@ -2739,7 +2814,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/27dDMKkX/Wp-Forms.webp" alt="WPForms Pro" loading="lazy" />
+              <img
+                src="https://i.ibb.co/27dDMKkX/Wp-Forms.webp"
+                alt="WPForms Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Form Plugin</span>
@@ -2759,7 +2838,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/0R4N5NbW/News-Paper.webp" alt="Newspaper Theme" loading="lazy" />
+              <img
+                src="https://i.ibb.co/0R4N5NbW/News-Paper.webp"
+                alt="Newspaper Theme"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">WordPress Theme</span>
@@ -2779,7 +2862,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/012prDM/Woocomerce.webp" alt="WooCommerce" loading="lazy" />
+              <img
+                src="https://i.ibb.co/012prDM/Woocomerce.webp"
+                alt="WooCommerce"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">E-Commerce Plugin</span>
@@ -2799,7 +2886,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/JwPgksLG/All-in-one-WP-Migration.webp" alt="All-in-One WP Migration" loading="lazy" />
+              <img
+                src="https://i.ibb.co/JwPgksLG/All-in-one-WP-Migration.webp"
+                alt="All-in-One WP Migration"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Migration Plugin</span>
@@ -2819,7 +2910,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/G3cv4cB3/Woodmart.webp" alt="Woodmart Theme" loading="lazy" />
+              <img
+                src="https://i.ibb.co/G3cv4cB3/Woodmart.webp"
+                alt="Woodmart Theme"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">WooCommerce Theme</span>
@@ -2839,7 +2934,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/LdXxgqLQ/electro.webp" alt="Electro Theme" loading="lazy" />
+              <img
+                src="https://i.ibb.co/LdXxgqLQ/electro.webp"
+                alt="Electro Theme"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Electronics Theme</span>
@@ -2859,7 +2958,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/1GSLV58k/Wordpress-Automatic-plugin.webp" alt="WordPress Automatic" loading="lazy" />
+              <img
+                src="https://i.ibb.co/1GSLV58k/Wordpress-Automatic-plugin.webp"
+                alt="WordPress Automatic"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Automation Plugin</span>
@@ -2879,7 +2982,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/qKTDJy8/Slider-Revolution.webp" alt="Slider Revolution" loading="lazy" />
+              <img
+                src="https://i.ibb.co/qKTDJy8/Slider-Revolution.webp"
+                alt="Slider Revolution"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Visual Builder</span>
@@ -2899,7 +3006,11 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img src="https://i.ibb.co/YBgSYzCs/Dokan.webp" alt="Dokan Pro" loading="lazy" />
+              <img
+                src="https://i.ibb.co/YBgSYzCs/Dokan.webp"
+                alt="Dokan Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <span class="product-category">Marketplace Plugin</span>
@@ -2916,19 +3027,29 @@
           </div>
 
           <!-- View All Card (Desktop) -->
-          <a href="https://puregpl.com/products/" class="view-all-card" target="_blank">
+          <a
+            href="https://puregpl.com/products/"
+            class="view-all-card"
+            target="_blank"
+          >
             <div class="view-all-content">
               <span class="view-all-icon">📦</span>
               <h3>View All Products</h3>
               <p>Explore 20,000+ Premium Themes & Plugins</p>
-              <span class="view-all-link">Browse Now <span class="arrow">→</span></span>
+              <span class="view-all-link"
+                >Browse Now <span class="arrow">→</span></span
+              >
             </div>
           </a>
         </div>
 
         <!-- View All Button (Mobile) -->
         <div class="view-all-mobile">
-          <a href="https://puregpl.com/products/" class="view-all-btn" target="_blank">
+          <a
+            href="https://puregpl.com/products/"
+            class="view-all-btn"
+            target="_blank"
+          >
             View All 20,000+ Products
             <span class="arrow">→</span>
           </a>
@@ -3169,7 +3290,10 @@
         <!-- Header -->
         <div class="comparison-header">
           <h2>One Project or Entire Agency — The Math is Simple</h2>
-          <p>See what agencies and freelancers spend buying tools individually vs. PureGPL</p>
+          <p>
+            See what agencies and freelancers spend buying tools individually
+            vs. PureGPL
+          </p>
         </div>
 
         <!-- Comparison Grid -->
@@ -3179,7 +3303,9 @@
             <div class="comparison-card-header">
               <span class="comparison-emoji">😰</span>
               <h3 class="comparison-card-title">Traditional Way</h3>
-              <p class="comparison-card-subtitle">Buying plugins individually</p>
+              <p class="comparison-card-subtitle">
+                Buying plugins individually
+              </p>
             </div>
 
             <div class="price-breakdown">
@@ -3223,7 +3349,9 @@
             <div class="comparison-card-header">
               <span class="comparison-emoji">🎉</span>
               <h3 class="comparison-card-title">The PureGPL Way</h3>
-              <p class="comparison-card-subtitle">Unlimited everything, one price</p>
+              <p class="comparison-card-subtitle">
+                Unlimited everything, one price
+              </p>
             </div>
 
             <div class="puregpl-features">
@@ -3267,11 +3395,22 @@
             <div class="savings-amount">
               $<span class="counter-value" data-target="456">0</span>+
             </div>
-            <div class="savings-note">every single year (and that's being conservative!)</div>
+            <div class="savings-note">
+              every single year (and that's being conservative!)
+            </div>
             <a href="#" class="savings-cta">
               Start Saving Now
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
           </div>
@@ -3284,9 +3423,10 @@
             <h4 class="agency-scenario-title">Real Agency Scenario</h4>
           </div>
           <p class="agency-scenario-text">
-            <strong>Sarah runs a WordPress agency</strong> building 10 client websites per year.
-            Each site needs: Elementor Pro ($59), WP Rocket ($59), Yoast SEO ($99), ACF Pro ($49),
-            security plugin ($79), backup plugin ($49), and a premium theme ($89).
+            <strong>Sarah runs a WordPress agency</strong> building 10 client
+            websites per year. Each site needs: Elementor Pro ($59), WP Rocket
+            ($59), Yoast SEO ($99), ACF Pro ($49), security plugin ($79), backup
+            plugin ($49), and a premium theme ($89).
           </p>
           <div class="scenario-comparison">
             <div class="scenario-box red">
@@ -3304,7 +3444,10 @@
           </div>
           <div class="scenario-result">
             <span class="scenario-result-text">
-              Sarah saves $<span class="counter-value" data-target="4731">0</span> every year 🎯
+              Sarah saves $<span class="counter-value" data-target="4731"
+                >0</span
+              >
+              every year 🎯
             </span>
           </div>
         </div>
@@ -3899,6 +4042,91 @@
           }, 2000);
         });
       });
+
+      // ============================================
+      // 5. COMPARISON SECTION ANIMATIONS
+      // ============================================
+
+      // Counter animation for comparison section
+      function animateComparisonCounter(element) {
+        const target = parseInt(element.getAttribute("data-target"));
+        const duration = 1500; // 1.5 seconds
+        const startTime = performance.now();
+
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+        const updateCounter = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeOutQuart(progress);
+          const current = Math.floor(target * easedProgress);
+
+          element.textContent = current.toLocaleString();
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = target.toLocaleString();
+          }
+        };
+
+        requestAnimationFrame(updateCounter);
+      }
+
+      // Intersection Observer for comparison section
+      const comparisonObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Animate cards
+              const cards = entry.target.querySelectorAll(".comparison-card");
+              cards.forEach((card, index) => {
+                setTimeout(() => {
+                  card.classList.add("animate-in");
+                }, index * 200);
+              });
+
+              // Animate savings banner
+              const savingsBanner =
+                entry.target.querySelector(".savings-banner");
+              if (savingsBanner) {
+                setTimeout(() => {
+                  savingsBanner.classList.add("animate-in");
+                }, 500);
+              }
+
+              // Animate agency scenario
+              const agencyScenario =
+                entry.target.querySelector(".agency-scenario");
+              if (agencyScenario) {
+                setTimeout(() => {
+                  agencyScenario.classList.add("animate-in");
+                }, 700);
+              }
+
+              // Animate counters
+              const counters = entry.target.querySelectorAll(".counter-value");
+              counters.forEach((counter) => {
+                if (counter.getAttribute("data-animated") !== "true") {
+                  counter.setAttribute("data-animated", "true");
+                  setTimeout(() => {
+                    animateComparisonCounter(counter);
+                  }, 800);
+                }
+              });
+
+              comparisonObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      // Observe comparison section
+      const comparisonSection = document.getElementById("comparison-section");
+      if (comparisonSection) {
+        comparisonObserver.observe(comparisonSection);
+      }
     </script>
   </body>
 </html>
