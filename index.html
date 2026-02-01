@@ -857,32 +857,58 @@
 
       .best-seller-badge {
         position: absolute;
-        top: 12px;
-        left: 12px;
-        background: #ef4444;
+        top: 10px;
+        left: 10px;
+        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
         color: var(--white);
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 5px;
+        font-size: 0.65rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        animation: badgePulse 2s ease-in-out infinite;
+        letter-spacing: 0.3px;
         z-index: 2;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
       }
 
-      @keyframes badgePulse {
-        0%,
-        100% {
-          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+      .best-seller-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: shine 3s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          left: -100%;
         }
-        50% {
-          box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+        50%,
+        100% {
+          left: 100%;
         }
       }
 
       .product-info {
         padding: 20px;
+      }
+
+      .product-category {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #10b981;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
       }
 
       .product-name {
@@ -2111,17 +2137,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/667eea/ffffff?text=Elementor+Pro"
-                alt="Elementor Pro"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/667eea/ffffff?text=Elementor+Pro" alt="Elementor Pro" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">Page Builder</span>
               <h3 class="product-name">Elementor Pro</h3>
               <div class="product-pricing">
                 <span class="original-price">$59</span>
-                <span class="puregpl-price">₹299</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2134,17 +2157,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/764ba2/ffffff?text=Astra+Pro"
-                alt="Astra Pro"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/764ba2/ffffff?text=Astra+Pro" alt="Astra Pro" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">WordPress Theme</span>
               <h3 class="product-name">Astra Pro Theme</h3>
               <div class="product-pricing">
                 <span class="original-price">$59</span>
-                <span class="puregpl-price">₹299</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2157,17 +2177,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/f093fb/ffffff?text=WP+Rocket"
-                alt="WP Rocket"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/f093fb/ffffff?text=WP+Rocket" alt="WP Rocket" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">Performance Plugin</span>
               <h3 class="product-name">WP Rocket</h3>
               <div class="product-pricing">
                 <span class="original-price">$49</span>
-                <span class="puregpl-price">₹249</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2180,17 +2197,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/4facfe/ffffff?text=Yoast+SEO"
-                alt="Yoast SEO Premium"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/4facfe/ffffff?text=Yoast+SEO" alt="Yoast SEO Premium" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">SEO Plugin</span>
               <h3 class="product-name">Yoast SEO Premium</h3>
               <div class="product-pricing">
                 <span class="original-price">$99</span>
-                <span class="puregpl-price">₹299</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2203,17 +2217,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/00f2fe/ffffff?text=WooCommerce"
-                alt="WooCommerce Subscriptions"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/00f2fe/ffffff?text=WooCommerce" alt="WooCommerce Subscriptions" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">WooCommerce Plugin</span>
               <h3 class="product-name">WooCommerce Subscriptions</h3>
               <div class="product-pricing">
                 <span class="original-price">$199</span>
-                <span class="puregpl-price">₹499</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2226,13 +2237,10 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/43e97b/ffffff?text=Slider+Revolution"
-                alt="Slider Revolution"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/43e97b/ffffff?text=Slider+Revolution" alt="Slider Revolution" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">Visual Builder</span>
               <h3 class="product-name">Slider Revolution</h3>
               <div class="product-pricing">
                 <span class="original-price">$29</span>
@@ -2249,17 +2257,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/fa709a/ffffff?text=Divi+Builder"
-                alt="Divi Builder Pro"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/fa709a/ffffff?text=Divi+Builder" alt="Divi Builder Pro" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">WordPress Theme</span>
               <h3 class="product-name">Divi Builder Pro</h3>
               <div class="product-pricing">
                 <span class="original-price">$89</span>
-                <span class="puregpl-price">₹299</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
@@ -2272,17 +2277,14 @@
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <img
-                src="https://via.placeholder.com/320x180/fee140/ffffff?text=WPBakery"
-                alt="WPBakery Page Builder"
-                loading="lazy"
-              />
+              <img src="https://via.placeholder.com/320x180/fee140/ffffff?text=WPBakery" alt="WPBakery Page Builder" loading="lazy" />
             </div>
             <div class="product-info">
+              <span class="product-category">Page Builder</span>
               <h3 class="product-name">WPBakery Page Builder</h3>
               <div class="product-pricing">
                 <span class="original-price">$64</span>
-                <span class="puregpl-price">₹299</span>
+                <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
