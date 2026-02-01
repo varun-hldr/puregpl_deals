@@ -1381,401 +1381,282 @@
         font-size: 1.5rem;
       }
 
-      /* Comparison Section - Enhanced */
+      /* ============================================
+         SECTION 5: COMPARISON - REDESIGNED
+         ============================================ */
       .comparison {
-        padding: 100px 0;
-        background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
-        overflow: hidden;
-      }
-
-      .comparison-header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .comparison-header h2 {
-        font-size: 2.5rem;
-        color: var(--dark);
-        margin-bottom: 15px;
-      }
-
-      .comparison-header p {
-        color: var(--gray);
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .comparison-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      /* Traditional Way Card */
-      .comparison-card {
-        background: var(--white);
-        padding: 40px;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        position: relative;
-        transition:
-          transform 0.3s var(--ease-smooth),
-          box-shadow 0.3s var(--ease-smooth);
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      .comparison-card.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
-      }
-
-      .comparison-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .comparison-card.traditional {
-        border: 2px solid #fecaca;
-        background: linear-gradient(180deg, #fff 0%, #fef2f2 100%);
-      }
-
-      .comparison-card.puregpl {
-        border: 2px solid var(--primary);
-        background: linear-gradient(180deg, #fff 0%, #f0fdf4 100%);
-      }
-
-      .comparison-card.puregpl::before {
-        content: "RECOMMENDED";
-        position: absolute;
-        top: -14px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
-        color: white;
-        padding: 8px 24px;
-        border-radius: 25px;
-        font-weight: 700;
-        font-size: 0.75rem;
-        letter-spacing: 0.5px;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-      }
-
-      .comparison-card-header {
-        text-align: center;
-        margin-bottom: 30px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .comparison-emoji {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
-        display: block;
-      }
-
-      .comparison-card-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 8px;
-      }
-
-      .comparison-card-subtitle {
-        font-size: 0.9rem;
-        color: var(--gray);
-      }
-
-      .price-breakdown {
-        margin-bottom: 25px;
-      }
-
-      .price-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .price-item:last-child {
-        border-bottom: none;
-      }
-
-      .price-item-name {
-        color: var(--gray);
-        font-size: 0.95rem;
-      }
-
-      .price-item-value {
-        font-weight: 600;
-        color: var(--dark);
-      }
-
-      .traditional .price-item-value {
-        color: #dc2626;
-      }
-
-      .price-total {
-        text-align: center;
-        padding-top: 25px;
-        border-top: 2px solid var(--border);
-        margin-top: 10px;
-      }
-
-      .price-total-label {
-        font-size: 0.9rem;
-        color: var(--gray);
-        margin-bottom: 8px;
-      }
-
-      .price-total-value {
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .traditional .price-total-value {
-        color: #dc2626;
-      }
-
-      .puregpl .price-total-value {
-        color: var(--primary);
-      }
-
-      .price-total-note {
-        font-size: 0.85rem;
-        color: var(--gray);
-        margin-top: 10px;
-      }
-
-      /* PureGPL Features List */
-      .puregpl-features {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        margin-bottom: 25px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-
-      .puregpl-features-title {
-        text-align: center;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 20px;
-      }
-
-      .feature-item {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px 0;
-        color: var(--gray);
-        font-size: 0.95rem;
-      }
-
-      .feature-item .check {
-        color: var(--primary);
-        font-size: 1.2rem;
-        flex-shrink: 0;
-      }
-
-      /* Savings Banner */
-      .savings-banner {
-        max-width: 700px;
-        margin: 60px auto 0;
-        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
-        padding: 50px 40px;
-        border-radius: 16px;
-        text-align: center;
-        color: white;
+        padding: 80px 0;
+        background: #0f172a;
         position: relative;
         overflow: hidden;
-        opacity: 0;
-        transform: translateY(30px);
       }
 
-      .savings-banner.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-          opacity 0.6s ease,
-          transform 0.6s ease;
-      }
-
-      .savings-banner::before {
-        content: "";
+      .comparison::before {
+        content: '';
         position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 60%
-        );
-        animation: rotateBg 20s linear infinite;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+        pointer-events: none;
       }
 
-      @keyframes rotateBg {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      .savings-banner-content {
+      .comparison .container {
         position: relative;
         z-index: 1;
       }
 
-      .savings-label {
-        font-size: 1.2rem;
-        opacity: 0.95;
+      .comparison-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .comparison-header h2 {
+        font-size: 2.2rem;
+        color: #fff;
+        margin-bottom: 12px;
+        font-weight: 800;
+      }
+
+      .comparison-header p {
+        color: #94a3b8;
+        font-size: 1rem;
+      }
+
+      /* Side by Side Cards */
+      .comparison-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        max-width: 900px;
+        margin: 0 auto 40px;
+      }
+
+      .compare-card {
+        border-radius: 16px;
+        padding: 30px 25px;
+        position: relative;
+      }
+
+      .compare-card.them {
+        background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        border: 1px solid #334155;
+      }
+
+      .compare-card.us {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+        border: 2px solid var(--primary);
+        box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+      }
+
+      .compare-card.us::before {
+        content: 'BEST VALUE';
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+        color: white;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+      }
+
+      .compare-card-header {
+        text-align: center;
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .compare-card.us .compare-card-header {
+        border-bottom-color: rgba(16, 185, 129, 0.3);
+      }
+
+      .compare-card-title {
+        font-size: 1.1rem;
+        font-weight: 700;
         margin-bottom: 15px;
+      }
+
+      .them .compare-card-title {
+        color: #ef4444;
+      }
+
+      .us .compare-card-title {
+        color: var(--primary);
+      }
+
+      .compare-price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .compare-price-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .them .compare-price-value {
+        color: #fca5a5;
+      }
+
+      .us .compare-price-value {
+        color: #86efac;
+      }
+
+      .compare-price-note {
+        font-size: 0.8rem;
+        color: #64748b;
+      }
+
+      .compare-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .compare-features li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 0;
+        font-size: 0.9rem;
+        color: #cbd5e1;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+
+      .compare-features li:last-child {
+        border-bottom: none;
+      }
+
+      .compare-features .icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .them .compare-features .icon {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+      }
+
+      .us .compare-features .icon {
+        background: rgba(34, 197, 94, 0.2);
+        color: #22c55e;
+      }
+
+      /* Savings Banner */
+      .savings-banner {
+        background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+        border-radius: 16px;
+        padding: 30px;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .savings-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .savings-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+      }
+
+      .savings-title {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 5px;
       }
 
       .savings-amount {
-        font-size: 4.5rem;
+        font-size: 2.8rem;
         font-weight: 800;
         line-height: 1;
-        margin-bottom: 15px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .savings-note {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        margin-bottom: 30px;
       }
 
       .savings-cta {
+        position: relative;
+        z-index: 1;
         display: inline-flex;
         align-items: center;
         gap: 10px;
         background: white;
         color: var(--primary);
-        padding: 16px 40px;
+        padding: 16px 32px;
         border-radius: 50px;
         font-weight: 700;
-        font-size: 1.05rem;
+        font-size: 1rem;
         text-decoration: none;
         transition: all 0.3s var(--ease-smooth);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
       }
 
       .savings-cta:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
       }
 
-      /* Agency Scenario */
-      .agency-scenario {
-        max-width: 900px;
-        margin: 60px auto 0;
-        background: var(--white);
-        padding: 40px;
-        border-radius: 16px;
-        border-left: 5px solid var(--primary);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      .agency-scenario.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-          opacity 0.6s ease 0.2s,
-          transform 0.6s ease 0.2s;
-      }
-
-      .agency-scenario-header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 20px;
-      }
-
-      .agency-scenario-icon {
-        font-size: 2rem;
-      }
-
-      .agency-scenario-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--dark);
-      }
-
-      .agency-scenario-text {
-        color: var(--gray);
-        line-height: 1.8;
-        margin-bottom: 25px;
-      }
-
-      .agency-scenario-text strong {
-        color: var(--dark);
-      }
-
-      .scenario-comparison {
+      /* Trust Points */
+      .trust-points {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-        margin-bottom: 25px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 900px;
+        margin: 0 auto;
       }
 
-      .scenario-box {
+      .trust-point {
         text-align: center;
-        padding: 20px;
+        padding: 20px 15px;
+        background: rgba(255,255,255,0.03);
         border-radius: 12px;
-        background: #f9fafb;
+        border: 1px solid rgba(255,255,255,0.05);
       }
 
-      .scenario-box-label {
-        font-size: 0.9rem;
-        color: var(--gray);
+      .trust-point-icon {
+        font-size: 1.8rem;
         margin-bottom: 10px;
       }
 
-      .scenario-box-value {
-        font-size: 2rem;
-        font-weight: 800;
+      .trust-point-text {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        font-weight: 500;
       }
 
-      .scenario-box.red .scenario-box-value {
-        color: #dc2626;
-      }
-
-      .scenario-box.green .scenario-box-value {
-        color: var(--primary);
-      }
-
-      .scenario-result {
-        text-align: center;
-        padding: 25px;
-        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        border-radius: 12px;
-      }
-
-      .scenario-result-text {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      /* Counter Animation */
-      .counter-value {
-        display: inline-block;
+      .trust-point-text strong {
+        display: block;
+        color: #fff;
+        margin-bottom: 3px;
       }
 
       /* Testimonials */
@@ -2298,49 +2179,85 @@
         .plan-card.popular {
           transform: scale(1);
         }
-        /* Comparison Section Mobile */
-        .comparison-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-
-        .comparison-card {
-          padding: 30px 25px;
-        }
-
-        .comparison-card.puregpl::before {
-          font-size: 0.7rem;
-          padding: 6px 18px;
+        /* Comparison Section Mobile - 2 columns grid */
+        .comparison {
+          padding: 45px 0;
         }
 
         .comparison-header h2 {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
+        }
+
+        .comparison-cards {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+
+        .compare-card {
+          padding: 20px 15px;
+        }
+
+        .compare-card.us::before {
+          font-size: 0.6rem;
+          padding: 4px 10px;
+          top: -10px;
+        }
+
+        .compare-card-title {
+          font-size: 0.85rem;
+        }
+
+        .compare-price-value {
+          font-size: 1.6rem;
+        }
+
+        .compare-price-note {
+          font-size: 0.7rem;
+        }
+
+        .compare-features li {
+          font-size: 0.75rem;
+          padding: 8px 0;
+          gap: 8px;
+        }
+
+        .compare-features .icon {
+          width: 18px;
+          height: 18px;
+          font-size: 0.65rem;
         }
 
         .savings-banner {
-          padding: 40px 25px;
+          flex-direction: column;
+          text-align: center;
+          padding: 25px 20px;
+          gap: 20px;
         }
 
         .savings-amount {
-          font-size: 3.5rem;
+          font-size: 2.2rem;
         }
 
         .savings-cta {
-          padding: 14px 30px;
-          font-size: 1rem;
+          padding: 14px 28px;
+          font-size: 0.9rem;
         }
 
-        .scenario-comparison {
-          grid-template-columns: 1fr;
-          gap: 15px;
+        .trust-points {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
         }
 
-        .agency-scenario {
-          padding: 30px 25px;
+        .trust-point {
+          padding: 15px 10px;
         }
 
-        .agency-scenario-title {
-          font-size: 1.2rem;
+        .trust-point-icon {
+          font-size: 1.4rem;
+        }
+
+        .trust-point-text {
+          font-size: 0.75rem;
         }
         .badges-grid {
           flex-direction: column;
@@ -3057,398 +2974,132 @@
       </div>
     </section>
 
-    <section class="trust-badges">
-      <div class="container">
-        <div class="badges-grid">
-          <div class="trust-item">
-            <span class="trust-icon">🔒</span>
-            <div>
-              <strong>256-bit SSL Secure</strong><br />
-              <small>100% Safe Payments</small>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon">⭐</span>
-            <div>
-              <strong>4.9/5 Rating</strong><br />
-              <small>12,450+ Reviews</small>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon">✅</span>
-            <div>
-              <strong>McAfee Secured</strong><br />
-              <small>Virus-Free Files</small>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon">💰</span>
-            <div>
-              <strong>30-Day Guarantee</strong><br />
-              <small>100% Money Back</small>
-            </div>
-          </div>
-          <div class="trust-item">
-            <span class="trust-icon">⚡</span>
-            <div>
-              <strong>Instant Access</strong><br />
-              <small>Download Immediately</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <div class="feature-grid">
-          <div class="feature-item">
-            <i>⚡</i>
-            <h4>Instant Delivery</h4>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Download immediately after purchase.
-            </p>
-          </div>
-          <div class="feature-item">
-            <i>🔄</i>
-            <h4>Daily Updates</h4>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Get the latest versions automatically.
-            </p>
-          </div>
-          <div class="feature-item">
-            <i>🛡️</i>
-            <h4>100% Secure</h4>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              McAfee Scanned & Virus Free files.
-            </p>
-          </div>
-          <div class="feature-item">
-            <i>💬</i>
-            <h4>Premium Support</h4>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Dedicated team to help you install.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="products-section container">
-      <div class="section-header">
-        <h2>Trending WordPress Products</h2>
-        <a
-          href="#"
-          style="color: var(--primary); text-decoration: none; font-weight: 600"
-          >View All Products →</a
-        >
-      </div>
-
-      <div class="grid">
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">96% OFF</span>
-            ELEMENTOR PRO
-          </div>
-          <div class="product-info">
-            <div class="category">Page Builder</div>
-            <div class="product-title">Elementor Pro Plugin</div>
-            <div class="price-row">
-              <span class="old-price">$59.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">92% OFF</span>
-            DIVI THEME
-          </div>
-          <div class="product-info">
-            <div class="category">WordPress Theme</div>
-            <div class="product-title">Divi Theme & Builder</div>
-            <div class="price-row">
-              <span class="old-price">$89.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">90% OFF</span>
-            WP ROCKET
-          </div>
-          <div class="product-info">
-            <div class="category">Performance</div>
-            <div class="product-title">WP Rocket Cache</div>
-            <div class="price-row">
-              <span class="old-price">$49.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">95% OFF</span>
-            YOAST SEO
-          </div>
-          <div class="product-info">
-            <div class="category">SEO Plugin</div>
-            <div class="product-title">Yoast SEO Premium</div>
-            <div class="price-row">
-              <span class="old-price">$99.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">94% OFF</span>
-            ACF PRO
-          </div>
-          <div class="product-info">
-            <div class="category">Custom Fields</div>
-            <div class="product-title">Advanced Custom Fields Pro</div>
-            <div class="price-row">
-              <span class="old-price">$49.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">88% OFF</span>
-            ASTRA PRO
-          </div>
-          <div class="product-info">
-            <div class="category">WordPress Theme</div>
-            <div class="product-title">Astra Pro Theme</div>
-            <div class="price-row">
-              <span class="old-price">$59.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">97% OFF</span>
-            WPML
-          </div>
-          <div class="product-info">
-            <div class="category">Translation</div>
-            <div class="product-title">WPML Multilingual CMS</div>
-            <div class="price-row">
-              <span class="old-price">$99.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <div class="product-img">
-            <span class="discount-tag">93% OFF</span>
-            SLIDER REVOLUTION
-          </div>
-          <div class="product-info">
-            <div class="category">Slider Plugin</div>
-            <div class="product-title">Slider Revolution</div>
-            <div class="price-row">
-              <span class="old-price">$29.00</span>
-              <span class="new-price">FREE</span>
-            </div>
-            <button class="product-btn">Get Instant Access →</button>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 50px">
-        <a
-          href="#"
-          class="btn btn-primary"
-          style="font-size: 1.1rem; padding: 15px 40px"
-        >
-          View All 20,000+ Products →
-        </a>
-      </div>
-    </section>
-
+    <!-- Section 5: Comparison - Redesigned -->
     <section class="comparison" id="comparison-section">
       <div class="container">
         <!-- Header -->
         <div class="comparison-header">
-          <h2>One Project or Entire Agency — The Math is Simple</h2>
-          <p>
-            See what agencies and freelancers spend buying tools individually
-            vs. PureGPL
-          </p>
+          <h2>Stop Overpaying for WordPress Tools</h2>
+          <p>See why 45,000+ freelancers switched to PureGPL</p>
         </div>
 
-        <!-- Comparison Grid -->
-        <div class="comparison-grid">
-          <!-- Traditional Way Card -->
-          <div class="comparison-card traditional">
-            <div class="comparison-card-header">
-              <span class="comparison-emoji">😰</span>
-              <h3 class="comparison-card-title">Traditional Way</h3>
-              <p class="comparison-card-subtitle">
-                Buying plugins individually
-              </p>
-            </div>
-
-            <div class="price-breakdown">
-              <div class="price-item">
-                <span class="price-item-name">Elementor Pro</span>
-                <span class="price-item-value">$59/year</span>
-              </div>
-              <div class="price-item">
-                <span class="price-item-name">WP Rocket</span>
-                <span class="price-item-value">$59/year</span>
-              </div>
-              <div class="price-item">
-                <span class="price-item-name">Yoast SEO Premium</span>
-                <span class="price-item-value">$99/year</span>
-              </div>
-              <div class="price-item">
-                <span class="price-item-name">ACF Pro</span>
-                <span class="price-item-value">$49/year</span>
-              </div>
-              <div class="price-item">
-                <span class="price-item-name">Premium Theme</span>
-                <span class="price-item-value">$89/year</span>
-              </div>
-              <div class="price-item">
-                <span class="price-item-name">5-10 more plugins...</span>
-                <span class="price-item-value">$200+/year</span>
+        <!-- Side by Side Comparison Cards -->
+        <div class="comparison-cards">
+          <!-- THEM Card -->
+          <div class="compare-card them">
+            <div class="compare-card-header">
+              <h3 class="compare-card-title">❌ Buying Separately</h3>
+              <div class="compare-price">
+                <span class="compare-price-value">$555+</span>
+                <span class="compare-price-note">per year / per site</span>
               </div>
             </div>
-
-            <div class="price-total">
-              <div class="price-total-label">Your Annual Cost:</div>
-              <div class="price-total-value">
-                $<span class="counter-value" data-target="555">0</span>+
-              </div>
-              <div class="price-total-note">For just ONE website!</div>
-            </div>
+            <ul class="compare-features">
+              <li>
+                <span class="icon">✗</span>
+                <span>Pay for each plugin separately</span>
+              </li>
+              <li>
+                <span class="icon">✗</span>
+                <span>Multiple renewals to track</span>
+              </li>
+              <li>
+                <span class="icon">✗</span>
+                <span>Limited to 1 site per license</span>
+              </li>
+              <li>
+                <span class="icon">✗</span>
+                <span>Scattered support channels</span>
+              </li>
+              <li>
+                <span class="icon">✗</span>
+                <span>Expensive for client projects</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- PureGPL Way Card -->
-          <div class="comparison-card puregpl">
-            <div class="comparison-card-header">
-              <span class="comparison-emoji">🎉</span>
-              <h3 class="comparison-card-title">The PureGPL Way</h3>
-              <p class="comparison-card-subtitle">
-                Unlimited everything, one price
-              </p>
-            </div>
-
-            <div class="puregpl-features">
-              <div class="puregpl-features-title">✓ Everything Included:</div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>20,000+ Premium Themes & Plugins</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Unlimited Downloads</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Regular Updates</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Use on Unlimited Websites</span>
-              </div>
-              <div class="feature-item">
-                <span class="check">✓</span>
-                <span>Premium Support</span>
+          <!-- US Card -->
+          <div class="compare-card us">
+            <div class="compare-card-header">
+              <h3 class="compare-card-title">✓ PureGPL Membership</h3>
+              <div class="compare-price">
+                <span class="compare-price-value">₹912</span>
+                <span class="compare-price-note">per month / unlimited sites</span>
               </div>
             </div>
-
-            <div class="price-total">
-              <div class="price-total-label">Your Annual Cost:</div>
-              <div class="price-total-value">
-                $<span class="counter-value" data-target="99">0</span>
-              </div>
-              <div class="price-total-note">For UNLIMITED websites!</div>
-            </div>
+            <ul class="compare-features">
+              <li>
+                <span class="icon">✓</span>
+                <span>20,000+ products included</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>One simple subscription</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Use on unlimited websites</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>24/7 dedicated support</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Perfect for agencies</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>100% Malware-Free</span>
+              </li>
+              <li>
+                <span class="icon">✓</span>
+                <span>Lifetime Free Updates</span>
+              </li>
+            </ul>
           </div>
         </div>
 
         <!-- Savings Banner -->
         <div class="savings-banner">
-          <div class="savings-banner-content">
-            <div class="savings-label">You Save</div>
-            <div class="savings-amount">
-              $<span class="counter-value" data-target="456">0</span>+
-            </div>
-            <div class="savings-note">
-              every single year (and that's being conservative!)
-            </div>
-            <a href="#" class="savings-cta">
-              Start Saving Now
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+          <div class="savings-content">
+            <div class="savings-title">Your Annual Savings</div>
+            <div class="savings-amount">₹35,000+</div>
           </div>
+          <a href="#" class="savings-cta">
+            Start Saving Now →
+          </a>
         </div>
 
-        <!-- Agency Scenario -->
-        <div class="agency-scenario">
-          <div class="agency-scenario-header">
-            <span class="agency-scenario-icon">💡</span>
-            <h4 class="agency-scenario-title">Real Agency Scenario</h4>
-          </div>
-          <p class="agency-scenario-text">
-            <strong>Sarah runs a WordPress agency</strong> building 10 client
-            websites per year. Each site needs: Elementor Pro ($59), WP Rocket
-            ($59), Yoast SEO ($99), ACF Pro ($49), security plugin ($79), backup
-            plugin ($49), and a premium theme ($89).
-          </p>
-          <div class="scenario-comparison">
-            <div class="scenario-box red">
-              <div class="scenario-box-label">Traditional Cost (10 sites):</div>
-              <div class="scenario-box-value">
-                $<span class="counter-value" data-target="4830">0</span>/year
-              </div>
-            </div>
-            <div class="scenario-box green">
-              <div class="scenario-box-label">With PureGPL:</div>
-              <div class="scenario-box-value">
-                $<span class="counter-value" data-target="99">0</span>/year
-              </div>
+        <!-- Trust Points -->
+        <div class="trust-points">
+          <div class="trust-point">
+            <div class="trust-point-icon">🔒</div>
+            <div class="trust-point-text">
+              <strong>100% Legal</strong>
+              GPL Licensed
             </div>
           </div>
-          <div class="scenario-result">
-            <span class="scenario-result-text">
-              Sarah saves $<span class="counter-value" data-target="4731"
-                >0</span
-              >
-              every year 🎯
-            </span>
+          <div class="trust-point">
+            <div class="trust-point-icon">⚡</div>
+            <div class="trust-point-text">
+              <strong>Instant Access</strong>
+              Download Now
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">🔄</div>
+            <div class="trust-point-text">
+              <strong>Daily Updates</strong>
+              Always Fresh
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">💯</div>
+            <div class="trust-point-text">
+              <strong>7 Days Money Back</strong>
+              Guarantee
+            </div>
           </div>
         </div>
       </div>
@@ -4047,79 +3698,52 @@
       // 5. COMPARISON SECTION ANIMATIONS
       // ============================================
 
-      // Counter animation for comparison section
-      function animateComparisonCounter(element) {
-        const target = parseInt(element.getAttribute("data-target"));
-        const duration = 1500; // 1.5 seconds
-        const startTime = performance.now();
-
-        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-
-        const updateCounter = (currentTime) => {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const easedProgress = easeOutQuart(progress);
-          const current = Math.floor(target * easedProgress);
-
-          element.textContent = current.toLocaleString();
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-          } else {
-            element.textContent = target.toLocaleString();
-          }
-        };
-
-        requestAnimationFrame(updateCounter);
-      }
-
-      // Intersection Observer for comparison section
+      // Simple fade-in animation for comparison cards on scroll
       const comparisonObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Animate cards
-              const cards = entry.target.querySelectorAll(".comparison-card");
+              // Add animation class to cards
+              const cards = entry.target.querySelectorAll(".compare-card");
               cards.forEach((card, index) => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(20px)";
                 setTimeout(() => {
-                  card.classList.add("animate-in");
-                }, index * 200);
+                  card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                  card.style.opacity = "1";
+                  card.style.transform = "translateY(0)";
+                }, index * 150);
               });
 
               // Animate savings banner
-              const savingsBanner =
-                entry.target.querySelector(".savings-banner");
+              const savingsBanner = entry.target.querySelector(".savings-banner");
               if (savingsBanner) {
+                savingsBanner.style.opacity = "0";
+                savingsBanner.style.transform = "translateY(20px)";
                 setTimeout(() => {
-                  savingsBanner.classList.add("animate-in");
-                }, 500);
+                  savingsBanner.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                  savingsBanner.style.opacity = "1";
+                  savingsBanner.style.transform = "translateY(0)";
+                }, 400);
               }
 
-              // Animate agency scenario
-              const agencyScenario =
-                entry.target.querySelector(".agency-scenario");
-              if (agencyScenario) {
+              // Animate trust points
+              const trustPoints = entry.target.querySelectorAll(".trust-point");
+              trustPoints.forEach((point, index) => {
+                point.style.opacity = "0";
+                point.style.transform = "translateY(15px)";
                 setTimeout(() => {
-                  agencyScenario.classList.add("animate-in");
-                }, 700);
-              }
-
-              // Animate counters
-              const counters = entry.target.querySelectorAll(".counter-value");
-              counters.forEach((counter) => {
-                if (counter.getAttribute("data-animated") !== "true") {
-                  counter.setAttribute("data-animated", "true");
-                  setTimeout(() => {
-                    animateComparisonCounter(counter);
-                  }, 800);
-                }
+                  point.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+                  point.style.opacity = "1";
+                  point.style.transform = "translateY(0)";
+                }, 600 + index * 100);
               });
 
               comparisonObserver.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.2 },
+        { threshold: 0.15 }
       );
 
       // Observe comparison section
