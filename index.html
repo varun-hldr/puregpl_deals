@@ -787,24 +787,30 @@
       /* ========== BEST SELLERS SECTION ========== */
       .best-sellers {
         background: #f8f9fa;
-        padding: 80px 0;
+        padding: 60px 0;
       }
 
       .best-sellers-header {
         text-align: center;
         margin-bottom: 50px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .best-sellers-header h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 12px;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #1a202c;
+        margin-bottom: 16px;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
       }
 
       .best-sellers-header p {
-        font-size: 1.1rem;
-        color: var(--gray);
+        font-size: 1.05rem;
+        color: #64748b;
+        line-height: 1.6;
       }
 
       .products-grid {
@@ -835,7 +841,7 @@
 
       .product-image {
         position: relative;
-        height: 220px;
+        aspect-ratio: 16 / 9;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         display: flex;
         align-items: center;
@@ -875,19 +881,6 @@
         }
       }
 
-      .discount-badge {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: #10b981;
-        color: var(--white);
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        font-weight: 700;
-        z-index: 2;
-      }
-
       .product-info {
         padding: 20px;
       }
@@ -898,32 +891,6 @@
         color: var(--dark);
         margin-bottom: 12px;
         line-height: 1.4;
-      }
-
-      .product-rating {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-
-      .stars {
-        display: flex;
-        gap: 2px;
-      }
-
-      .star {
-        color: #fbbf24;
-        font-size: 0.9rem;
-      }
-
-      .star.empty {
-        color: #d1d5db;
-      }
-
-      .rating-count {
-        font-size: 0.85rem;
-        color: var(--gray);
       }
 
       .product-pricing {
@@ -1763,24 +1730,26 @@
 
         /* Best Sellers Mobile */
         .best-sellers {
-          padding: 60px 0;
+          padding: 30px 0;
+        }
+
+        .best-sellers-header {
+          margin-bottom: 30px;
+          padding: 0 10px;
         }
 
         .best-sellers-header h2 {
-          font-size: 2rem;
+          font-size: 1.6rem;
+          margin-bottom: 12px;
         }
 
         .best-sellers-header p {
-          font-size: 1rem;
+          font-size: 0.95rem;
         }
 
         .products-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 16px;
-        }
-
-        .product-image {
-          height: 160px;
         }
 
         .product-info {
@@ -1790,22 +1759,6 @@
         .product-name {
           font-size: 0.95rem;
           margin-bottom: 10px;
-        }
-
-        .product-rating {
-          margin-bottom: 10px;
-        }
-
-        .stars {
-          gap: 1px;
-        }
-
-        .star {
-          font-size: 0.8rem;
-        }
-
-        .rating-count {
-          font-size: 0.75rem;
         }
 
         .product-pricing {
@@ -2148,280 +2101,192 @@
     <section class="best-sellers">
       <div class="container">
         <div class="best-sellers-header">
-          <h2>🏆 Best Selling Products</h2>
-          <p>Premium WordPress themes & plugins at unbeatable prices</p>
+          <h2>Featured WordPress Products</h2>
+          <p>Hand-picked selection of the most popular themes and plugins</p>
         </div>
 
         <!-- Products Grid -->
         <div class="products-grid">
           <!-- Product 1: Elementor Pro -->
-          <div class="product-card" data-category="plugins">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">95% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/667eea/ffffff?text=Elementor+Pro"
+                src="https://via.placeholder.com/320x180/667eea/ffffff?text=Elementor+Pro"
                 alt="Elementor Pro"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">Elementor Pro</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(2,840)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹299</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 2: Astra Pro Theme -->
-          <div class="product-card" data-category="themes">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">95% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/764ba2/ffffff?text=Astra+Pro"
+                src="https://via.placeholder.com/320x180/764ba2/ffffff?text=Astra+Pro"
                 alt="Astra Pro"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">Astra Pro Theme</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(1,920)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹299</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 3: WP Rocket -->
-          <div class="product-card" data-category="plugins">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">94% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/f093fb/ffffff?text=WP+Rocket"
+                src="https://via.placeholder.com/320x180/f093fb/ffffff?text=WP+Rocket"
                 alt="WP Rocket"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">WP Rocket</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(3,150)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$49</span>
                 <span class="puregpl-price">₹249</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 4: Yoast SEO Premium -->
-          <div class="product-card" data-category="plugins">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">96% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/4facfe/ffffff?text=Yoast+SEO"
+                src="https://via.placeholder.com/320x180/4facfe/ffffff?text=Yoast+SEO"
                 alt="Yoast SEO Premium"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">Yoast SEO Premium</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(2,460)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$99</span>
                 <span class="puregpl-price">₹299</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 5: WooCommerce Subscriptions -->
-          <div class="product-card" data-category="woocommerce">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">97% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/00f2fe/ffffff?text=WooCommerce"
+                src="https://via.placeholder.com/320x180/00f2fe/ffffff?text=WooCommerce"
                 alt="WooCommerce Subscriptions"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">WooCommerce Subscriptions</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(1,780)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$199</span>
                 <span class="puregpl-price">₹499</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 6: Slider Revolution -->
-          <div class="product-card" data-category="plugins">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">93% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/43e97b/ffffff?text=Slider+Revolution"
+                src="https://via.placeholder.com/320x180/43e97b/ffffff?text=Slider+Revolution"
                 alt="Slider Revolution"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">Slider Revolution</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(2,290)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$29</span>
                 <span class="puregpl-price">₹199</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 7: Divi Builder Pro -->
-          <div class="product-card" data-category="themes">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">96% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/fa709a/ffffff?text=Divi+Builder"
+                src="https://via.placeholder.com/320x180/fa709a/ffffff?text=Divi+Builder"
                 alt="Divi Builder Pro"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">Divi Builder Pro</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(3,680)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$89</span>
                 <span class="puregpl-price">₹299</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
 
           <!-- Product 8: WPBakery Page Builder -->
-          <div class="product-card" data-category="plugins">
+          <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
-              <div class="discount-badge">95% OFF</div>
               <img
-                src="https://via.placeholder.com/300x220/fee140/ffffff?text=WPBakery"
+                src="https://via.placeholder.com/320x180/fee140/ffffff?text=WPBakery"
                 alt="WPBakery Page Builder"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <h3 class="product-name">WPBakery Page Builder</h3>
-              <div class="product-rating">
-                <div class="stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <span class="rating-count">(2,920)</span>
-              </div>
               <div class="product-pricing">
                 <span class="original-price">$64</span>
                 <span class="puregpl-price">₹299</span>
               </div>
               <button class="add-to-cart-btn">
                 <span class="btn-spinner"></span>
-                <span class="btn-text">Add to Cart</span>
+                <span class="btn-text">Buy Now</span>
               </button>
             </div>
           </div>
