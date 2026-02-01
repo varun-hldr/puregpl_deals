@@ -807,37 +807,6 @@
         color: var(--gray);
       }
 
-      .filter-tabs {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        margin-bottom: 40px;
-        flex-wrap: wrap;
-      }
-
-      .filter-tab {
-        padding: 12px 28px;
-        background: var(--white);
-        border: 2px solid var(--border);
-        border-radius: 50px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: var(--gray-dark);
-        cursor: pointer;
-        transition: all 0.3s var(--ease-smooth);
-      }
-
-      .filter-tab:hover {
-        border-color: var(--primary);
-        color: var(--primary);
-      }
-
-      .filter-tab.active {
-        background: var(--primary);
-        border-color: var(--primary);
-        color: var(--white);
-      }
-
       .products-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -897,7 +866,8 @@
       }
 
       @keyframes badgePulse {
-        0%, 100% {
+        0%,
+        100% {
           box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
         }
         50% {
@@ -1804,15 +1774,6 @@
           font-size: 1rem;
         }
 
-        .filter-tabs {
-          gap: 10px;
-        }
-
-        .filter-tab {
-          padding: 10px 20px;
-          font-size: 0.85rem;
-        }
-
         .products-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 16px;
@@ -2126,13 +2087,13 @@
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <!-- <div class="logo-item">
             <img
               src="https://i.ibb.co/8gynMFkz/Slide-Serve.jpg"
               alt="SlideServe"
               loading="lazy"
             />
-          </div>
+          </div> -->
           <div class="logo-item">
             <img
               src="https://i.ibb.co/HDbJRxZC/Techcrunch.webp"
@@ -2165,13 +2126,13 @@
               loading="lazy"
             />
           </div>
-          <div class="logo-item">
+          <!-- <div class="logo-item">
             <img
               src="https://i.ibb.co/8gynMFkz/Slide-Serve.jpg"
               alt="SlideServe"
               loading="lazy"
             />
-          </div>
+          </div> -->
           <div class="logo-item">
             <img
               src="https://i.ibb.co/HDbJRxZC/Techcrunch.webp"
@@ -2191,14 +2152,6 @@
           <p>Premium WordPress themes & plugins at unbeatable prices</p>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All Products</button>
-          <button class="filter-tab" data-filter="themes">Themes</button>
-          <button class="filter-tab" data-filter="plugins">Plugins</button>
-          <button class="filter-tab" data-filter="woocommerce">WooCommerce</button>
-        </div>
-
         <!-- Products Grid -->
         <div class="products-grid">
           <!-- Product 1: Elementor Pro -->
@@ -2206,7 +2159,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">95% OFF</div>
-              <img src="https://via.placeholder.com/300x220/667eea/ffffff?text=Elementor+Pro" alt="Elementor Pro" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/667eea/ffffff?text=Elementor+Pro"
+                alt="Elementor Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Elementor Pro</h3>
@@ -2236,7 +2193,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">95% OFF</div>
-              <img src="https://via.placeholder.com/300x220/764ba2/ffffff?text=Astra+Pro" alt="Astra Pro" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/764ba2/ffffff?text=Astra+Pro"
+                alt="Astra Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Astra Pro Theme</h3>
@@ -2266,7 +2227,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">94% OFF</div>
-              <img src="https://via.placeholder.com/300x220/f093fb/ffffff?text=WP+Rocket" alt="WP Rocket" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/f093fb/ffffff?text=WP+Rocket"
+                alt="WP Rocket"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">WP Rocket</h3>
@@ -2296,7 +2261,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">96% OFF</div>
-              <img src="https://via.placeholder.com/300x220/4facfe/ffffff?text=Yoast+SEO" alt="Yoast SEO Premium" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/4facfe/ffffff?text=Yoast+SEO"
+                alt="Yoast SEO Premium"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Yoast SEO Premium</h3>
@@ -2326,7 +2295,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">97% OFF</div>
-              <img src="https://via.placeholder.com/300x220/00f2fe/ffffff?text=WooCommerce" alt="WooCommerce Subscriptions" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/00f2fe/ffffff?text=WooCommerce"
+                alt="WooCommerce Subscriptions"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">WooCommerce Subscriptions</h3>
@@ -2356,7 +2329,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">93% OFF</div>
-              <img src="https://via.placeholder.com/300x220/43e97b/ffffff?text=Slider+Revolution" alt="Slider Revolution" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/43e97b/ffffff?text=Slider+Revolution"
+                alt="Slider Revolution"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Slider Revolution</h3>
@@ -2386,7 +2363,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">96% OFF</div>
-              <img src="https://via.placeholder.com/300x220/fa709a/ffffff?text=Divi+Builder" alt="Divi Builder Pro" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/fa709a/ffffff?text=Divi+Builder"
+                alt="Divi Builder Pro"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">Divi Builder Pro</h3>
@@ -2416,7 +2397,11 @@
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <div class="discount-badge">95% OFF</div>
-              <img src="https://via.placeholder.com/300x220/fee140/ffffff?text=WPBakery" alt="WPBakery Page Builder" loading="lazy" />
+              <img
+                src="https://via.placeholder.com/300x220/fee140/ffffff?text=WPBakery"
+                alt="WPBakery Page Builder"
+                loading="lazy"
+              />
             </div>
             <div class="product-info">
               <h3 class="product-name">WPBakery Page Builder</h3>
@@ -3679,35 +3664,7 @@
       }
 
       // ============================================
-      // 4. BEST SELLERS FILTER FUNCTIONALITY
-      // ============================================
-      const filterTabs = document.querySelectorAll(".filter-tab");
-      const productCards = document.querySelectorAll(".product-card");
-
-      filterTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const filter = tab.getAttribute("data-filter");
-
-          // Update active tab
-          filterTabs.forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-
-          // Filter products with fade animation
-          productCards.forEach((card) => {
-            const category = card.getAttribute("data-category");
-
-            if (filter === "all" || category === filter) {
-              card.classList.remove("hidden");
-              card.style.animation = "fadeInUp 0.5s ease-out";
-            } else {
-              card.classList.add("hidden");
-            }
-          });
-        });
-      });
-
-      // ============================================
-      // 5. ADD TO CART BUTTON ANIMATION
+      // 4. ADD TO CART BUTTON ANIMATION
       // ============================================
       const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
 
