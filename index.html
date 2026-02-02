@@ -1246,71 +1246,234 @@
         display: block;
       }
 
-      /* Pricing */
+      /* Pricing Section - New Design */
       .pricing {
-        padding: 80px 0;
+        padding: 60px 0;
         text-align: center;
+        background: #0f172a;
+      }
+
+      .pricing .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .pricing-header {
+        margin-bottom: 50px;
+      }
+
+      .pricing-header h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      .pricing-header h2 .highlight {
+        color: #2dd4bf;
+      }
+
+      .pricing-header p {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .pricing-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 24px;
         margin-top: 40px;
+        align-items: start;
       }
 
       .plan-card {
-        background: var(--white);
-        padding: 40px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
+        background: #1e293b;
+        padding: 40px 30px;
+        border-radius: 16px;
+        border: 1px solid #334155;
         position: relative;
+        text-align: left;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
       }
 
       .plan-card.popular {
-        border: 2px solid var(--primary);
-        transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        border: 2px solid #2dd4bf;
+        background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+        transform: scale(1);
+        box-shadow: 0 0 30px rgba(45, 212, 191, 0.15);
+      }
+
+      .plan-card.popular:hover {
+        transform: translateY(-5px);
       }
 
       .plan-tag {
         position: absolute;
-        top: -12px;
+        top: -14px;
         left: 50%;
         transform: translateX(-50%);
-        background: var(--primary);
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
+        background: #2dd4bf;
+        color: #0f172a;
+        padding: 8px 20px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+      }
+
+      .plan-name {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .plan-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+      }
+
+      .plan-subtitle.pink {
+        color: #f472b6;
+      }
+
+      .plan-subtitle.yellow {
+        color: #fbbf24;
+      }
+
+      .plan-subtitle.cyan {
+        color: #2dd4bf;
+      }
+
+      .plan-original-price {
+        font-size: 0.95rem;
+        color: #64748b;
+        text-decoration: line-through;
+        margin-bottom: 5px;
       }
 
       .plan-price {
-        font-size: 2.5rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 3rem;
         font-weight: 800;
-        margin: 20px 0;
-        color: var(--dark);
+        color: #fff;
+        margin-bottom: 5px;
+        line-height: 1;
+      }
+
+      .plan-price.highlight {
+        color: #2dd4bf;
+      }
+
+      .plan-billing {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 25px;
       }
 
       .plan-features {
         list-style: none;
-        margin: 30px 0;
+        margin: 0 0 30px 0;
+        padding: 0;
         text-align: left;
       }
 
       .plan-features li {
-        margin-bottom: 12px;
-        color: var(--gray);
+        margin-bottom: 14px;
+        color: #e2e8f0;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
+        font-size: 0.95rem;
       }
 
       .plan-features li::before {
-        content: "✓";
-        color: var(--primary);
-        font-weight: bold;
+        content: none;
+      }
+
+      .plan-features li .icon {
+        font-size: 1rem;
+        flex-shrink: 0;
+        width: 20px;
+        text-align: center;
+      }
+
+      .plan-features li .icon.check {
+        color: #2dd4bf;
+      }
+
+      .plan-features li .icon.bolt {
+        color: #fbbf24;
+      }
+
+      .plan-features li .icon.trophy {
+        color: #fbbf24;
+      }
+
+      .plan-features li.disabled {
+        color: #64748b;
+      }
+
+      .plan-features li.disabled .icon {
+        color: #64748b;
+      }
+
+      .plan-btn {
+        display: block;
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .plan-btn.outline {
+        background: #f8fafc;
+        color: #0f172a;
+        border: 2px solid #f8fafc;
+      }
+
+      .plan-btn.outline:hover {
+        background: #e2e8f0;
+        border-color: #e2e8f0;
+      }
+
+      .plan-btn.primary {
+        background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
+        color: #0f172a;
+        border: none;
+        box-shadow: 0 4px 15px rgba(45, 212, 191, 0.3);
+      }
+
+      .plan-btn.primary:hover {
+        background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 100%);
+        box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .pricing-footer {
+        margin-top: 40px;
+        color: #94a3b8;
+        font-size: 0.95rem;
       }
 
       /* Footer */
@@ -1392,15 +1555,23 @@
       }
 
       .comparison::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background:
-          radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.1) 0%, transparent 50%);
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(16, 185, 129, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(239, 68, 68, 0.1) 0%,
+            transparent 50%
+          );
         pointer-events: none;
       }
 
@@ -1447,13 +1618,17 @@
       }
 
       .compare-card.us {
-        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.05) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(16, 185, 129, 0.15) 0%,
+          rgba(16, 185, 129, 0.05) 100%
+        );
         border: 2px solid var(--primary);
         box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
       }
 
       .compare-card.us::before {
-        content: 'BEST VALUE';
+        content: "BEST VALUE";
         position: absolute;
         top: -12px;
         left: 50%;
@@ -1471,7 +1646,7 @@
         text-align: center;
         margin-bottom: 25px;
         padding-bottom: 20px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .compare-card.us .compare-card-header {
@@ -1531,7 +1706,7 @@
         padding: 12px 0;
         font-size: 0.9rem;
         color: #cbd5e1;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
 
       .compare-features li:last-child {
@@ -1559,6 +1734,16 @@
         color: #22c55e;
       }
 
+      .compare-features li.disabled {
+        color: #64748b;
+      }
+
+      .compare-features li.disabled .icon {
+        background: transparent;
+        color: #64748b;
+        font-weight: bold;
+      }
+
       /* Savings Banner */
       .savings-banner {
         background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
@@ -1575,7 +1760,7 @@
       }
 
       .savings-banner::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -1637,9 +1822,9 @@
       .trust-point {
         text-align: center;
         padding: 20px 15px;
-        background: rgba(255,255,255,0.03);
+        background: rgba(255, 255, 255, 0.03);
         border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.05);
+        border: 1px solid rgba(255, 255, 255, 0.05);
       }
 
       .trust-point-icon {
@@ -1660,70 +1845,237 @@
       }
 
       /* Testimonials */
+      /* Testimonials Section - Trustpilot Reviews */
       .testimonials {
-        padding: 80px 0;
-        background: #f9fafb;
+        padding: 60px 0;
+        background: #0f172a;
+        overflow: hidden;
       }
 
-      .testimonials h2 {
+      .testimonials-header {
         text-align: center;
         margin-bottom: 50px;
+      }
+
+      .testimonials-header h2 {
+        font-family: "Poppins", sans-serif;
         font-size: 2.5rem;
-      }
-
-      .testimonial-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-      }
-
-      .testimonial-card {
-        background: var(--white);
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      }
-
-      .stars {
-        color: #fbbf24;
+        font-weight: 800;
+        color: #fff;
         margin-bottom: 15px;
-        font-size: 1.2rem;
       }
 
-      .testimonial-text {
-        color: var(--gray);
-        line-height: 1.8;
-        margin-bottom: 20px;
-        font-style: italic;
+      .testimonials-header h2 .highlight {
+        color: #2dd4bf;
       }
 
-      .testimonial-author {
-        display: flex;
+      .testimonials-header p {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      /* Trustpilot Badge */
+      .trustpilot-badge {
+        display: inline-flex;
         align-items: center;
         gap: 15px;
+        background: #1e293b;
+        padding: 15px 30px;
+        border-radius: 12px;
+        border: 1px solid #334155;
       }
 
-      .author-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--primary);
-        color: var(--white);
+      .trustpilot-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .trustpilot-logo svg {
+        height: 24px;
+        width: auto;
+      }
+
+      .trustpilot-logo span {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .trustpilot-stars {
+        display: flex;
+        gap: 3px;
+      }
+
+      .trustpilot-stars .star {
+        width: 28px;
+        height: 28px;
+        background: #00b67a;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
-        font-size: 1.2rem;
+        color: #fff;
+        font-size: 0.9rem;
       }
 
-      .author-info h5 {
-        margin-bottom: 3px;
-        color: var(--dark);
+      .trustpilot-rating {
+        color: #fff;
+        font-size: 0.95rem;
       }
 
-      .author-info p {
-        font-size: 0.85rem;
-        color: var(--gray);
+      .trustpilot-rating strong {
+        color: #2dd4bf;
+      }
+
+      /* Reviews Grid */
+      .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+
+      .review-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #1e293b;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .review-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .review-card:hover img {
+        transform: scale(1.02);
+      }
+
+      /* Testimonials CTA Box */
+      .testimonials-cta {
+        margin-top: 50px;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        border: 1px solid #334155;
+        border-radius: 20px;
+        padding: 40px;
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-box .cta-icon {
+        font-size: 3rem;
+        flex-shrink: 0;
+      }
+
+      .cta-box .cta-content h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+      }
+
+      .cta-box .cta-content p {
+        color: #94a3b8;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .cta-box .cta-content p strong {
+        color: #2dd4bf;
+      }
+
+      .cta-buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn-try {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
+        color: #0f172a;
+        padding: 14px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(45, 212, 191, 0.3);
+      }
+
+      .btn-try:hover {
+        background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+      }
+
+      .btn-try .btn-subtext {
+        font-size: 0.75rem;
+        font-weight: 500;
+        opacity: 0.8;
+        margin-top: 3px;
+      }
+
+      .btn-reviews {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+
+      .btn-reviews:hover {
+        color: #2dd4bf;
+      }
+
+      /* Social Proof Stats */
+      .social-proof-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 50px;
+        padding-top: 40px;
+        border-top: 1px solid #334155;
+      }
+
+      .proof-stat {
+        text-align: center;
+      }
+
+      .proof-stat .number {
+        font-family: "Poppins", sans-serif;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #2dd4bf;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .proof-stat .label {
+        color: #94a3b8;
+        font-size: 0.95rem;
       }
 
       /* FAQ */
@@ -2179,9 +2531,85 @@
         .plan-card.popular {
           transform: scale(1);
         }
+
+        /* Pricing Section Mobile */
+        .pricing {
+          padding: 30px 0;
+        }
+
+        .pricing-header h2 {
+          font-size: 1.75rem;
+        }
+
+        .pricing-header p {
+          font-size: 1rem;
+        }
+
+        .pricing-grid {
+          gap: 20px;
+        }
+
+        .plan-card {
+          padding: 30px 20px;
+        }
+
+        .plan-price {
+          font-size: 2.5rem;
+        }
+
+        .plan-tag {
+          font-size: 0.7rem;
+          padding: 6px 14px;
+        }
+
+        /* Testimonials Section Mobile */
+        .testimonials {
+          padding: 50px 0;
+        }
+
+        .testimonials-header h2 {
+          font-size: 1.75rem;
+        }
+
+        .testimonials-header p {
+          font-size: 1rem;
+        }
+
+        .reviews-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+
+        .cta-box {
+          flex-direction: column;
+          text-align: center;
+          padding: 30px 20px;
+        }
+
+        .cta-box .cta-content h3 {
+          font-size: 1.25rem;
+        }
+
+        .cta-buttons {
+          justify-content: center;
+        }
+
+        .social-proof-stats {
+          flex-wrap: wrap;
+          gap: 25px;
+        }
+
+        .proof-stat .number {
+          font-size: 1.6rem;
+        }
+
+        .proof-stat .label {
+          font-size: 0.8rem;
+        }
+
         /* Comparison Section Mobile - 2 columns grid */
         .comparison {
-          padding: 45px 0;
+          padding: 30px 0;
         }
 
         .comparison-header h2 {
@@ -2423,7 +2851,10 @@
         <!-- Limited Time Badge -->
         <div class="hero-badge">
           <span class="pulse-dot"></span>
-          <span>🔥 LIMITED TIME OFFER - <span id="spots-badge">100</span> Spots Left</span>
+          <span
+            >🔥 LIMITED TIME OFFER - <span id="spots-badge">100</span> Spots
+            Left</span
+          >
         </div>
 
         <!-- Main Headline -->
@@ -2454,7 +2885,11 @@
         <!-- Urgency Strip -->
         <div class="hero-urgency">
           <span class="icon">⏰</span>
-          <span>Only <strong><span id="spots-urgency">100</span> spots</strong> remaining at this price!</span>
+          <span
+            >Only
+            <strong><span id="spots-urgency">100</span> spots</strong> remaining
+            at this price!</span
+          >
         </div>
 
         <!-- Stats Counter -->
@@ -3024,37 +3459,37 @@
               <h3 class="compare-card-title">✓ PureGPL Membership</h3>
               <div class="compare-price">
                 <span class="compare-price-value">₹912</span>
-                <span class="compare-price-note">per month / unlimited sites</span>
+                <span class="compare-price-note">Billed every month.</span>
               </div>
             </div>
             <ul class="compare-features">
               <li>
                 <span class="icon">✓</span>
-                <span>20,000+ products included</span>
+                <span>Access to 20,000+ products</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span>One simple subscription</span>
+                <span>30 Downloads per day</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span>Use on unlimited websites</span>
+                <span>Unlimited Domains</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span>24/7 dedicated support</span>
+                <span>Instant Download</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span>Perfect for agencies</span>
+                <span>Standard Support</span>
               </li>
               <li>
                 <span class="icon">✓</span>
-                <span>100% Malware-Free</span>
+                <span>Themes, Plugins and Extras *</span>
               </li>
-              <li>
-                <span class="icon">✓</span>
-                <span>Lifetime Free Updates</span>
+              <li class="disabled">
+                <span class="icon">—</span>
+                <span>No Lifetime Updates</span>
               </li>
             </ul>
           </div>
@@ -3066,9 +3501,7 @@
             <div class="savings-title">Your Annual Savings</div>
             <div class="savings-amount">₹35,000+</div>
           </div>
-          <a href="#" class="savings-cta">
-            Start Saving Now →
-          </a>
+          <a href="#" class="savings-cta"> Start Saving Now → </a>
         </div>
 
         <!-- Trust Points -->
@@ -3105,198 +3538,251 @@
       </div>
     </section>
 
-    <section class="pricing" style="background-color: #f3f4f6">
+    <!-- Section 8: Pricing - Redesigned -->
+    <section class="pricing" id="pricing-section">
       <div class="container">
-        <h2>Choose Your Plan & Start Saving</h2>
-        <p style="color: var(--gray); margin-top: 10px; font-size: 1.1rem">
-          Stop paying $49-$299 per product. Get unlimited access to everything
-          for one low price.
-        </p>
+        <!-- Header -->
+        <div class="pricing-header">
+          <h2>
+            <span class="highlight">Start Building</span> Limitless Websites
+            Today
+          </h2>
+          <p>
+            Choose the plan that best fits your needs. Start with a month, or go
+            Annual for the best value.
+          </p>
+        </div>
 
+        <!-- Pricing Cards -->
         <div class="pricing-grid">
+          <!-- Monthly Starter -->
           <div class="plan-card">
-            <h3>Monthly</h3>
-            <div class="plan-price">
-              $16
-              <span
-                style="font-size: 1rem; color: var(--gray); font-weight: normal"
-                >/mo</span
-              >
-            </div>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Perfect for testing waters.
-            </p>
+            <h3 class="plan-name">Monthly Starter</h3>
+            <p class="plan-subtitle pink">Perfect for testing the waters</p>
+
+            <div class="plan-price">₹912</div>
+            <p class="plan-billing">Billed every month.</p>
+
             <ul class="plan-features">
-              <li>30 Downloads / Day</li>
-              <li>Access All 20,000+ Items</li>
-              <li>Regular Updates</li>
-              <li>Basic Support</li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>Access to 20,000+ products</span>
+              </li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>30 Downloads per day</span>
+              </li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>Unlimited Domains</span>
+              </li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>Instant Download</span>
+              </li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>Standard Support</span>
+              </li>
+              <li>
+                <span class="icon check">✓</span>
+                <span>Themes, Plugins and Extras *</span>
+              </li>
+              <li class="disabled">
+                <span class="icon">—</span>
+                <span>No Lifetime Updates</span>
+              </li>
             </ul>
-            <a href="#" class="btn btn-outline" style="width: 100%"
-              >Get Started</a
+
+            <a
+              href="https://puregpl.com/membership/"
+              class="plan-btn outline"
+              target="_blank"
+              >Choose Monthly</a
             >
           </div>
 
+          <!-- Annual Pro (Popular) -->
           <div class="plan-card popular">
-            <span class="plan-tag">MOST POPULAR</span>
-            <h3>Yearly</h3>
-            <div class="plan-price">
-              $99
-              <span
-                style="font-size: 1rem; color: var(--gray); font-weight: normal"
-                >/yr</span
-              >
-            </div>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Best value for freelancers.
+            <span class="plan-tag">BEST VALUE - SAVE 38%</span>
+            <h3 class="plan-name">Annual Pro</h3>
+            <p class="plan-subtitle yellow">
+              Recommended for Agencies & Freelancers
             </p>
+
+            <p class="plan-original-price">₹10947/year</p>
+            <div class="plan-price highlight">₹5644</div>
+            <p class="plan-billing">Billed Annually (Just ₹470/mo)</p>
+
             <ul class="plan-features">
-              <li>Unlimited Downloads</li>
-              <li>Priority Support</li>
-              <li>Early Access to New Items</li>
-              <li>API Access</li>
-              <li>Cancel Anytime</li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>Access to 20,000+ products</span>
+              </li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>35 Downloads per day</span>
+              </li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>Unlimited Domains</span>
+              </li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>Instant Download</span>
+              </li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>Priority Support</span>
+              </li>
+              <li>
+                <span class="icon bolt">⚡</span>
+                <span>Themes, Plugins and Extras *</span>
+              </li>
+              <li class="disabled">
+                <span class="icon">—</span>
+                <span>No Lifetime Updates</span>
+              </li>
             </ul>
-            <a href="#" class="btn btn-primary" style="width: 100%"
-              >Choose Yearly</a
+
+            <a
+              href="https://puregpl.com/membership/"
+              class="plan-btn primary"
+              target="_blank"
+              >Start Annual Plan</a
             >
           </div>
 
+          <!-- Lifetime Access -->
           <div class="plan-card">
-            <h3>Lifetime</h3>
-            <div class="plan-price">
-              $199
-              <span
-                style="font-size: 1rem; color: var(--gray); font-weight: normal"
-                >/once</span
-              >
-            </div>
-            <p style="font-size: 0.9rem; color: var(--gray)">
-              Pay once, use forever.
-            </p>
+            <h3 class="plan-name">Lifetime Access</h3>
+            <p class="plan-subtitle cyan">Pay once, use forever</p>
+
+            <div class="plan-price">₹11346</div>
+            <p class="plan-billing">One-Time Payment</p>
+
             <ul class="plan-features">
-              <li>Lifetime Access</li>
-              <li>Lifetime Updates</li>
-              <li>VIP Support</li>
-              <li>No Recurring Fees</li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>Access to 20,000+ products</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>30 Downloads per day</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>Unlimited Domains</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>Instant Download</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>Dedicated Support</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>Themes, Plugins and Extras *</span>
+              </li>
+              <li>
+                <span class="icon trophy">🏆</span>
+                <span>LIFETIME Access & Updates</span>
+              </li>
             </ul>
-            <a href="#" class="btn btn-outline" style="width: 100%"
-              >Get Lifetime</a
+
+            <a
+              href="https://puregpl.com/membership/"
+              class="plan-btn primary"
+              target="_blank"
+              >Get Lifetime Deal</a
             >
           </div>
         </div>
+
+        <!-- Footer Text -->
+        <p class="pricing-footer">
+          Experience worry-free purchasing with instant access and trusted
+          payment security.
+        </p>
       </div>
     </section>
 
-    <section class="testimonials">
+    <!-- Section 9: Testimonials - Customer Stories -->
+    <section class="testimonials" id="testimonials-section">
       <div class="container">
-        <h2>Trusted by 45,000+ Happy Customers</h2>
-        <p
-          style="
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-          "
-        >
-          See what our members are saying about PureGPL
-        </p>
+        <!-- Header -->
+        <div class="testimonials-header">
+          <h2><span class="highlight">What Our Members</span> Are Saying</h2>
+          <p>Real experiences from WordPress developers, agencies, and freelancers who use PureGPL every day.</p>
+        </div>
 
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "I've saved over $3,000 in my first year alone. As a freelance
-              developer, PureGPL has been a game-changer for my business. The
-              instant downloads and regular updates are fantastic!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">MJ</div>
-              <div class="author-info">
-                <h5>Michael Johnson</h5>
-                <p>Freelance Developer</p>
+        <!-- Reviews Grid - 8 Customer Screenshots -->
+        <div class="reviews-grid">
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review1.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review2.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review3.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review4.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review5.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review6.avif" alt="Customer Review" loading="lazy">
+          </div>
+          <div class="review-card">
+            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review7.avif" alt="Customer Review" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Honest CTA with Risk Reversal -->
+        <div class="testimonials-cta">
+          <div class="cta-box">
+            <div class="cta-icon">🛡️</div>
+            <div class="cta-content">
+              <h3>Not Sure Yet? Try It Risk-Free</h3>
+              <p>We understand you might have concerns. That's why we offer a <strong>7-day money-back guarantee</strong>. If PureGPL doesn't work for you, get a full refund — no questions asked.</p>
+              <div class="cta-buttons">
+                <a href="https://puregpl.com/membership/" class="btn-try" target="_blank">
+                  Start Your Trial
+                  <span class="btn-subtext">Cancel anytime within 7 days</span>
+                </a>
+                <a href="https://www.trustpilot.com/review/puregpl.com" class="btn-reviews" target="_blank" rel="noopener">
+                  Read All Reviews →
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "Best investment for my agency. We build 20+ client sites per
-              month and PureGPL gives us access to every premium theme and
-              plugin we need. Incredible value!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">SR</div>
-              <div class="author-info">
-                <h5>Sarah Rodriguez</h5>
-                <p>Agency Owner</p>
-              </div>
-            </div>
+        <!-- Value Props - Honest Claims Only -->
+        <div class="social-proof-stats">
+          <div class="proof-stat">
+            <div class="number">20,000+</div>
+            <div class="label">Products Available</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "Clean files, regular updates, and excellent support. I was
-              skeptical at first, but PureGPL has exceeded all my expectations.
-              The lifetime plan is worth every penny."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">DK</div>
-              <div class="author-info">
-                <h5>David Kim</h5>
-                <p>WordPress Developer</p>
-              </div>
-            </div>
+          <div class="proof-stat">
+            <div class="number">GPL</div>
+            <div class="label">100% Legal License</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "Finally, a GPL site that actually works! Downloads are instant,
-              files are clean, and everything is updated regularly. The
-              money-back guarantee gave me confidence to try it."
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">EP</div>
-              <div class="author-info">
-                <h5>Emily Parker</h5>
-                <p>Web Designer</p>
-              </div>
-            </div>
+          <div class="proof-stat">
+            <div class="number">7 Days</div>
+            <div class="label">Money-Back Guarantee</div>
           </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "The variety of themes and plugins is incredible. I can find
-              everything I need in one place. No more searching multiple sites
-              or paying ridiculous prices. Highly recommend!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">RC</div>
-              <div class="author-info">
-                <h5>Robert Chen</h5>
-                <p>Digital Marketer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">
-              "PureGPL has become essential for my workflow. The support team is
-              responsive, files are always clean, and the savings are
-              unbelievable. Best decision I've made for my business!"
-            </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">LM</div>
-              <div class="author-info">
-                <h5>Lisa Martinez</h5>
-                <p>E-commerce Consultant</p>
-              </div>
-            </div>
+          <div class="proof-stat">
+            <div class="number">24/7</div>
+            <div class="label">Download Access</div>
           </div>
         </div>
       </div>
@@ -3530,7 +4016,7 @@
       (function initSpotsCounter() {
         const INITIAL_SPOTS = 100;
         const MIN_SPOTS = 7;
-        const storageKey = 'puregpl_spots_data_v2';
+        const storageKey = "puregpl_spots_data_v2";
 
         // Get stored data or initialize
         let spotsData = JSON.parse(localStorage.getItem(storageKey));
@@ -3539,7 +4025,7 @@
           spotsData = {
             firstVisit: Date.now(),
             lastVisit: Date.now(),
-            currentSpots: INITIAL_SPOTS
+            currentSpots: INITIAL_SPOTS,
           };
           localStorage.setItem(storageKey, JSON.stringify(spotsData));
         }
@@ -3574,14 +4060,17 @@
           const phase5Loss = phase5Hours * 0.2;
 
           // Total spots remaining
-          const totalLoss = phase1Loss + phase2Loss + phase3Loss + phase4Loss + phase5Loss;
+          const totalLoss =
+            phase1Loss + phase2Loss + phase3Loss + phase4Loss + phase5Loss;
 
           // Add slight randomness based on time (deterministic per timestamp)
           const seed = Math.floor(hoursElapsed);
           const pseudoRandom = ((seed * 9301 + 49297) % 233280) / 233280; // 0-1
           const randomVariation = (pseudoRandom - 0.5) * 4; // -2 to +2
 
-          const finalSpots = Math.round(INITIAL_SPOTS - totalLoss + randomVariation);
+          const finalSpots = Math.round(
+            INITIAL_SPOTS - totalLoss + randomVariation,
+          );
           return Math.max(MIN_SPOTS, Math.min(INITIAL_SPOTS, finalSpots));
         }
 
@@ -3592,8 +4081,8 @@
 
         // Update display elements
         function updateSpotsDisplay(spots) {
-          const spotsBadge = document.getElementById('spots-badge');
-          const spotsUrgency = document.getElementById('spots-urgency');
+          const spotsBadge = document.getElementById("spots-badge");
+          const spotsUrgency = document.getElementById("spots-urgency");
           if (spotsBadge) spotsBadge.textContent = spots;
           if (spotsUrgency) spotsUrgency.textContent = spots;
         }
@@ -3804,19 +4293,22 @@
                 card.style.opacity = "0";
                 card.style.transform = "translateY(20px)";
                 setTimeout(() => {
-                  card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                  card.style.transition =
+                    "opacity 0.5s ease, transform 0.5s ease";
                   card.style.opacity = "1";
                   card.style.transform = "translateY(0)";
                 }, index * 150);
               });
 
               // Animate savings banner
-              const savingsBanner = entry.target.querySelector(".savings-banner");
+              const savingsBanner =
+                entry.target.querySelector(".savings-banner");
               if (savingsBanner) {
                 savingsBanner.style.opacity = "0";
                 savingsBanner.style.transform = "translateY(20px)";
                 setTimeout(() => {
-                  savingsBanner.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+                  savingsBanner.style.transition =
+                    "opacity 0.5s ease, transform 0.5s ease";
                   savingsBanner.style.opacity = "1";
                   savingsBanner.style.transform = "translateY(0)";
                 }, 400);
@@ -3827,18 +4319,22 @@
               trustPoints.forEach((point, index) => {
                 point.style.opacity = "0";
                 point.style.transform = "translateY(15px)";
-                setTimeout(() => {
-                  point.style.transition = "opacity 0.4s ease, transform 0.4s ease";
-                  point.style.opacity = "1";
-                  point.style.transform = "translateY(0)";
-                }, 600 + index * 100);
+                setTimeout(
+                  () => {
+                    point.style.transition =
+                      "opacity 0.4s ease, transform 0.4s ease";
+                    point.style.opacity = "1";
+                    point.style.transform = "translateY(0)";
+                  },
+                  600 + index * 100,
+                );
               });
 
               comparisonObserver.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.15 },
       );
 
       // Observe comparison section
