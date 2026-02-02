@@ -1981,8 +1981,13 @@
       }
 
       .cta-box .cta-icon {
-        font-size: 3rem;
         flex-shrink: 0;
+        filter: drop-shadow(0 0 15px rgba(45, 212, 191, 0.4));
+      }
+
+      .cta-box .cta-icon svg {
+        width: 60px;
+        height: 60px;
       }
 
       .cta-box .cta-content h3 {
@@ -2564,7 +2569,7 @@
 
         /* Testimonials Section Mobile */
         .testimonials {
-          padding: 50px 0;
+          padding: 30px 0;
         }
 
         .testimonials-header h2 {
@@ -2583,28 +2588,93 @@
         .cta-box {
           flex-direction: column;
           text-align: center;
-          padding: 30px 20px;
+          padding: 35px 25px;
+          border: 2px solid #2dd4bf;
+          box-shadow: 0 0 30px rgba(45, 212, 191, 0.15), inset 0 1px 0 rgba(255,255,255,0.05);
+          border-radius: 24px;
+        }
+
+        .cta-box .cta-icon {
+          margin-bottom: 15px;
+        }
+
+        .cta-box .cta-icon svg {
+          width: 70px;
+          height: 70px;
+          filter: drop-shadow(0 0 25px rgba(45, 212, 191, 0.5));
         }
 
         .cta-box .cta-content h3 {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+          background: linear-gradient(135deg, #fff 0%, #2dd4bf 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .cta-box .cta-content p {
+          font-size: 1rem;
+          line-height: 1.6;
+          margin-bottom: 25px;
         }
 
         .cta-buttons {
-          justify-content: center;
+          flex-direction: column;
+          gap: 15px;
+          width: 100%;
         }
 
+        .btn-try {
+          width: 100%;
+          padding: 18px 30px;
+          font-size: 1.1rem;
+          border-radius: 14px;
+          box-shadow: 0 8px 25px rgba(45, 212, 191, 0.35);
+        }
+
+        .btn-reviews {
+          padding: 12px;
+          font-size: 1rem;
+        }
+
+        /* Enhanced Stats Grid for Mobile */
         .social-proof-stats {
-          flex-wrap: wrap;
-          gap: 25px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0;
+          margin-top: 40px;
+          padding: 30px 20px;
+          background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, transparent 100%);
+          border-radius: 20px;
+        }
+
+        .proof-stat {
+          padding: 20px 15px;
+          position: relative;
+        }
+
+        /* Add divider lines */
+        .proof-stat:nth-child(1),
+        .proof-stat:nth-child(2) {
+          border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+        }
+
+        .proof-stat:nth-child(1),
+        .proof-stat:nth-child(3) {
+          border-right: 1px solid rgba(45, 212, 191, 0.2);
         }
 
         .proof-stat .number {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
+          color: #2dd4bf;
+          text-shadow: 0 0 20px rgba(45, 212, 191, 0.3);
         }
 
         .proof-stat .label {
-          font-size: 0.8rem;
+          font-size: 0.85rem;
+          color: #94a3b8;
+          margin-top: 5px;
         }
 
         /* Comparison Section Mobile - 2 columns grid */
@@ -3538,7 +3608,145 @@
       </div>
     </section>
 
-    <!-- Section 8: Pricing - Redesigned -->
+    <!-- Section 8: Testimonials - Customer Stories -->
+    <section class="testimonials" id="testimonials-section">
+      <div class="container">
+        <!-- Header -->
+        <div class="testimonials-header">
+          <h2><span class="highlight">What Our Members</span> Are Saying</h2>
+          <p>
+            Real experiences from WordPress developers, agencies, and
+            freelancers who use PureGPL every day.
+          </p>
+        </div>
+
+        <!-- Reviews Grid - 8 Customer Screenshots -->
+        <div class="reviews-grid">
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review1.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review2.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review3.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review4.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review5.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review6.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+          <div class="review-card">
+            <img
+              src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review7.avif"
+              alt="Customer Review"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <!-- Honest CTA with Risk Reversal -->
+        <div class="testimonials-cta">
+          <div class="cta-box">
+            <div class="cta-icon">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L4 5V11.09C4 16.14 7.41 20.85 12 22C16.59 20.85 20 16.14 20 11.09V5L12 2Z" fill="url(#shieldGradient)" stroke="#2dd4bf" stroke-width="1.5"/>
+                <path d="M9 12L11 14L15 10" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="shieldGradient" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2dd4bf"/>
+                    <stop offset="1" stop-color="#14b8a6"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="cta-content">
+              <h3>Not Sure Yet? Try It Risk-Free</h3>
+              <p>
+                We understand you might have concerns. That's why we offer a
+                <strong>7-day money-back guarantee</strong>. If PureGPL doesn't
+                work for you, get a full refund.
+              </p>
+              <div class="cta-buttons">
+                <a
+                  href="https://puregpl.com/membership/"
+                  class="btn-try"
+                  target="_blank"
+                >
+                  Start Your Trial
+                  <span class="btn-subtext">Cancel anytime within 7 days</span>
+                </a>
+                <a
+                  href="https://www.trustpilot.com/review/puregpl.com"
+                  class="btn-reviews"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Read All Reviews →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Value Props - Honest Claims Only -->
+        <div class="social-proof-stats">
+          <div class="proof-stat">
+            <div class="number">20,000+</div>
+            <div class="label">Products Available</div>
+          </div>
+          <div class="proof-stat">
+            <div class="number">GPL</div>
+            <div class="label">100% Legal License</div>
+          </div>
+          <div class="proof-stat">
+            <div class="number">7 Days</div>
+            <div class="label">Money-Back Guarantee</div>
+          </div>
+          <div class="proof-stat">
+            <div class="number">24/7</div>
+            <div class="label">Download Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Pricing - Redesigned -->
     <section class="pricing" id="pricing-section">
       <div class="container">
         <!-- Header -->
@@ -3706,85 +3914,6 @@
           Experience worry-free purchasing with instant access and trusted
           payment security.
         </p>
-      </div>
-    </section>
-
-    <!-- Section 9: Testimonials - Customer Stories -->
-    <section class="testimonials" id="testimonials-section">
-      <div class="container">
-        <!-- Header -->
-        <div class="testimonials-header">
-          <h2><span class="highlight">What Our Members</span> Are Saying</h2>
-          <p>Real experiences from WordPress developers, agencies, and freelancers who use PureGPL every day.</p>
-        </div>
-
-        <!-- Reviews Grid - 8 Customer Screenshots -->
-        <div class="reviews-grid">
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review1.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review2.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review3.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review4.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review5.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review6.avif" alt="Customer Review" loading="lazy">
-          </div>
-          <div class="review-card">
-            <img src="https://puregpl.com/wp-content/uploads/2025/10/puregpl-review7.avif" alt="Customer Review" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Honest CTA with Risk Reversal -->
-        <div class="testimonials-cta">
-          <div class="cta-box">
-            <div class="cta-icon">🛡️</div>
-            <div class="cta-content">
-              <h3>Not Sure Yet? Try It Risk-Free</h3>
-              <p>We understand you might have concerns. That's why we offer a <strong>7-day money-back guarantee</strong>. If PureGPL doesn't work for you, get a full refund — no questions asked.</p>
-              <div class="cta-buttons">
-                <a href="https://puregpl.com/membership/" class="btn-try" target="_blank">
-                  Start Your Trial
-                  <span class="btn-subtext">Cancel anytime within 7 days</span>
-                </a>
-                <a href="https://www.trustpilot.com/review/puregpl.com" class="btn-reviews" target="_blank" rel="noopener">
-                  Read All Reviews →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Value Props - Honest Claims Only -->
-        <div class="social-proof-stats">
-          <div class="proof-stat">
-            <div class="number">20,000+</div>
-            <div class="label">Products Available</div>
-          </div>
-          <div class="proof-stat">
-            <div class="number">GPL</div>
-            <div class="label">100% Legal License</div>
-          </div>
-          <div class="proof-stat">
-            <div class="number">7 Days</div>
-            <div class="label">Money-Back Guarantee</div>
-          </div>
-          <div class="proof-stat">
-            <div class="number">24/7</div>
-            <div class="label">Download Access</div>
-          </div>
-        </div>
       </div>
     </section>
 
