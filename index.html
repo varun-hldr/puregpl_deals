@@ -2084,15 +2084,34 @@
       }
 
       /* FAQ */
+      /* FAQ Section - Dark Theme */
       .faq {
         padding: 80px 0;
-        background: var(--white);
+        background: #0f172a;
       }
 
-      .faq h2 {
+      .faq-header {
         text-align: center;
         margin-bottom: 50px;
+      }
+
+      .faq-header h2 {
+        font-family: "Poppins", sans-serif;
         font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      .faq-header h2 .highlight {
+        color: #2dd4bf;
+      }
+
+      .faq-header p {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       .faq-container {
@@ -2101,30 +2120,111 @@
       }
 
       .faq-item {
-        background: #f9fafb;
-        margin-bottom: 15px;
-        border-radius: 8px;
+        background: #1e293b;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        border: 1px solid #334155;
         overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        border-color: #2dd4bf;
+        box-shadow: 0 0 20px rgba(45, 212, 191, 0.1);
+      }
+
+      .faq-item.active {
+        border-color: #2dd4bf;
+        box-shadow: 0 0 25px rgba(45, 212, 191, 0.15);
       }
 
       .faq-question {
-        padding: 20px 25px;
+        padding: 22px 25px;
         font-weight: 600;
+        font-size: 1rem;
+        color: #fff;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: background 0.3s;
+        gap: 15px;
+        transition: all 0.3s ease;
       }
 
       .faq-question:hover {
-        background: #f3f4f6;
+        color: #2dd4bf;
+      }
+
+      .faq-question .faq-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(45, 212, 191, 0.1);
+        border: 1px solid #2dd4bf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question .faq-icon svg {
+        width: 14px;
+        height: 14px;
+        stroke: #2dd4bf;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question .faq-icon {
+        background: #2dd4bf;
+        transform: rotate(180deg);
+      }
+
+      .faq-item.active .faq-question .faq-icon svg {
+        stroke: #0f172a;
       }
 
       .faq-answer {
-        padding: 0 25px 20px;
-        color: var(--gray);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+      }
+
+      .faq-answer-content {
+        padding: 0 25px 22px;
+        color: #94a3b8;
         line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      .faq-cta {
+        text-align: center;
+        margin-top: 50px;
+        padding: 30px;
+        background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+        border-radius: 16px;
+        border: 1px solid rgba(45, 212, 191, 0.2);
+      }
+
+      .faq-cta p {
+        color: #94a3b8;
+        margin-bottom: 15px;
+      }
+
+      .faq-cta a {
+        color: #2dd4bf;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .faq-cta a:hover {
+        color: #5eead4;
+        text-decoration: underline;
       }
 
       /* Guarantee Section */
@@ -2765,10 +2865,36 @@
           align-items: center;
         }
         .guarantee h2,
-        .faq h2,
         .testimonials h2,
         .comparison h2 {
           font-size: 1.8rem;
+        }
+
+        /* FAQ Mobile */
+        .faq {
+          padding: 60px 0;
+        }
+
+        .faq-header h2 {
+          font-size: 1.75rem;
+        }
+
+        .faq-header p {
+          font-size: 1rem;
+        }
+
+        .faq-question {
+          padding: 18px 20px;
+          font-size: 0.95rem;
+        }
+
+        .faq-answer-content {
+          padding: 0 20px 18px;
+          font-size: 0.9rem;
+        }
+
+        .faq-cta {
+          padding: 25px 20px;
         }
       }
     </style>
@@ -3917,127 +4043,157 @@
       </div>
     </section>
 
-    <section class="guarantee">
+    <!-- Section 10: FAQ -->
+    <section class="faq" id="faq-section">
       <div class="container">
-        <div class="guarantee-content">
-          <h2>30-Day Money-Back Guarantee</h2>
-          <div class="guarantee-badge float">🛡️</div>
-          <p>
-            Try PureGPL completely risk-free. If you're not 100% satisfied with
-            your membership within the first 30 days, we'll refund every penny.
-            No questions asked. You have nothing to lose and everything to gain!
-          </p>
+        <!-- Header -->
+        <div class="faq-header">
+          <h2><span class="highlight">Frequently Asked</span> Questions</h2>
+          <p>Got questions? We've got answers. If you can't find what you're looking for, feel free to contact us.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="faq">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
 
         <div class="faq-container">
-          <div class="faq-item">
-            <div class="faq-question">
-              Is this legal? How can you offer premium products so cheap?
-              <span style="color: var(--primary)">+</span>
+          <!-- FAQ 1 -->
+          <div class="faq-item active">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Is this legal? How can you offer premium products so cheap?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Yes, 100% legal! All WordPress themes and plugins are released
-              under the GPL (General Public License), which allows
-              redistribution. We purchase original licenses and share them with
-              our members, passing the savings to you. This is completely within
-              GPL rights and WordPress foundation guidelines.
+              <div class="faq-answer-content">
+                Yes, 100% legal! All WordPress themes and plugins are released under the GPL (General Public License), which allows redistribution. We purchase original licenses and share them with our members, passing the savings to you. This is completely within GPL rights and WordPress foundation guidelines.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 2 -->
           <div class="faq-item">
-            <div class="faq-question">
-              Will I receive updates for the themes and plugins?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Will I receive updates for the themes and plugins?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Absolutely! Our team monitors and updates all products regularly.
-              You'll always have access to the latest versions. Premium members
-              get priority access to updates, often within 24-48 hours of
-              official release.
+              <div class="faq-answer-content">
+                Yes! Our team monitors and updates all products regularly. You'll always have access to the latest versions. Premium members get priority access to updates, often within 24-48 hours of official release.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 3 -->
           <div class="faq-item">
-            <div class="faq-question">
-              Are the files safe and malware-free?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Are the files safe and malware-free?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Safety is our top priority. Every file is scanned with McAfee and
-              other security tools before upload. We never modify original files
-              - you get clean, authentic versions straight from developers. We
-              also offer a malware-free guarantee.
+              <div class="faq-answer-content">
+                Safety is our top priority. Every file is scanned with multiple security tools before upload. We never modify original files - you get clean, authentic versions straight from developers. We also offer a malware-free guarantee.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 4 -->
           <div class="faq-item">
-            <div class="faq-question">
-              Can I use these on client websites?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Can I use these on client websites?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Yes! Under GPL license, you can use all products on unlimited
-              personal and client websites. Perfect for agencies, freelancers,
-              and developers managing multiple projects. No restrictions on
-              commercial use.
+              <div class="faq-answer-content">
+                Yes! Under GPL license, you can use all products on unlimited personal and client websites. Perfect for agencies, freelancers, and developers managing multiple projects. No restrictions on commercial use.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 5 -->
           <div class="faq-item">
-            <div class="faq-question">
-              Do I get premium support from original developers?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Do I get premium support from original developers?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              While you won't get direct support from original developers (that
-              requires individual licenses), our team provides installation help
-              and troubleshooting. Plus, you save so much that you can afford
-              premium support for specific products if needed.
+              <div class="faq-answer-content">
+                While you won't get direct support from original developers (that requires individual licenses), our team provides installation help and troubleshooting. Plus, you save so much that you can afford premium support for specific products if needed.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 6 -->
           <div class="faq-item">
-            <div class="faq-question">
-              What if I'm not satisfied?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>What if I'm not satisfied?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              We offer a 30-day money-back guarantee, no questions asked. If
-              PureGPL doesn't meet your expectations, simply contact us within
-              30 days for a full refund. Your satisfaction is guaranteed!
+              <div class="faq-answer-content">
+                We offer a 7-day money-back guarantee. If PureGPL doesn't meet your expectations, simply contact us within 7 days for a full refund. Your satisfaction matters to us!
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 7 -->
           <div class="faq-item">
-            <div class="faq-question">
-              How quickly can I download after joining?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>How quickly can I download after joining?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Immediately! Once your payment is confirmed, you'll get instant
-              access to your member dashboard. Start downloading any of our
-              20,000+ products right away. No waiting, no approval process.
+              <div class="faq-answer-content">
+                Immediately! Once your payment is confirmed, you'll get instant access to your member dashboard. Start downloading any of our 20,000+ products right away. No waiting, no approval process.
+              </div>
             </div>
           </div>
 
+          <!-- FAQ 8 -->
           <div class="faq-item">
-            <div class="faq-question">
-              Can I cancel my subscription anytime?
-              <span style="color: var(--primary)">+</span>
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span>Can I cancel my subscription anytime?</span>
+              <div class="faq-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 9l-7 7-7-7"/>
+                </svg>
+              </div>
             </div>
             <div class="faq-answer">
-              Yes, you can cancel anytime from your account dashboard. No
-              contracts, no commitments. If you cancel, you'll retain access
-              until the end of your current billing period. (Lifetime members
-              have permanent access with no recurring fees!)
+              <div class="faq-answer-content">
+                Yes, you can cancel anytime from your account dashboard. No contracts, no commitments. If you cancel, you'll retain access until the end of your current billing period. (Lifetime members have permanent access with no recurring fees!)
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Still have questions? -->
+        <div class="faq-cta">
+          <p>Still have questions? We're here to help!</p>
+          <a href="https://puregpl.com/contact/" target="_blank">Contact Support →</a>
         </div>
       </div>
     </section>
@@ -4470,6 +4626,24 @@
       const comparisonSection = document.getElementById("comparison-section");
       if (comparisonSection) {
         comparisonObserver.observe(comparisonSection);
+      }
+
+      // ============================================
+      // 6. FAQ ACCORDION
+      // ============================================
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        const isActive = faqItem.classList.contains("active");
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          faqItem.classList.add("active");
+        }
       }
     </script>
   </body>
