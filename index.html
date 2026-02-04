@@ -953,6 +953,7 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
+        text-decoration: none;
       }
 
       .add-to-cart-btn:hover {
@@ -3491,11 +3492,144 @@
           align-items: center;
           text-align: center;
           gap: 15px;
-          padding: 20px 0;
+          padding: 20px 0 80px;
         }
 
         .footer-payments {
           justify-content: center;
+        }
+
+      }
+
+      /* Mobile Sticky Bottom Bar - Base Styles */
+      .mobile-sticky-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        padding: 10px 12px;
+        z-index: 9999;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.4);
+        border-top: 2px solid #ef4444;
+      }
+
+      .sticky-bar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .sticky-bar-left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .sticky-urgency {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .sticky-fire {
+        font-size: 0.9rem;
+        animation: fire-shake 0.5s infinite;
+      }
+
+      @keyframes fire-shake {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+      }
+
+      .sticky-spots-text {
+        font-size: 0.7rem;
+        color: #ef4444;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .sticky-spots-count {
+        color: #fbbf24;
+        font-weight: 800;
+        animation: blink-count 1s infinite;
+      }
+
+      @keyframes blink-count {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+
+      .sticky-bar-price {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .sticky-original {
+        font-size: 0.8rem;
+        color: #64748b;
+        text-decoration: line-through;
+      }
+
+      .sticky-sale {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #2dd4bf;
+      }
+
+      .sticky-period {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        font-weight: 500;
+      }
+
+      .sticky-bar-btn {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+        animation: pulse-urgent 1.5s infinite;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .sticky-bar-btn .btn-icon {
+        font-size: 1rem;
+      }
+
+      @keyframes pulse-urgent {
+        0%, 100% {
+          box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+          transform: scale(1);
+        }
+        50% {
+          box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+          transform: scale(1.02);
+        }
+      }
+
+      /* Mobile Sticky Bar - Show on Mobile */
+      @media (max-width: 768px) {
+        .mobile-sticky-bar {
+          display: block;
+        }
+
+        .mobile-sticky-bar.visible {
+          transform: translateY(0);
         }
       }
     </style>
@@ -3605,11 +3739,11 @@
       <nav class="nav-links" id="nav-menu">
         <ul>
           <li><a href="#">🏠 Home</a></li>
-          <li><a href="#">🎨 WordPress Themes</a></li>
-          <li><a href="#">🔌 WordPress Plugins</a></li>
-          <li><a href="#">🛒 WooCommerce</a></li>
-          <li><a href="#">💎 Membership Plans</a></li>
-          <li><a href="#">💬 Support</a></li>
+          <li><a href="https://puregpl.com/wordpress-themes/" target="_blank">🎨 WordPress Themes</a></li>
+          <li><a href="https://puregpl.com/wordpress-plugins/" target="_blank">🔌 WordPress Plugins</a></li>
+          <li><a href="https://puregpl.com/downloads/category/woocommerce/" target="_blank">🛒 WooCommerce</a></li>
+          <li><a href="#pricing-section">💎 Membership Plans</a></li>
+          <li><a href="https://puregpl.com/support/" target="_blank">💬 Support</a></li>
         </ul>
       </nav>
 
@@ -3856,10 +3990,9 @@
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/elementor-pro-wordpress-page-builder-translation-kit-library/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -3880,10 +4013,9 @@
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/astra-wordpress-theme/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -3904,10 +4036,9 @@
                 <span class="original-price">$49</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/wp-rocket/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -3928,10 +4059,9 @@
                 <span class="original-price">$99</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/yoast-seo-premium/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -3952,10 +4082,9 @@
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/rank-math-seo-pro/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -3976,10 +4105,9 @@
                 <span class="original-price">$199</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/wpforms-drag-drop-wordpress-form-builder/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -4000,34 +4128,32 @@
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/themeforest-newspaper/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Product 8: WooCommerce -->
+          <!-- Product 8: WooCommerce Food -->
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <img
                 src="https://i.ibb.co/012prDM/Woocomerce.webp"
-                alt="WooCommerce"
+                alt="WooCommerce Food"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
               <span class="product-category">E-Commerce Plugin</span>
-              <h3 class="product-name">WooCommerce</h3>
+              <h3 class="product-name">WooCommerce Food</h3>
               <div class="product-pricing">
                 <span class="original-price">$199</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/woocommerce-food-restaurant-menu-food-ordering/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -4048,10 +4174,9 @@
                 <span class="original-price">$69</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/all-in-one-wp-migration-unlimited-extension/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -4072,34 +4197,32 @@
                 <span class="original-price">$59</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/woodmart-responsive-woocommerce-wordpress-theme/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Product 11: Electro Theme -->
+          <!-- Product 11: Divi Builder Pro -->
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <img
-                src="https://i.ibb.co/LdXxgqLQ/electro.webp"
-                alt="Electro Theme"
+                src="https://puregpl.com/wp-content/uploads/edd/2025/01/Divi-Builder-pro.avif"
+                alt="Divi Builder Pro"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
-              <span class="product-category">Electronics Theme</span>
-              <h3 class="product-name">Electro Theme</h3>
+              <span class="product-category">Page Builder</span>
+              <h3 class="product-name">Divi Builder Pro</h3>
               <div class="product-pricing">
-                <span class="original-price">$59</span>
+                <span class="original-price">$89</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/elegant-themes-divi-builder/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -4120,10 +4243,9 @@
                 <span class="original-price">$39</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/codecanyon-wordpress-automatic-plugin/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -4144,34 +4266,32 @@
                 <span class="original-price">$29</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/slider-revolution-responsive-wordpress-plugin/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Product 14: Dokan Pro -->
+          <!-- Product 14: Avada Theme -->
           <div class="product-card">
             <div class="product-image">
               <div class="best-seller-badge">Best Seller</div>
               <img
-                src="https://i.ibb.co/YBgSYzCs/Dokan.webp"
-                alt="Dokan Pro"
+                src="https://puregpl.com/wp-content/uploads/edd/2025/01/Avada-Website-Builder-For-WordPress-WooCommerce.avif"
+                alt="Avada Theme"
                 loading="lazy"
               />
             </div>
             <div class="product-info">
-              <span class="product-category">Marketplace Plugin</span>
-              <h3 class="product-name">Dokan Pro</h3>
+              <span class="product-category">Multipurpose Theme</span>
+              <h3 class="product-name">Avada Theme</h3>
               <div class="product-pricing">
-                <span class="original-price">$149</span>
+                <span class="original-price">$69</span>
                 <span class="puregpl-price">₹199</span>
               </div>
-              <button class="add-to-cart-btn">
-                <span class="btn-spinner"></span>
+              <a href="https://puregpl.com/downloads/avada-website-builder-for-wordpress-woocommerce/" class="add-to-cart-btn" target="_blank">
                 <span class="btn-text">Buy Now</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -5104,6 +5224,26 @@
       </div>
     </footer>
 
+    <!-- Mobile Sticky Bottom Bar -->
+    <div class="mobile-sticky-bar" id="mobile-sticky-bar">
+      <div class="sticky-bar-content">
+        <div class="sticky-bar-left">
+          <div class="sticky-urgency">
+            <span class="sticky-fire">🔥</span>
+            <span class="sticky-spots-text">Only <span class="sticky-spots-count">47</span> spots left!</span>
+          </div>
+          <div class="sticky-bar-price">
+            <span class="sticky-original">$49</span>
+            <span class="sticky-sale">₹912</span>
+            <span class="sticky-period">/mo</span>
+          </div>
+        </div>
+        <a href="#pricing-section" class="sticky-bar-btn">
+          <span class="btn-icon">⚡</span> Grab Deal
+        </a>
+      </div>
+    </div>
+
     <!-- JavaScript -->
     <script>
       // ============================================
@@ -5588,6 +5728,86 @@
 
         // Sync every 5 seconds to stay in sync with hero
         setInterval(updateCtaSpots, 5000);
+      })();
+
+      // ============================================
+      // 8. MOBILE STICKY BOTTOM BAR
+      // ============================================
+      (function initMobileStickyBar() {
+        const stickyBar = document.getElementById("mobile-sticky-bar");
+        if (!stickyBar) return;
+
+        let lastScrollY = window.scrollY;
+        const showThreshold = 400; // Show after scrolling 400px
+        const pricingSection = document.getElementById("pricing-section");
+        const footer = document.querySelector("footer");
+        const stickySpots = stickyBar.querySelector(".sticky-spots-count");
+
+        // Sync spots count with hero section
+        function updateStickySpots() {
+          if (!stickySpots) return;
+          const spotsData = JSON.parse(localStorage.getItem("puregpl_spots_data_v2"));
+          if (spotsData && spotsData.currentSpots) {
+            stickySpots.textContent = spotsData.currentSpots;
+          }
+        }
+
+        // Initial spots update and sync every 5 seconds
+        updateStickySpots();
+        setInterval(updateStickySpots, 5000);
+
+        function updateStickyBar() {
+          const currentScrollY = window.scrollY;
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+
+          // Get pricing section position
+          const pricingRect = pricingSection ? pricingSection.getBoundingClientRect() : null;
+          const footerRect = footer ? footer.getBoundingClientRect() : null;
+
+          // Hide if pricing section is visible in viewport
+          const pricingVisible = pricingRect && pricingRect.top < windowHeight && pricingRect.bottom > 0;
+
+          // Hide if near footer
+          const nearFooter = footerRect && footerRect.top < windowHeight + 100;
+
+          // Show sticky bar logic
+          if (currentScrollY > showThreshold && !pricingVisible && !nearFooter) {
+            stickyBar.classList.add("visible");
+          } else {
+            stickyBar.classList.remove("visible");
+          }
+
+          lastScrollY = currentScrollY;
+        }
+
+        // Throttled scroll handler
+        let ticking = false;
+        window.addEventListener("scroll", function() {
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              updateStickyBar();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+
+        // Close sticky bar when clicking the button (smooth scroll)
+        const stickyBtn = stickyBar.querySelector(".sticky-bar-btn");
+        if (stickyBtn) {
+          stickyBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              stickyBar.classList.remove("visible");
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        }
+
+        // Initial check
+        updateStickyBar();
       })();
     </script>
   </body>
