@@ -1327,6 +1327,7 @@
         padding: 60px 0;
         text-align: center;
         background: #0f172a;
+        scroll-margin-top: 80px;
       }
 
       .pricing .container {
@@ -5594,7 +5595,41 @@
 
       // Close menu when clicking on navigation links
       navLinks.forEach((link) => {
-        link.addEventListener("click", closeMenu);
+        link.addEventListener("click", function(e) {
+          const href = this.getAttribute("href");
+
+          // Handle internal links (starting with #)
+          if (href && href.startsWith("#") && href.length > 1) {
+            e.preventDefault();
+            const targetSection = document.querySelector(href);
+
+            if (targetSection) {
+              // Get header height to offset scroll position
+              const header = document.getElementById("main-header");
+              const headerHeight = header ? header.offsetHeight : 70;
+
+              // Calculate absolute position using offsetTop (more reliable)
+              let absoluteTop = 0;
+              let element = targetSection;
+              while (element) {
+                absoluteTop += element.offsetTop;
+                element = element.offsetParent;
+              }
+              const targetPosition = absoluteTop - headerHeight - 20;
+
+              closeMenu();
+              // Small delay to allow menu CSS transition and body overflow to reset
+              setTimeout(() => {
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth"
+                });
+              }, 100);
+            }
+          } else {
+            closeMenu();
+          }
+        });
       });
 
       // Open menu function
