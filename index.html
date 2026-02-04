@@ -308,28 +308,29 @@
       .user-icon-btn {
         display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 10px 20px;
-        border-radius: 6px;
-        background: transparent;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
         color: var(--white);
         text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: 500;
         transition: all 0.3s var(--ease-smooth);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .user-icon-btn img {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         display: block;
         filter: brightness(0) invert(1);
       }
 
       .user-icon-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.05);
       }
 
       /* Hamburger Menu (Mobile Only) */
@@ -2914,10 +2915,10 @@
           padding: 5px 15px;
         }
 
-        /* Mobile Header Layout: Hamburger | Logo | Login Button */
+        /* Mobile Header Layout: Hamburger | Logo (centered) | Login Icon */
         .header-main {
           grid-template-columns: auto 1fr auto;
-          gap: 15px;
+          gap: 10px;
           padding: 12px 0;
         }
 
@@ -2940,17 +2941,13 @@
         }
 
         .user-icon-btn {
-          padding: 8px 12px;
-          font-size: 0.85rem;
+          width: 36px;
+          height: 36px;
         }
 
         .user-icon-btn img {
-          width: 16px;
-          height: 16px;
-        }
-
-        .user-icon-btn span {
-          display: inline;
+          width: 18px;
+          height: 18px;
         }
 
         .logo img,
@@ -3720,7 +3717,7 @@
             <button class="search-btn" aria-label="Search">🔍</button>
           </div>
 
-          <!-- Header Actions (Login Button) -->
+          <!-- Header Actions (Login Icon) -->
           <div class="header-actions">
             <a
               href="https://puregpl.com/login/"
@@ -3729,7 +3726,6 @@
               aria-label="Login / Join"
             >
               <img src="https://i.ibb.co/kstd71wm/user.png" alt="User" />
-              <span>Login</span>
             </a>
           </div>
         </div>
