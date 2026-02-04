@@ -223,10 +223,9 @@
       }
 
       .header-main {
-        display: grid;
-        grid-template-columns: 180px 1fr 140px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 40px;
         padding: 14px 0;
       }
 
@@ -249,8 +248,9 @@
         display: block;
       }
 
-      /* Search Bar (Center) */
+      /* Search Bar (Center) - Hidden on Desktop */
       .search-container {
+        display: none;
         max-width: 700px;
         width: 100%;
         position: relative;
@@ -308,29 +308,32 @@
       .user-icon-btn {
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 6px;
+        background: transparent;
         color: var(--white);
         text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
         transition: all 0.3s var(--ease-smooth);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
       }
 
       .user-icon-btn img {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         display: block;
         filter: brightness(0) invert(1);
       }
 
+      .user-icon-btn span {
+        display: inline;
+      }
+
       .user-icon-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-        border-color: rgba(255, 255, 255, 0.4);
-        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.5);
       }
 
       /* Hamburger Menu (Mobile Only) */
@@ -498,6 +501,33 @@
         font-weight: 600;
         margin-bottom: 30px;
         animation: fadeInDown 0.8s ease-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: badge-shine 3s ease-in-out infinite;
+      }
+
+      @keyframes badge-shine {
+        0% {
+          left: -100%;
+        }
+        50%, 100% {
+          left: 100%;
+        }
       }
 
       .hero-badge .pulse-dot {
@@ -2943,11 +2973,18 @@
         .user-icon-btn {
           width: 36px;
           height: 36px;
+          padding: 0;
+          border-radius: 50%;
+          justify-content: center;
         }
 
         .user-icon-btn img {
           width: 18px;
           height: 18px;
+        }
+
+        .user-icon-btn span {
+          display: none;
         }
 
         .logo img,
@@ -2957,7 +2994,7 @@
 
         /* Hero Mobile Styles */
         .hero {
-          padding: 60px 0 50px;
+          padding: 40px 0 50px;
         }
 
         .floating-badge {
@@ -3727,7 +3764,7 @@
             <button class="search-btn" aria-label="Search">🔍</button>
           </div>
 
-          <!-- Header Actions (Login Icon) -->
+          <!-- Header Actions (Login Button) -->
           <div class="header-actions">
             <a
               href="https://puregpl.com/login/"
@@ -3736,6 +3773,7 @@
               aria-label="Login / Join"
             >
               <img src="https://i.ibb.co/kstd71wm/user.png" alt="User" />
+              <span>Login</span>
             </a>
           </div>
         </div>
