@@ -5434,6 +5434,22 @@
 
     <!-- JavaScript - Optimized for performance -->
     <script>
+      // FAQ toggle function - must be global for onclick attributes
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        const isActive = faqItem.classList.contains("active");
+
+        // Close all other FAQ items
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          faqItem.classList.add("active");
+        }
+      }
+
       // Wait for DOM to be ready
       document.addEventListener('DOMContentLoaded', function() {
         'use strict';
@@ -5803,24 +5819,6 @@
       const comparisonSection = document.getElementById("comparison-section");
       if (comparisonSection) {
         comparisonObserver.observe(comparisonSection);
-      }
-
-      // ============================================
-      // 6. FAQ ACCORDION
-      // ============================================
-      function toggleFaq(element) {
-        const faqItem = element.parentElement;
-        const isActive = faqItem.classList.contains("active");
-
-        // Close all other FAQ items
-        document.querySelectorAll(".faq-item").forEach((item) => {
-          item.classList.remove("active");
-        });
-
-        // Toggle current item
-        if (!isActive) {
-          faqItem.classList.add("active");
-        }
       }
 
       // ============================================
